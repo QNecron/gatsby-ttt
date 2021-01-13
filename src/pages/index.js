@@ -23,7 +23,7 @@ const IndexPage = () => {
 
       <Hero
         title="Tabletop Tools"
-        copy="Try the beta version Character Builder, supporting core races and classes. Save your characters and manage who stays and who goes, all locally to your device."
+        copy="Try the beta version Character Builder, supporting core races and classes. Save your characters and manage who stays and who goes, all local to your device."
         cta="Character Builder"
         link="/character/"
         desktop={ImgDesktop}

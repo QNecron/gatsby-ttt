@@ -122,21 +122,6 @@ const Backgrounds = ({ ...props }) => {
           <option value="Halfling">Halfling</option>
           <option value="Human">Human</option>
         </optgroup>
-        <optgroup label="Racial Types">
-          <option value="Aberration">Aberration</option>
-          <option value="Animal">Animal</option>
-          <option value="Construct">Construct</option>
-          <option value="Dragon">Dragon</option>
-          <option value="Fey">Fey</option>
-          <option value="Humanoid">Humanoid</option>
-          <option value="MagicalBeast">Magical Beast</option>
-          <option value="MonstrousHumanoid">Monstrous Humanoid</option>
-          <option value="Ooze">Ooze</option>
-          <option value="Outsider">Outsider</option>
-          <option value="Plant">Plant</option>
-          <option value="Undead">Undead</option>
-          <option value="Vermin">Vermin</option>
-        </optgroup>
       </Select>
 
       <Select
@@ -181,3 +166,21 @@ const Backgrounds = ({ ...props }) => {
 }
 
 export default Backgrounds
+
+
+// @TODO
+// <optgroup label="Racial Types">
+//   <option value="Aberration">Aberration</option>
+//   <option value="Animal">Animal</option>
+//   <option value="Construct">Construct</option>
+//   <option value="Dragon">Dragon</option>
+//   <option value="Fey">Fey</option>
+//   <option value="Humanoid">Humanoid</option>
+//   <option value="MagicalBeast">Magical Beast</option>
+//   <option value="MonstrousHumanoid">Monstrous Humanoid</option>
+//   <option value="Ooze">Ooze</option>
+//   <option value="Outsider">Outsider</option>
+//   <option value="Plant">Plant</option>
+//   <option value="Undead">Undead</option>
+//   <option value="Vermin">Vermin</option>
+// </optgroup>
