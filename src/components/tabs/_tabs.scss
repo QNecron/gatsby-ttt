@@ -1,0 +1,32 @@
+.tabs-container {
+  @include flex-center("true", "true", "true", 50%);
+  // flex-wrap: wrap;
+  margin-bottom: $space-16;
+  position: sticky;
+  top: 0;
+}
+
+.tab {
+  @extend %black-letter;
+  background-color: $l-brown;
+  background-image: url('../images/textures/texture-mud.jpg');
+  background-size: cover;
+  border-top: solid rem(2) $l-brown;
+  font-size: rem(12);
+  font-weight: 700;
+  padding: 0 $space-16;
+  line-height: 1.25;
+  height: $space-64;
+  @include shadow(1, 0, black);
+
+  &:focus,
+  &:hover {
+    border-color: $orange-tint;
+  }
+
+  &[tab-active] {
+    border-color: $orange;
+    color: $orange;
+  }
+
+}

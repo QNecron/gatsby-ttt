@@ -1,0 +1,31 @@
+.section-copyright {
+
+  .wrapper {
+
+    // media
+    @include media($mq-tablet-up) {
+      @include flex-center("true", "true");
+    }
+
+  }
+
+}
+
+.paizo-logo {
+  margin: 0 auto;
+  max-width: rem(256);
+}
+
+.paizo-copyright {
+  color: $orange-white;
+  font-size: rem(12);
+
+  // media
+  @include media($mq-tablet-up) {
+    padding-left: $space-32;
+  }
+  @include media($mq-mobile) {
+    margin-top: $space-32;
+  }
+
+}

@@ -1,0 +1,206 @@
+.block-container {
+  @include flex-center("true", "false", "true", 33%);
+  gap: $space-8;
+}
+
+.block-defined,
+.block-support,
+.block {
+  border: solid rem(1) $l-brown;
+  padding: 0 $space-12;
+  text-align: center;
+  height: rem(40);
+  min-width: $space-48;
+  @include flex-center("true", "true");
+}
+
+.block-defined,
+.block-support {
+  min-width: rem(80);
+}
+
+.block-defined {
+  background-color: $l-brown;
+  background-image: url('../images/textures/texture-mud.jpg');
+  background-size: cover;
+  color: $orange;
+  opacity: .98;
+}
+
+.block-support {
+  background: lighten($black, 72%);
+  border-color: lighten($black, 64%);
+}
+
+.block {
+  min-width: $space-48;
+}
+
+.name,
+.size,
+.str,
+.dex,
+.con,
+.int,
+.wis,
+.cha,
+.armor,
+.fortitude,
+.reflex,
+.will,
+.bab,
+.hit-points,
+.skill,
+.speed {
+
+  .block-defined,
+  .block-support,
+  .block,
+  .btn {
+    margin-top: $space-16;
+  }
+
+}
+
+.str,
+.dex,
+.con,
+.int,
+.wis,
+.cha,
+.fortitude,
+.reflex,
+.will,
+.skill {
+
+  .block {
+    max-width: $space-48;
+  }
+
+}
+
+// icon
+.character-icon {
+
+  // media
+  @include media($mq-desktop) {
+    height: rem(304);
+    width: rem(304);
+    right: $space-32;
+  }
+  @include media($mq-tablet-up) {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    > * {
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(16%, -100%);
+      @include timing(4);
+    }
+
+    &[data-class="Barbarian"] .barbarian {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Bard"] .bard {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Cleric"] .cleric {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Druid"] .druid {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Fighter"] .fighter {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Monk"] .monk {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Paladin"] .paladin {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Ranger"] .ranger {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Rogue"] .rogue {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Sorcerer"] .sorcerer {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+    &[data-class="Wizard"] .wizard {
+      opacity: 1;
+      transform: translate(0, -100%);
+    }
+
+  }
+  @include media($mq-tablet-l) {
+    height: rem(256);
+    width: rem(256);
+    right: $space-24;
+  }
+  @include media($mq-tablet-p) {
+    height: rem(224);
+    width: rem(224);
+  }
+  @include media($mq-mobile) {
+    display: none;
+  }
+
+}
+
+// storage
+.character-storage-container {
+  color: $off-white;
+}
+
+.character-storage-item {
+  @include flex-center("true", "true", "true");
+  padding-bottom: $space-8;
+}
+
+.character-storage-remove,
+.character-storage-load {
+  margin-right: $space-8;
+  max-width: $space-40;
+  @include shadow(1, 0, black);
+}
+
+.character-storage-name {
+  @extend %black-letter;
+  color: $orange-white;
+  font-family: $serif;
+  font-size: rem(14);
+  font-weight: 700;
+  @include shadow(0, 1, black);
+}
+
+.character-storage-empty {
+  text-align: center;
+}

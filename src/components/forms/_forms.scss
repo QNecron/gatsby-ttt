@@ -1,0 +1,148 @@
+.input-field-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: $space-4;
+  padding-top: $space-12;
+  position: relative;
+  z-index: 1;
+}
+
+.input-field {
+  background: transparent;
+  border: solid rem(1) $l-brown;
+  color: $white;
+  display: block;
+  padding: 0 $space-12;
+  line-height: $space-40;
+  height: $space-40;
+  outline: dashed rem(1) transparent;
+  outline-offset: rem(-4);
+  order: 2;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  &:focus,
+  &:hover {
+
+    ~ .input-field-label,
+    ~ .input-field-helper {
+      color: $orange;
+    }
+
+  }
+
+  &:focus {
+    outline-color: $orange;
+  }
+
+  &:disabled {
+    background: rgba(black, .24);
+    cursor: default;
+
+    &:focus,
+    &:hover {
+
+      ~ .input-field-label,
+      ~ .input-field-helper {
+        color: $white;
+      }
+
+    }
+
+  }
+
+}
+
+.input-field-label,
+.input-field-helper {
+  font-size: rem(12);
+  padding: rem(3) $space-4;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  @include timing;
+
+  &:before {
+    content: "";
+    background-image: url('../images/textures/texture-dirt.jpg');
+    background-position: center center;
+    height: rem(1);
+    width: 100%;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    z-index: -1;
+  }
+
+}
+
+.input-field-label,
+.input-field-helper {
+  font-weight: 700;
+  left: rem(9);
+}
+
+.input-field-label { order: 1; }
+.input-field-helper { order: 3; }
+
+// specific
+[data-srt="false"] {
+
+  ~ .input-field-helper {
+    right: $space-16;
+    left: auto;
+  }
+
+}
+
+[data-input="checkbox"] {
+  max-width: $space-40;
+
+  .input-field {
+    cursor: pointer;
+    padding: 0;
+
+    &:checked {
+
+      ~ .input-field-icon {
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+}
+
+.input-field-icon {
+  background: $orange;
+  border: solid $space-4 rgba(black, .24);
+  border-radius: 50%;
+  opacity: 0;
+  height: $space-24;
+  width: $space-24;
+  pointer-events: none;
+  position: absolute;
+  top: calc(50% + 6px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+[data-input="number"] {
+
+  .input-field {
+    padding-right: 0;
+  }
+
+}
+
+[data-input="select"] {
+
+  option,
+  optgroup {
+    background: $white;
+    color: $black;
+  }
+
+}

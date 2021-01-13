@@ -1,0 +1,22 @@
+@mixin timing($s: 1) {
+
+  $speed: none;
+
+  @if $s == 1 {
+    $speed: all .16s ease-in-out 0s;
+  }
+  @if $s == 2 {
+    $speed: all .24s ease-in-out 0s;
+  }
+  @if $s == 3 {
+    $speed: all .32s ease-in-out 0s;
+  }
+  @if $s == 4 {
+    $speed: all .40s ease-in-out 0s;
+  }
+
+  @if $s >= 1 {
+    transition: $speed;
+  }
+
+}

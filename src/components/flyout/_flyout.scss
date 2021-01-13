@@ -1,0 +1,60 @@
+.flyout-overlay {
+  background: rgba(black, .8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  transition: all 0s ease-in-out 0s, opacity .24s ease-in-out 0s;
+
+  &[data-overlay="false"] {
+    opacity: 0;
+    transform: translate(101%, 0)
+  }
+
+}
+
+.flyout-close {
+  margin-right: $space-8;
+  position: absolute;
+  top: $space-24;
+  left: rem(-20);
+  z-index: 1;
+  @include shadow(1, 0, black);
+
+  .material-icons {
+    font-size: rem(36);
+  }
+
+}
+
+[data-flyout="right"] {
+  background-position: left center;
+  background-color: $l-brown;
+  background-image: url('../images/textures/texture-dirt.jpg');
+  background-size: auto 100%;
+  border-left: solid rem(1) rgba($l-brown, .48);
+  padding: $space-88 $space-24 $space-24 $space-24;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  transition: all .24s ease-in-out 0s;
+  @include shadow(1, 0, black);
+
+  // media
+  @include media($mq-tablet-up) {
+    width: rem(384);
+
+  }
+  @include media($mq-mobile) {
+    width: rem(288);
+  }
+
+  &[aria-expanded="false"] {
+    transform: translate(calc(101% + 20px), 0)
+  }
+
+}

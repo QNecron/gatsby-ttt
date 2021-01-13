@@ -1,0 +1,94 @@
+[class*="btn"] {
+  outline: dashed rem(1) transparent;
+  outline-offset: rem(-4);
+
+  &:focus {
+    outline-color: $orange;
+  }
+
+}
+
+.btn,
+.btn-icon,
+.btn-hero {
+  @extend %black-letter;
+  font-size: rem(12);
+  font-weight: 700;
+  height: $space-40;
+  position: relative;
+}
+
+.btn,
+.btn-icon {
+
+  &:focus,
+  &:hover {
+    @include shadow(1, 0, black);
+  }
+
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 $space-24;
+}
+
+.btn-primary {
+  background: $orange;
+  border: solid rem(2) $d-brown;
+  color: $d-brown;
+
+  &:focus,
+  &:hover {
+    background: $orange-tint;
+  }
+
+}
+
+.btn-secondary {
+  background: transparent;
+  border: solid rem(2) $orange;
+  color: $orange;
+
+  &:focus,
+  &:hover {
+    color: $orange-tint;
+    border-color: $orange-tint;
+  }
+
+}
+
+.btn-hero {
+  @extend %black-letter;
+  background: rgba(black, .24);
+  border: solid rem(2) $orange;
+  color: $orange;
+  font-size: rem(14);
+  font-weight: 700;
+  padding: 0 $space-24;
+  line-height: rem(36); // -4px for top/bot borders
+  position: relative;
+  @include shadow(1, 0, black);
+
+  &:focus,
+  &:hover {
+    background: $orange;
+    color: $d-brown;
+  }
+
+}
+
+.btn-icon {
+  @include flex-center("true", "true", "true");
+  width: $space-40;
+}
+
+.btn-with-icon {
+  @include flex-center("true", "true", "false");
+
+  .material-icons {
+    font-size: rem(16);
+    padding-right: $space-4;
+  }
+
+}

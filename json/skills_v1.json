@@ -1,0 +1,306 @@
+[
+  {
+    "name": "Acrobatics",
+    "base": "props.acrobatics",
+    "baseUpdate": "props.acrobaticsUpdate",
+    "item": "props.acrobaticsItem",
+    "itemUpdate": "props.acrobaticsItemUpdate",
+    "modifier": "props.dex"
+  },
+  {
+    "name": "Appraise",
+    "base": "props.appraise",
+    "baseUpdate": "props.appraiseUpdate",
+    "item": "props.appraiseItem",
+    "itemUpdate": "props.appraiseItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Bluff",
+    "base": "props.bluff",
+    "baseUpdate": "props.bluffUpdate",
+    "item": "props.bluffItem",
+    "itemUpdate": "props.bluffItemUpdate",
+    "modifier": "props.cha"
+  },
+  {
+    "name": "Climb",
+    "base": "props.climb",
+    "baseUpdate": "props.climbUpdate",
+    "item": "props.climbItem",
+    "itemUpdate": "props.climbItemUpdate",
+    "modifier": "props.str"
+  },
+  {
+    "name": "Craft (1)",
+    "base": "props.craft1",
+    "baseUpdate": "props.craft1Update",
+    "item": "props.craft1Item",
+    "itemUpdate": "props.craft1ItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Craft (2)",
+    "base": "props.craft2",
+    "baseUpdate": "props.craft2Update",
+    "item": "props.craft2Item",
+    "itemUpdate": "props.craft2ItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Diplomacy",
+    "base": "props.diplomacy",
+    "baseUpdate": "props.diplomacyUpdate",
+    "item": "props.diplomacyItem",
+    "itemUpdate": "props.diplomacyItemUpdate",
+    "modifier": "props.cha"
+  },
+  {
+    "name": "Disable Device",
+    "base": "props.device",
+    "baseUpdate": "props.deviceUpdate",
+    "item": "props.deviceItem",
+    "itemUpdate": "props.deviceItemUpdate",
+    "modifier": "props.dex"
+  },
+  {
+    "name": "Disguise",
+    "base": "props.disguise",
+    "baseUpdate": "props.disguiseUpdate",
+    "item": "props.disguiseItem",
+    "itemUpdate": "props.disguiseItemUpdate",
+    "modifier": "props.cha"
+  },
+  {
+    "name": "Escape Artist",
+    "base": "props.escape",
+    "baseUpdate": "props.escapeUpdate",
+    "item": "props.escapeItem",
+    "itemUpdate": "props.escapeItemUpdate",
+    "modifier": "props.dex"
+  },
+  {
+    "name": "Fly",
+    "base": "props.fly",
+    "baseUpdate": "props.flyUpdate",
+    "item": "props.flyItem",
+    "itemUpdate": "props.flyItemUpdate",
+    "modifier": "props.dex"
+  },
+  {
+    "name": "Handle Animal",
+    "base": "props.handle",
+    "baseUpdate": "props.handleUpdate",
+    "item": "props.handleItem",
+    "itemUpdate": "props.handleItemUpdate",
+    "modifier": "props.cha"
+  },
+  {
+    "name": "Heal",
+    "base": "props.heal",
+    "baseUpdate": "props.healUpdate",
+    "item": "props.healItem",
+    "itemUpdate": "props.healItemUpdate",
+    "modifier": "props.wis"
+  },
+  {
+    "name": "Intimidate",
+    "base": "props.intimidate",
+    "baseUpdate": "props.intimidateUpdate",
+    "item": "props.intimidateItem",
+    "itemUpdate": "props.intimidateItemUpdate",
+    "modifier": "props.cha"
+  },
+  {
+    "name": "Knowledge Arcana",
+    "base": "props.karcana",
+    "baseUpdate": "props.karcanaUpdate",
+    "item": "props.karcanaItem",
+    "itemUpdate": "props.karcanaItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge Dungeoneering",
+    "base": "props.kdungeon",
+    "baseUpdate": "props.kdungeonUpdate",
+    "item": "props.kdungeonItem",
+    "itemUpdate": "props.kdungeonItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge Engineering",
+    "base": "props.kengineer",
+    "baseUpdate": "props.kengineerUpdate",
+    "item": "props.kengineerItem",
+    "itemUpdate": "props.kengineerItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge Geography",
+    "base": "props.kgeography",
+    "baseUpdate": "props.kgeographyUpdate",
+    "item": "props.kgeographyItem",
+    "itemUpdate": "props.kgeographyItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge History",
+    "base": "props.khistory",
+    "baseUpdate": "props.khistoryUpdate",
+    "item": "props.khistoryItem",
+    "itemUpdate": "props.khistoryItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge Local",
+    "base": "props.klocal",
+    "baseUpdate": "props.klocalUpdate",
+    "item": "props.klocalItem",
+    "itemUpdate": "props.klocalItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge Nature",
+    "base": "props.knature",
+    "baseUpdate": "props.knatureUpdate",
+    "item": "props.knatureItem",
+    "itemUpdate": "props.knatureItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge Nobility",
+    "base": "props.knobility",
+    "baseUpdate": "props.knobilityUpdate",
+    "item": "props.knobilityItem",
+    "itemUpdate": "props.knobilityItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge Planes",
+    "base": "props.kplanes",
+    "baseUpdate": "props.kplanesUpdate",
+    "item": "props.kplanesItem",
+    "itemUpdate": "props.kplanesItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Knowledge Religion",
+    "base": "props.kreligion",
+    "baseUpdate": "props.kreligionUpdate",
+    "item": "props.kreligionItem",
+    "itemUpdate": "props.kreligionItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Linguistics",
+    "base": "props.linguistics",
+    "baseUpdate": "props.linguisticsUpdate",
+    "item": "props.linguisticsItem",
+    "itemUpdate": "props.linguisticsItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Perception",
+    "base": "props.perception",
+    "baseUpdate": "props.perceptionUpdate",
+    "item": "props.perceptionItem",
+    "itemUpdate": "props.perceptionItemUpdate",
+    "modifier": "props.wis"
+  },
+  {
+    "name": "Perform (1)",
+    "base": "props.perform1",
+    "baseUpdate": "props.perform1Update",
+    "item": "props.perform1Item",
+    "itemUpdate": "props.perform1ItemUpdate",
+    "modifier": "props.cha"
+  },
+  {
+    "name": "Perform (2)",
+    "base": "props.perform2",
+    "baseUpdate": "props.perform2Update",
+    "item": "props.perform2Item",
+    "itemUpdate": "props.perform2ItemUpdate",
+    "modifier": "props.cha"
+  },
+  {
+    "name": "Profession (1)",
+    "base": "props.profession1",
+    "baseUpdate": "props.profession1Update",
+    "item": "props.profession1Item",
+    "itemUpdate": "props.profession1ItemUpdate",
+    "modifier": "props.wis"
+  },
+  {
+    "name": "Profession (2)",
+    "base": "props.profession2",
+    "baseUpdate": "props.profession2Update",
+    "item": "props.profession2Item",
+    "itemUpdate": "props.profession2ItemUpdate",
+    "modifier": "props.wis"
+  },
+  {
+    "name": "Ride",
+    "base": "props.ride",
+    "baseUpdate": "props.rideUpdate",
+    "item": "props.rideItem",
+    "itemUpdate": "props.rideItemUpdate",
+    "modifier": "props.dex"
+  },
+  {
+    "name": "Sense Motive",
+    "base": "props.motive",
+    "baseUpdate": "props.motiveUpdate",
+    "item": "props.motiveItem",
+    "itemUpdate": "props.motiveItemUpdate",
+    "modifier": "props.wis"
+  },
+  {
+    "name": "Sleight of Hand",
+    "base": "props.sleight",
+    "baseUpdate": "props.sleightUpdate",
+    "item": "props.sleightItem",
+    "itemUpdate": "props.sleightItemUpdate",
+    "modifier": "props.dex"
+  },
+  {
+    "name": "Spellcraft",
+    "base": "props.spellcraft",
+    "baseUpdate": "props.spellcraftUpdate",
+    "item": "props.spellcraftItem",
+    "itemUpdate": "props.spellcraftItemUpdate",
+    "modifier": "props.int"
+  },
+  {
+    "name": "Stealth",
+    "base": "props.stealth",
+    "baseUpdate": "props.stealthUpdate",
+    "item": "props.stealthItem",
+    "itemUpdate": "props.stealthItemUpdate",
+    "modifier": "props.dex"
+  },
+  {
+    "name": "Survival",
+    "base": "props.survival",
+    "baseUpdate": "props.survivalUpdate",
+    "item": "props.survivalItem",
+    "itemUpdate": "props.survivalItemUpdate",
+    "modifier": "props.wis"
+  },
+  {
+    "name": "Swim",
+    "base": "props.swim",
+    "baseUpdate": "props.swimUpdate",
+    "item": "props.swimItem",
+    "itemUpdate": "props.swimItemUpdate",
+    "modifier": "props.str"
+  },
+  {
+    "name": "Use Magic Device",
+    "base": "props.usemagic",
+    "baseUpdate": "props.usemagicUpdate",
+    "item": "props.usemagicItem",
+    "itemUpdate": "props.usemagicItemUpdate",
+    "modifier": "props.cha"
+  }
+]

@@ -1,0 +1,10 @@
+.footer {
+  background-color: $l-brown;
+  background-image: url('../images/textures/texture-mud.jpg');
+  background-size: 100% auto;
+  border-top: solid rem(1) $d-brown;
+  color: $orange-white;
+  font-size: rem(12);
+  padding: 4vh $space-32;
+  text-align: center;
+}

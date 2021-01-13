@@ -1,0 +1,120 @@
+.hero-container {
+  background: black;
+  border-bottom: solid rem(1) rgba($l-brown, .48);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+[data-hero="large"],
+[data-hero="large"] .wrapper {
+  min-height: 88vh;
+}
+
+[data-hero="small"],
+[data-hero="small"] .wrapper {
+
+  // media
+  @include media($mq-desktop) {
+    min-height: 48vh;
+  }
+  @include media($mq-tablet-l) {
+    min-height: 48vh;
+  }
+  @include media($mq-tablet-p) {
+    min-height: 32vh;
+  }
+  @include media($mq-mobile) {
+    min-height: 48vh;
+  }
+
+}
+
+[data-hero="large"] {
+
+  .hero-content-container {
+    top: 50%;
+  }
+
+}
+
+[data-hero="small"] {
+
+  .hero-content-container {
+    bottom: 0;
+  }
+
+}
+
+.hero-overlay {
+  background: linear-gradient(to top, rgba(black, .88) 0%, rgba(black, .16) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.hero-asset-container {
+  clip: rect(auto, auto, auto, auto);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.hero-asset {
+  opacity: .96;
+  position: absolute;
+
+  // media
+  @include media($mq-desktop) {
+    height: auto;
+    width: 100%;
+    top: -16%;
+    left: 0;
+  }
+  @include media($mq-mobile) {
+    height: 100%;
+    width: auto;
+    max-width: initial;
+    top: 0;
+    left: 50%;
+    transform: translate(-75%, 0);
+  }
+
+}
+
+.hero-content-container {
+  max-width: calc(100% - 32px);
+  opacity: .92;
+  position: absolute;
+  z-index: 3;
+  transform: translate(0, -50%);
+
+  // media
+  @include media($mq-desktop) {
+    max-width: 48%;
+  }
+
+}
+
+.hero-title {
+  @extend %black-letter;
+  color: $orange-white;
+  font-family: $serif;
+  font-size: rem(48);
+  font-weight: 700;
+  line-height: 1;
+  @include shadow(0, 1, black);
+}
+
+.hero-copy {
+  color: $white;
+  font-size: rem(20);
+  padding: $space-16 0;
+  @include shadow(0, 1, black)
+}

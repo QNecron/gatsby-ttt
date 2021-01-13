@@ -1,0 +1,31 @@
+.spell-container {
+  display: grid;
+  grid-gap: $space-4;
+  grid-template-areas:
+    "name name name name name"
+    "school school level level level"
+    "casting casting component component component"
+    "range range time time time"
+    "saving saving resist resist resist"
+    "descript descript descript descript descript"
+  ;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin-bottom: $space-16;
+}
+
+.spell-info {
+  background: rgba(violet, .08);
+  padding: $space-8 $space-16;
+}
+
+.spell-name { grid-area: name; }
+.spell-school { grid-area: school; }
+.spell-level { grid-area: level; }
+.spell-casting { grid-area: casting; }
+.spell-component { grid-area: component; }
+.spell-range { grid-area: range; }
+.spell-duration { grid-area: time; }
+.spell-saving { grid-area: saving; }
+.spell-resist { grid-area: resist; }
+.spell-descript { grid-area: descript; }

@@ -1,0 +1,55 @@
+.monster-stats-container {
+
+  strong {
+    color: $orange-white;
+  }
+
+}
+
+.monster-visual {
+  display: block;
+  margin-bottom: $space-32;
+}
+
+.monster-plate {
+  background-image: url('../images/textures/texture-mud.jpg');
+  background-size: cover;
+  border: solid rem(1) rgba($l-brown, .48);
+  color: $white;
+  margin: $space-4 0;
+  opacity: .92;
+  @include flex-center("true", "true", "false");
+  @include shadow(1, 0, black);
+}
+
+.monster-subplate {
+  border-top: solid rem(1) rgba($l-brown, .48);
+  border-bottom: solid rem(1) rgba($l-brown, .48);
+  color: $orange;
+  margin: $space-4 0;
+  padding: $space-8 $space-12;
+}
+
+.monster-stat {
+  padding: $space-4 4vw $space-4 $space-12;
+}
+
+.monster-name,
+.monster-cr,
+.monster-xp {
+  padding: $space-8 $space-12;
+}
+
+.monster-name {
+  flex: 1 1 auto;
+}
+
+.monster-cr,
+.monster-xp {
+  text-align: right;
+}
+
+.monster-xp {
+  background: $orange;
+  color: $orange-white;
+}

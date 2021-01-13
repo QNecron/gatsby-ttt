@@ -1,0 +1,40 @@
+.table {
+  width: 100%;
+}
+
+.table-info {
+  font-size: rem(14);
+}
+
+.table-row {
+
+  // :not(:first-child) {
+  //   text-align: center;
+  // }
+
+  &:nth-child(even) {
+    background: rgba(black, .24);
+  }
+
+}
+
+.table-heading {
+  font-weight: 700;
+}
+
+.table-col {
+  padding: $space-8;
+
+  &.small {
+    width: 8%;
+  }
+
+  &.medium {
+    width: 16%;
+  }
+
+  &.large {
+    width: 34%;
+  }
+
+}
