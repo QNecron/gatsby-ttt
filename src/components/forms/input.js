@@ -5,9 +5,12 @@ const Input = ({
   inputType,
   inputId,
   inputDisabled,
+  inputName,
   inputStep,
   inputValue,
+  inputChecked,
   inputChange,
+  inputClick,
   inputSRT,
   inputLabel,
   inputHelper }) => {
@@ -20,9 +23,12 @@ const Input = ({
         id={inputId}
         className="input-field"
         disabled={inputDisabled ? inputDisabled : false}
-        step={inputStep ? inputStep : 1}
+        name={inputName}
+        step={inputStep}
         value={inputValue}
+        defaultChecked={inputChecked}
         onChange={inputChange}
+        onClick={inputClick}
       />
       <label htmlFor={inputId} className="input-field-label" data-srt={inputSRT}>{inputLabel}</label>
       {inputHelper && (
@@ -40,12 +46,17 @@ Input.propTypes = {
   inputType: PropTypes.string,
   inputId: PropTypes.string,
   inputDisabled: PropTypes.bool,
-  inputStep: PropTypes.number,
+  inputName: PropTypes.string,
+  inputStep: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   inputValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
   ]),
   inputChange: PropTypes.func,
+  inputClick: PropTypes.func,
   inputSRT: PropTypes.string,
   inputLabel: PropTypes.string,
   inputHelper: PropTypes.string
@@ -55,9 +66,12 @@ Input.defaultProps = {
   inputType: ``,
   inputId: ``,
   inputDisabled: false,
-  inputStep: 1,
+  inputName: ``,
+  inputStep: ``,
   inputValue: ``,
+  inputChecked: false,
   inputChange: ``,
+  inputClick: ``,
   inputSRT: ``,
   inputLabel: ``,
   inputHelper: ``

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
 import SEO from "../components/seo"
+import Input from "../components/forms/input"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
 import Wrapper from "../components/wrapper/wrapper"
@@ -19,7 +20,8 @@ const Feats = () => {
 
   const [book, setBook] = useState("Core")
   // console.log(Data);
-  const [flyout, flyoutUpdate] = useState("false")
+  const [filter, filterUpdate] = useState("false")
+  const [detail, detailUpdate] = useState("false")
 
   const [descriptName, descriptNameUpdate] = useState("")
   const [descriptType, descriptTypeUpdate] = useState("")
@@ -33,7 +35,7 @@ const Feats = () => {
     let needed = "-"
     let descript = "Feat not found."
 
-    flyoutUpdate("true")
+    detailUpdate("true")
 
     Data.forEach((d, index) => {
 
@@ -70,13 +72,16 @@ const Feats = () => {
 
         <Wrapper wrapper="structure">
 
-          <Tabs
-            data={Books}
-            state={book}
-            click={setBook}
-          />
+          <button
+            className="btn btn-secondary btn-with-icon"
+            onClick={(e) => filterUpdate("true")}
+          >
+            <span className="material-icons" aria-hidden="true">sort</span> Filter
+          </button>
 
-          <table className="table">
+          {/* above need to be a secondary menu and below needs no spacing */}
+
+          <table className="table gutter-top-32">
 
             <tbody className="table-info">
 
@@ -123,11 +128,35 @@ const Feats = () => {
       </Section>
 
       <Flyout
-        flyoutId="character-storage"
+        flyoutId="filters"
         flyoutType={"right"}
-        flyoutOpen={flyout}
-        flyout={flyout}
-        flyoutUpdate={flyoutUpdate}
+        flyoutOpen={filter}
+        flyout={filter}
+        flyoutUpdate={filterUpdate}
+      >
+
+        {Books.map((name, index) =>
+
+          <Input
+            inputType="radio"
+            inputId={"book-" + index}
+            inputLabel={name}
+            inputName="books"
+            inputChecked={name === "Core" ? true : false}
+            inputClick={(e) => setBook(name)}
+            key={index}
+          />
+
+        )}
+
+      </Flyout>
+
+      <Flyout
+        flyoutId="details"
+        flyoutType={"right"}
+        flyoutOpen={detail}
+        flyout={detail}
+        flyoutUpdate={detailUpdate}
       >
         <h3 className="heading-4">{descriptName}</h3>
         <p className="gutter-top-8">{descriptType}</p>

@@ -695,9 +695,33 @@ const Character = ({ menu, menuUpdate }) => {
         size="small"
       />
 
+
       <Section type="both">
 
         <Wrapper wrapper="structure">
+
+          <button
+            className="btn btn-secondary btn-with-icon"
+            onClick={(e) => saveCharacter(
+              createCharacter, bg, bgBonus, bgSize, bgSizeUpdate, class1, class2, class3, class1Level, class2Level, class3Level, bab1, bab2, bab3, armor, shield, natural, deflection, spellresistance,
+              fortitude1, fortitude2, fortitude3, fortitude1Item, reflex1, reflex2, reflex3, reflex1Item, will1, will2, will3, will1Item, str, strItem, dex, dexItem, con, conItem, int, intItem, wis, wisItem, cha, chaItem,
+              init, speedArmor, acrobatics, acrobaticsItem, appraise, appraiseItem, bluff, bluffItem, climb, climbItem, craft1, craft1Item, craft2, craft2Item, diplomacy, diplomacyItem, device, deviceItem, disguise, disguiseItem,
+              escape, escapeItem, fly, flyItem, handle, handleItem, heal, healItem, intimidate, intimidateItem, karcana, karcanaItem, kdungeon, kdungeonItem, kengineer, kengineerItem, kgeography, kgeographyItem, khistory,
+              khistoryItem, klocal, klocalItem, knature, knatureItem, knobility, knobilityItem, kplanes, kplanesItem, kreligion, kreligionItem,
+              linguistics, linguisticsItem, perception, perceptionItem, perform1, perform1Item, perform2, perform2Item, profession1, profession1Item, profession2, profession2Item,
+              ride, rideItem, motive, motiveItem, sleight, sleightItem, spellcraft, spellcraftItem, stealth, stealthItem, survival, survivalItem, swim, swimItem, usemagic, usemagicItem
+            )}>
+            <span className="material-icons" aria-hidden="true">cloud_upload</span> Save
+          </button>
+
+          <button
+            className="btn btn-secondary btn-with-icon"
+            aria-haspopup="true"
+            aria-controls="character-storage"
+            onClick={(e) => flyoutUpdate("true")}
+          >
+            <span className="material-icons" aria-hidden="true">settings</span> Manage
+          </button>
 
           {/*
           <div className="character-icon" data-class={class1}>
@@ -728,101 +752,6 @@ const Character = ({ menu, menuUpdate }) => {
                   inputChange={(e) => createCharacterUpdate(e.target.value)}
                   inputLabel="Character Name"
                 />
-
-                <button className="btn btn-secondary btn-with-icon"
-                  onClick={(e) => saveCharacter(
-                    createCharacter, bg, bgBonus, bgSize, bgSizeUpdate, class1, class2, class3, class1Level, class2Level, class3Level, bab1, bab2, bab3, armor, shield, natural, deflection, spellresistance,
-                    fortitude1, fortitude2, fortitude3, fortitude1Item, reflex1, reflex2, reflex3, reflex1Item, will1, will2, will3, will1Item, str, strItem, dex, dexItem, con, conItem, int, intItem, wis, wisItem, cha, chaItem,
-                    init,
-                    speedArmor,
-                    acrobatics,
-                    acrobaticsItem,
-                    appraise,
-                    appraiseItem,
-                    bluff,
-                    bluffItem,
-                    climb,
-                    climbItem,
-                    craft1,
-                    craft1Item,
-                    craft2,
-                    craft2Item,
-                    diplomacy,
-                    diplomacyItem,
-                    device,
-                    deviceItem,
-                    disguise,
-                    disguiseItem,
-                    escape,
-                    escapeItem,
-                    fly,
-                    flyItem,
-                    handle,
-                    handleItem,
-                    heal,
-                    healItem,
-                    intimidate,
-                    intimidateItem,
-                    karcana,
-                    karcanaItem,
-                    kdungeon,
-                    kdungeonItem,
-                    kengineer,
-                    kengineerItem,
-                    kgeography,
-                    kgeographyItem,
-                    khistory,
-                    khistoryItem,
-                    klocal,
-                    klocalItem,
-                    knature,
-                    knatureItem,
-                    knobility,
-                    knobilityItem,
-                    kplanes,
-                    kplanesItem,
-                    kreligion,
-                    kreligionItem,
-                    linguistics,
-                    linguisticsItem,
-                    perception,
-                    perceptionItem,
-                    perform1,
-                    perform1Item,
-                    perform2,
-                    perform2Item,
-                    profession1,
-                    profession1Item,
-                    profession2,
-                    profession2Item,
-                    ride,
-                    rideItem,
-                    motive,
-                    motiveItem,
-                    sleight,
-                    sleightItem,
-                    spellcraft,
-                    spellcraftItem,
-                    stealth,
-                    stealthItem,
-                    survival,
-                    survivalItem,
-                    swim,
-                    swimItem,
-                    usemagic,
-                    usemagicItem
-                  )}>
-                  <span className="material-icons" aria-hidden="true">cloud_upload</span> Save
-                </button>
-
-                <button
-                  className="btn btn-secondary btn-with-icon"
-                  aria-haspopup="true"
-                  aria-controls="character-storage"
-                  onClick={(e) => flyoutUpdate("true")}
-                >
-                  <span className="material-icons" aria-hidden="true">settings</span> Manage
-                </button>
 
               </div>
 
