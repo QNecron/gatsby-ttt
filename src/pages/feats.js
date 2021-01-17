@@ -8,7 +8,6 @@ import Wrapper from "../components/wrapper/wrapper"
 
 import Hero from "../components/hero/hero"
 import Flyout from "../components/flyout/flyout"
-import Tabs from "../components/tabs/tabs"
 
 import Books from "../../json/books_core_v1.json"
 import Data from "../../json/feats_v2.json"
@@ -72,16 +71,18 @@ const Feats = () => {
 
         <Wrapper wrapper="structure">
 
-          <button
-            className="btn btn-secondary btn-with-icon"
-            onClick={(e) => filterUpdate("true")}
-          >
-            <span className="material-icons" aria-hidden="true">sort</span> Filter
-          </button>
+          <nav className="nav-utility" role="navigation">
 
-          {/* above need to be a secondary menu and below needs no spacing */}
+            <button
+              className="nav-utility-link"
+              onClick={(e) => filterUpdate("true")}
+            >
+              <span className="material-icons" aria-hidden="true">sort</span> Filters
+            </button>
 
-          <table className="table gutter-top-32">
+          </nav>
+
+          <table className="table">
 
             <tbody className="table-info">
 
@@ -109,7 +110,7 @@ const Feats = () => {
                         aria-controls="character-storage"
                         onClick={(e) => description(d.source, d.name)}
                       >
-                        <span className="material-icons" aria-hidden="true">exit_to_app</span>
+                        <span className="material-icons" aria-hidden="true">menu_open</span>
                       </button>
                     </td>
                   </tr>

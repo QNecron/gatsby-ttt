@@ -28,12 +28,12 @@
 // -----------------------------------------------------------------------------
 a[class=""],
 .link-utility {
-  color: $orange-tint;
+  color: $orange;
   font-weight: 700;
 
   &:focus,
   &:hover {
-    color: $orange;
+    color: $orange-tint;
     text-decoration: none;
   }
 

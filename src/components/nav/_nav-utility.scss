@@ -1,0 +1,38 @@
+.nav-utility {
+  background-color: $l-brown;
+  background-image: url('../images/textures/texture-mud.jpg');
+  background-size: cover;
+  border: solid rem(1) $d-brown;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: $space-32;
+  position: sticky;
+  top: 0;
+  @include shadow(1, 0, black);
+}
+
+.nav-utility-link {
+  @extend %black-letter;
+  color: $orange-white;
+  font-size: rem(12);
+  font-weight: 700;
+  outline: dashed rem(1) transparent;
+  outline-offset: rem(-4);
+  padding: 0 $space-16;
+  line-height: rem(38);
+
+  &:focus {
+    outline-color: $orange;
+  }
+
+  &:focus,
+  &:hover {
+    color: $orange;
+  }
+
+  .material-icons {
+    font-size: rem(18);
+    vertical-align: sub;
+  }
+
+}

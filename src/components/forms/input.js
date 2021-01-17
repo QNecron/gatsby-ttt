@@ -18,6 +18,7 @@ const Input = ({
   return(
 
     <div className="input-field-container" data-input={inputType}>
+
       <input
         type={inputType}
         id={inputId}
@@ -30,13 +31,19 @@ const Input = ({
         onChange={inputChange}
         onClick={inputClick}
       />
-      <label htmlFor={inputId} className="input-field-label" data-srt={inputSRT}>{inputLabel}</label>
+
+      <label htmlFor={inputId} className="input-field-label" data-srt={inputSRT}>
+        {inputLabel}
+      </label>
+
       {inputHelper && (
         <span className="input-field-helper">{inputHelper}</span>
       )}
+
       {(inputType === "checkbox" || inputType === "radio") && (
         <span className="input-field-icon" aria-hidden="true"></span>
       )}
+
     </div>
   )
 
@@ -70,8 +77,8 @@ Input.defaultProps = {
   inputStep: ``,
   inputValue: ``,
   inputChecked: false,
-  inputChange: ``,
-  inputClick: ``,
+  inputChange: (e) => null,
+  inputClick: (e) => null,
   inputSRT: ``,
   inputLabel: ``,
   inputHelper: ``

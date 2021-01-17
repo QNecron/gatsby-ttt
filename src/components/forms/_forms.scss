@@ -106,10 +106,69 @@
 
 }
 
+[data-input="checkbox"],
 [data-input="radio"] {
 
   .input-field {
-    @include appearance(auto);
+
+    &:focus,
+    &:hover {
+
+      ~ .input-field-icon {
+
+        &:after {
+          background: $l-brown;
+        }
+
+      }
+
+    }
+
+    &:checked {
+
+      ~ .input-field-icon {
+        border-color: $orange;
+
+        &:after {
+          background: $orange;
+        }
+
+      }
+
+    }
+
+  }
+
+  .input-field-label {
+    cursor: pointer;
+    font-weight: 700;
+    padding-left: $space-32;
+  }
+
+  .input-field-icon {
+    border: solid rem(2) $l-brown;
+    height: rem(18);
+    width: rem(18);
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% + 5px);
+    left: 0;
+    transform: translate(0, -50%);
+    z-index: -1;
+    @include timing;
+
+    &:after {
+      content: "";
+      background: transparent;
+      height: $space-8;
+      width: $space-8;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include timing;
+    }
+
   }
 
 }
@@ -122,36 +181,3 @@
   }
 
 }
-
-// .input-field-icon {
-//   background: $orange;
-//   border: solid $space-4 rgba(black, .24);
-//   border-radius: 50%;
-//   opacity: 0;
-//   height: $space-24;
-//   width: $space-24;
-//   pointer-events: none;
-//   position: absolute;
-//   top: calc(50% + 6px);
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
-//
-// [data-input="checkbox"] {
-//   max-width: $space-40;
-//
-//   .input-field {
-//     cursor: pointer;
-//     padding: 0;
-//
-//     &:checked {
-//
-//       ~ .input-field-icon {
-//         opacity: 1;
-//       }
-//
-//     }
-//
-//   }
-//
-// }
