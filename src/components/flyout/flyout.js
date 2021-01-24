@@ -29,7 +29,9 @@ const Flyout = ({ ...props }) => {
         <span className="material-icons" aria-hidden="true">close</span>
       </button>
 
-      {props.children}
+      <div className="flyout-content">
+        {props.children}
+      </div>
 
     </div>
 

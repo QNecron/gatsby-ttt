@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 import SEO from "../components/seo"
-import Input from "../components/forms/input"
+import Select from "../components/forms/select"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
 import Wrapper from "../components/wrapper/wrapper"
@@ -91,7 +91,7 @@ const Feats = () => {
               <td className="table-col large">Description</td>
               <td className="table-col large">Requirement(s)</td>
               <td className="table-col small">Type</td>
-              <td className="table-col small">Details</td>
+              <td className="table-col small feat-flyout">Details</td>
             </tr>
 
             {Data.map((d, index) => {
@@ -136,19 +136,16 @@ const Feats = () => {
         flyoutUpdate={filterUpdate}
       >
 
-        {Books.map((name, index) =>
-
-          <Input
-            inputType="radio"
-            inputId={"book-" + index}
-            inputLabel={name}
-            inputName="books"
-            inputChecked={name === "Core" ? true : false}
-            inputClick={(e) => setBook(name)}
-            key={index}
-          />
-
-        )}
+        <Select
+          inputId="spell-books"
+          inputValue={book}
+          inputChange={(e) => setBook(e.target.value)}
+          inputLabel="Books"
+        >
+          {Books.map((name, index) =>
+            <option value={name} key={index}>{name}</option>
+          )}
+        </Select>
 
       </Flyout>
 

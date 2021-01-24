@@ -29,6 +29,11 @@
 
 }
 
+.flyout-content {
+  overflow-y: auto;
+  max-height: calc(100vh - 88px);
+}
+
 [data-flyout="right"] {
   background-position: left center;
   background-color: $l-brown;

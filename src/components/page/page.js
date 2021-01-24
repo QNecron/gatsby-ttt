@@ -21,7 +21,7 @@ const Page = ({ ...props }) => {
 
   return (
 
-    <div>
+    <>
 
       <Header
         flyout={props.flyout}
@@ -35,7 +35,7 @@ const Page = ({ ...props }) => {
 
       <Footer title={data.site.siteMetadata.title} />
 
-    </div>
+    </>
 
   )
 

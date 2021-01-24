@@ -8,6 +8,7 @@
   @if $v == "true" { align-items: center; }
   display: flex;
   @if $h == "true" { justify-content: center; }
+  @if $h == "false" { justify-content: flex-start; }
 
   @if $c == "true" {
     > * {

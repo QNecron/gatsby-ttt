@@ -1,8 +1,11 @@
 .spell-container {
+  background: rgba(black, .24);
+  border-top: solid rem(1) $d-brown;
   display: grid;
+  font-size: rem(14);
   grid-gap: $space-4;
   grid-template-areas:
-    "name name name name name"
+    "name name name name details"
     "school school level level level"
     "casting casting component component component"
     "range range time time time"
@@ -11,21 +14,57 @@
   ;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
-  margin-bottom: $space-16;
+  padding: $space-16 $space-24;
+  @include shadow(1, 0, black);
+
+  ~ .spell-container {
+    margin-top: $space-16;
+  }
+
 }
 
 .spell-info {
-  background: rgba(violet, .08);
-  padding: $space-8 $space-16;
+  padding: $space-4 0;
 }
 
-.spell-name { grid-area: name; }
+.spell-name {
+  color: $orange;
+  grid-area: name;
+  vertical-align: baseline;
+}
+
 .spell-school { grid-area: school; }
+
 .spell-level { grid-area: level; }
+
 .spell-casting { grid-area: casting; }
+
 .spell-component { grid-area: component; }
+
 .spell-range { grid-area: range; }
+
 .spell-duration { grid-area: time; }
+
 .spell-saving { grid-area: saving; }
+
 .spell-resist { grid-area: resist; }
-.spell-descript { grid-area: descript; }
+
+.spell-descript {
+  border-top: solid rem(1) $d-brown;
+  grid-area: descript;
+  margin-top: $space-4;
+  padding-top: $space-8;
+}
+
+.spell-details {
+  grid-area: details;
+  position: relative;
+
+  .link-utility {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+  }
+
+}

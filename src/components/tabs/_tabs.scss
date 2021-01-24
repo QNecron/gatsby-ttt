@@ -1,9 +1,5 @@
 .tabs-container {
   @include flex-center("true", "true", "true", 50%);
-  // flex-wrap: wrap;
-  margin-bottom: $space-16;
-  position: sticky;
-  top: 0;
 }
 
 .tab {
@@ -16,7 +12,7 @@
   font-weight: 700;
   padding: 0 $space-16;
   line-height: 1.25;
-  height: $space-64;
+  height: $space-48;
   @include shadow(1, 0, black);
 
   &:focus,
@@ -27,6 +23,18 @@
   &[tab-active] {
     border-color: $orange;
     color: $orange;
+  }
+
+}
+
+//
+[tabs-type="alphabet"] {
+  @include flex-center("true", "false", "true", 16.6667%);
+  flex-wrap: wrap;
+  margin: $space-16 0;
+
+  .tab {
+    max-width: 16.6667%;
   }
 
 }
