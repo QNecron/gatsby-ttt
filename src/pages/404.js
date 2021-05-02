@@ -1,6 +1,6 @@
 import React from "react"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Page from "../components/page/page"
 
 const NotFoundPage = () => {
@@ -9,7 +9,7 @@ const NotFoundPage = () => {
 
     <Page>
 
-      <SEO title="404: Not found" />
+      <Seo title="404: Not found" />
 
       <h1>NOT FOUND</h1>
 

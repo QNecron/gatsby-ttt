@@ -1,6 +1,6 @@
 import React from "react"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
 import Wrapper from "../components/wrapper/wrapper"
@@ -59,7 +59,7 @@ const TemplateBestiary = ({ pageContext }) => (
 
   <Page>
 
-    <SEO title={pageContext.title} />
+    <Seo title={pageContext.title} />
 
     <Hero
       title={pageContext.title}

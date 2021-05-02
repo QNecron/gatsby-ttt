@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Select from "../components/forms/select"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
@@ -35,7 +35,7 @@ function Bestiary() {
 
     <Page>
 
-      <SEO title="Home" />
+      <Seo title="Home" />
 
       <Hero
         title="Bestiary"

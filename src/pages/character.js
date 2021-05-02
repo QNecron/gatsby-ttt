@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
 import Wrapper from "../components/wrapper/wrapper"
@@ -686,7 +686,7 @@ const Character = ({ menu, menuUpdate }) => {
       flyoutUpdate={flyoutUpdate}
     >
 
-      <SEO title="Character Builder" />
+      <Seo title="Character Builder" />
 
       <Hero
         desktop={ImgDesktop}

@@ -1,7 +1,7 @@
 import React from "react"
 // import { Link } from "gatsby"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
 import Wrapper from "../components/wrapper/wrapper"
@@ -19,7 +19,7 @@ const IndexPage = () => {
 
     <Page>
 
-      <SEO title="Home" />
+      <Seo title="Home" />
 
       <Hero
         title="Tabletop Tools"

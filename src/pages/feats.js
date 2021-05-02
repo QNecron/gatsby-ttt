@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Select from "../components/forms/select"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
@@ -58,7 +58,7 @@ const Feats = () => {
 
     <Page>
 
-      <SEO title="Feats" />
+      <Seo title="Feats" />
 
       <Hero
         desktop={ImgDesktop}
