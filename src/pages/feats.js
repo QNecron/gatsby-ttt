@@ -11,6 +11,7 @@ import Flyout from "../components/flyout/flyout"
 
 import Books from "../../json/books_core_v1.json"
 import Data from "../../json/feats_v2.json"
+import Types from "../../json/feat_types.json"
 
 import ImgDesktop from "../images/hero/hero-03.jpg"
 import ImgMobile from "../images/hero/hero-03-mobile.jpg"
@@ -19,6 +20,7 @@ const Feats = () => {
 
   const [filter, filterUpdate] = useState("false")
   const [book, setBook] = useState("Core")
+  const [type, setType] = useState("General")
   const [detail, detailUpdate] = useState("false")
   const [descriptName, descriptNameUpdate] = useState("")
   const [descriptType, descriptTypeUpdate] = useState("")
@@ -95,7 +97,11 @@ const Feats = () => {
             {Data.map((d, index) => {
 
               if (d.source === book) {
+
+                if (d.type !== type && type !== "All") return null
+
                 return(
+
                   <tr className="table-row" key={index} aria-live="polite">
                     <td className="table-col feat-name">{d.name}</td>
                     <td className="table-col feat-desc">{d.description}</td>
@@ -112,7 +118,9 @@ const Feats = () => {
                       </button>
                     </td>
                   </tr>
+
                 )
+
               }
               else { return null }
 
@@ -135,12 +143,23 @@ const Feats = () => {
       >
 
         <Select
-          inputId="spell-books"
+          inputId="feats-books"
           inputValue={book}
           inputChange={(e) => setBook(e.target.value)}
           inputLabel="Books"
         >
           {Books.map((name, index) =>
+            <option value={name} key={index}>{name}</option>
+          )}
+        </Select>
+
+        <Select
+          inputId="feats-types"
+          inputValue={type}
+          inputChange={(e) => setType(e.target.value)}
+          inputLabel="Type"
+        >
+          {Types.map((name, index) =>
             <option value={name} key={index}>{name}</option>
           )}
         </Select>
