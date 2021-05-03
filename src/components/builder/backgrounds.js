@@ -152,7 +152,7 @@ const Backgrounds = ({ ...props }) => {
         <option value="con">+2 CON</option>
         <option value="int">+2 INT</option>
         <option value="wis">+2 WIS</option>
-        <option value="chr">+2 CHA</option>
+        <option value="cha">+2 CHA</option>
       </Select>
 
       <Select
