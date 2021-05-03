@@ -22,16 +22,14 @@ import ImgMobile from "../images/hero/hero-02-mobile.jpg"
 
 const Spells = () => {
 
+  const [filter, filterUpdate] = useState("false")
   const [book, setBook] = useState("Core")
   const [letter, setLetter] = useState("*")
   const [caster, setCaster] = useState("all")
-  const [casterLvl, setCasterLvl] = useState("*")
+  const [casterLvl, setCasterLvl] = useState("0")
   const [school, setSchool] = useState("all")
   const [subschool, setSubSchool] = useState("all")
-  // console.log(Data);
-  const [filter, filterUpdate] = useState("false")
   const [detail, detailUpdate] = useState("false")
-
   const [descriptName, descriptNameUpdate] = useState("")
   const [descriptFull, descriptFullUpdate] = useState("")
 

@@ -27,18 +27,6 @@ import Speed from "../components/builder/speed"
 import ImgDesktop from "../images/hero/hero-05.jpg"
 import ImgMobile from "../images/hero/hero-05-mobile.jpg"
 
-// import Barbarian from "../images/classes/Barbarian-Amiri.png"
-// import Bard from "../images/classes/Bard-Lem.png"
-// import Cleric from "../images/classes/Cleric-Kyra.png"
-// import Druid from "../images/classes/Druid-Lini.png"
-// import Fighter from "../images/classes/Fighter-Valeros.png"
-// import Monk from "../images/classes/Monk-Sajan.png"
-// import Paladin from "../images/classes/Paladin-Seelah.png"
-// import Ranger from "../images/classes/Ranger-Harsk.png"
-// import Rogue from "../images/classes/Rogue-Merisiel.png"
-// import Sorcerer from "../images/classes/Sorcerer-Seoni.png"
-// import Wizard from "../images/classes/Wizard-Ezren.png"
-
 const Character = ({ menu, menuUpdate }) => {
 
   const [createCharacter, createCharacterUpdate] = useState("")
@@ -726,22 +714,6 @@ const Character = ({ menu, menuUpdate }) => {
             </button>
 
           </nav>
-
-          {/*
-          <div className="character-icon" data-class={class1}>
-            <img className="barbarian" src={Barbarian} alt=" " aria-hidden="true" />
-            <img className="bard" src={Bard} alt=" " aria-hidden="true" />
-            <img className="cleric" src={Cleric} alt=" " aria-hidden="true" />
-            <img className="druid" src={Druid} alt=" " aria-hidden="true" />
-            <img className="fighter" src={Fighter} alt=" " aria-hidden="true" />
-            <img className="monk" src={Monk} alt=" " aria-hidden="true" />
-            <img className="paladin" src={Paladin} alt=" " aria-hidden="true" />
-            <img className="ranger" src={Ranger} alt=" " aria-hidden="true" />
-            <img className="rogue" src={Rogue} alt=" " aria-hidden="true" />
-            <img className="sorcerer" src={Sorcerer} alt=" " aria-hidden="true" />
-            <img className="wizard" src={Wizard} alt=" " aria-hidden="true" />
-          </div>
-          */}
 
           <Grid desktop="2" tablet="2" mobile="1">
 

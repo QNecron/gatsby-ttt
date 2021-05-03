@@ -17,11 +17,9 @@ import ImgMobile from "../images/hero/hero-03-mobile.jpg"
 
 const Feats = () => {
 
-  const [book, setBook] = useState("Core")
-  // console.log(Data);
   const [filter, filterUpdate] = useState("false")
+  const [book, setBook] = useState("Core")
   const [detail, detailUpdate] = useState("false")
-
   const [descriptName, descriptNameUpdate] = useState("")
   const [descriptType, descriptTypeUpdate] = useState("")
   const [descriptNeeded, descriptNeededUpdate] = useState("")

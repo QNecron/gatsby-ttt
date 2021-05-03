@@ -20,11 +20,10 @@ import ImgMobile from "../images/hero/hero-01-mobile.jpg"
 
 function Bestiary() {
 
+  const [filter, filterUpdate] = useState("false")
   const [book, setBook] = useState("Bestiary")
   const [creature, setCreature] = useState("all")
-  const [challenge, setChallenge] = useState("all")
-  // console.log(Data);
-  const [filter, filterUpdate] = useState("false")
+  const [challenge, setChallenge] = useState("1")
 
   function capitalize(s) {
     if (typeof s !== 'string') return ''
