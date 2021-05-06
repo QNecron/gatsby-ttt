@@ -18,7 +18,7 @@ const Header = ({ ...props }) => {
             <span data-srt="true">{props.title}</span>
             <img className="nav-primary-logo" src={Logo} alt=" " aria-hidden="true" />
           </Link>
-          <Link className="nav-primary-link" to="/character/">Chracter <br /> Creator</Link>
+          <Link className="nav-primary-link" to="/creator/">Creator</Link>
           <Link className="nav-primary-link" to="/spells/">Spells</Link>
           <Link className="nav-primary-link" to="/feats/">Feats</Link>
           <Link className="nav-primary-link" to="/bestiary/">Bestiary</Link>

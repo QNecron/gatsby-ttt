@@ -61,7 +61,10 @@ const HitPoints = ({ ...props }) => {
     <div className="block-container hit-points">
       <h2 className="block-defined heading-5">Hit Points</h2>
       <div className="block">
-        {props.class1Level + hitdie(props.class1)} + {props.class2Level + hitdie(props.class2)} + {props.class3Level + hitdie(props.class3)} + {total(props.class1Level, props.class2Level, props.class3Level) * props.con}
+        {props.class1Level >= 1 ? props.class1Level + hitdie(props.class1) + " + " : ""}
+        {props.class2Level >= 1 ? props.class2Level + hitdie(props.class2) + " + " : ""}
+        {props.class3Level >= 1 ? props.class3Level + hitdie(props.class3) + " + " : ""}
+        {total(props.class1Level, props.class2Level, props.class3Level) * props.con}
       </div>
     </div>
 

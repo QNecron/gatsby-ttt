@@ -18,6 +18,7 @@ const Select = ({
   return(
 
     <div className="input-field-container" data-input="select">
+
       <select
         id={inputId}
         className="input-field"
@@ -28,10 +29,13 @@ const Select = ({
       >
         {children}
       </select>
+
       <label htmlFor={inputId} className="input-field-label" data-srt={inputSRT}>{inputLabel}</label>
+
       {inputHelper && (
         <span className="input-field-helper">{inputHelper}</span>
       )}
+
     </div>
   )
 

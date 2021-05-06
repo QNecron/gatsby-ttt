@@ -27,7 +27,7 @@ import Speed from "../components/builder/speed"
 import ImgDesktop from "../images/hero/hero-05.jpg"
 import ImgMobile from "../images/hero/hero-05-mobile.jpg"
 
-const Character = ({ menu, menuUpdate }) => {
+const Creator = ({ menu, menuUpdate }) => {
 
   const [createCharacter, createCharacterUpdate] = useState("")
   const [listedCharacter, listedCharacterUpdate] = useState("")
@@ -679,7 +679,7 @@ const Character = ({ menu, menuUpdate }) => {
       <Hero
         desktop={ImgDesktop}
         mobile={ImgMobile}
-        title="Character Creator"
+        title="Creator"
         size="small"
       />
 
@@ -1120,4 +1120,4 @@ const Character = ({ menu, menuUpdate }) => {
 
 }
 
-export default Character
+export default Creator

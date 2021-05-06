@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import Input from "../../components/forms/input"
 import Select from "../../components/forms/select"
@@ -11,6 +11,7 @@ const Classes = ({ ...props }) => {
     let refl = 0
     let will = 0
 
+    // BAB
     switch (classed) {
 
       case "Barbarian":
@@ -46,12 +47,11 @@ const Classes = ({ ...props }) => {
 
     }
 
+    // saves
     switch (classed) {
 
       case "Barbarian":
       case "Fighter":
-      case "Plant":
-      case "Vermin":
         // FSS
         fort = Math.floor(2 + value * .5)
         refl = Math.floor(0 + value * .3333)
@@ -59,9 +59,6 @@ const Classes = ({ ...props }) => {
       break;
 
       case "Bard":
-      case "Fey":
-      case "MonstrousHumanoid":
-      case "Outsider":
         // SFF
         fort = Math.floor(0 + value * .3333)
         refl = Math.floor(2 + value * .5)
@@ -78,7 +75,6 @@ const Classes = ({ ...props }) => {
       break;
 
       case "Monk":
-      case "Dragon":
         // FFF
         fort = Math.floor(2 + value * .5)
         refl = Math.floor(2 + value * .5)
@@ -86,8 +82,6 @@ const Classes = ({ ...props }) => {
       break;
 
       case "Ranger":
-      case "Animal":
-      case "MagicalBeast":
         // FFS
         fort = Math.floor(2 + value * .5)
         refl = Math.floor(2 + value * .5)
@@ -95,7 +89,6 @@ const Classes = ({ ...props }) => {
       break;
 
       case "Rogue":
-      case "Humanoid":
         // SFS
         fort = Math.floor(0 + value * .3333)
         refl = Math.floor(2 + value * .5)
@@ -104,20 +97,10 @@ const Classes = ({ ...props }) => {
 
       case "Sorcerer":
       case "Wizard":
-      case "Aberration":
-      case "Undead":
         // SSF
         fort = Math.floor(0 + value * .3333)
         refl = Math.floor(0 + value * .3333)
         will = Math.floor(2 + value * .5)
-      break;
-
-      case "Construct":
-      case "Ooze":
-        // SSS
-        fort = Math.floor(0 + value * .3333)
-        refl = Math.floor(0 + value * .3333)
-        will = Math.floor(2 + value * .3333)
       break;
 
       default:
@@ -209,12 +192,10 @@ const Classes = ({ ...props }) => {
         if (property === 3) props.save3Update("SSF")
       break;
 
-      // SSS
-
       default:
-      if (property === 1) props.save1Update("None")
-      if (property === 2) props.save2Update("None")
-      if (property === 3) props.save3Update("None")
+        if (property === 1) props.save1Update("None")
+        if (property === 2) props.save2Update("None")
+        if (property === 3) props.save3Update("None")
       break;
 
     }
@@ -227,11 +208,28 @@ const Classes = ({ ...props }) => {
       props.class2Update(classed)
     }
 
-    if (property === 2) {
+    if (property === 3) {
       props.class3Update(classed)
     }
 
   }
+
+  /*
+
+    NEED TO RETHINK HOW SAVES UPDATE + WORK
+
+    Right now you choose the class and based off that it "fake" shows
+    the speeds (example: FSS) but the calculation function is still based
+    off the class.
+
+    Changing the calculation to be based off the speed would allow me to
+    set the speed automatically or manually, then calculate off that.
+
+    This allows monster HD + class levels to calculate properly.
+
+    PROBABLY?
+
+  */
 
   return(
 
@@ -299,7 +297,7 @@ const Classes = ({ ...props }) => {
         <option value="FFS">F / F / S</option>
         <option value="SFS">S / F / S</option>
         <option value="SSF">S / S / F</option>
-        <option value="SSS">F / S / S</option>
+        <option value="SSS">S / S / S</option>
       </Select>
 
     </div>
@@ -310,9 +308,7 @@ const Classes = ({ ...props }) => {
         inputId="class2"
         inputValue={props.class2}
         inputChange={(e) => saves(e.target.value, 2)}
-        inputSRT="true"
-        inputLabel="Class 2"
-        inputHelper="Class"
+        inputLabel="Class"
       >
         <option value="None">-</option>
         <optgroup label="Core Classes">
@@ -335,9 +331,7 @@ const Classes = ({ ...props }) => {
         inputId="level2"
         inputValue={props.class2Level}
         inputChange={(e) => calculate(e.target.value, props.class2, 2)}
-        inputSRT="true"
-        inputLabel="Class 2 Level"
-        inputHelper="Level"
+        inputLabel="Level"
       />
 
       <Select
@@ -355,7 +349,7 @@ const Classes = ({ ...props }) => {
         <option value="FFS">F / F / S</option>
         <option value="SFS">S / F / S</option>
         <option value="SSF">S / S / F</option>
-        <option value="SSS">F / S / S</option>
+        <option value="SSS">S / S / S</option>
       </Select>
 
     </div>
@@ -366,9 +360,7 @@ const Classes = ({ ...props }) => {
         inputId="class3"
         inputValue={props.class3}
         inputChange={(e) => saves(e.target.value, 3)}
-        inputSRT="true"
-        inputLabel="Class 3"
-        inputHelper="Class"
+        inputLabel="Class"
       >
         <option value="None">-</option>
         <optgroup label="Core Classes">
@@ -391,9 +383,7 @@ const Classes = ({ ...props }) => {
         inputId="level3"
         inputValue={props.class3Level}
         inputChange={(e) => calculate(e.target.value, props.class3, 3)}
-        inputSRT="true"
-        inputLabel="Class 3 Level"
-        inputHelper="Level"
+        inputLabel="Level"
       />
 
       <Select
@@ -411,7 +401,7 @@ const Classes = ({ ...props }) => {
         <option value="FFS">F / F / S</option>
         <option value="SFS">S / F / S</option>
         <option value="SSF">S / S / F</option>
-        <option value="SSS">F / S / S</option>
+        <option value="SSS">S / S / S</option>
       </Select>
 
     </div>
