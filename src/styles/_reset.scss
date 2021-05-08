@@ -38,6 +38,10 @@ a {
   @include timing;
 }
 
+p ~ p {
+  margin-top: $space-16;
+}
+
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;

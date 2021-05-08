@@ -22,6 +22,7 @@ const Header = ({ ...props }) => {
           <Link className="nav-primary-link" to="/spells/">Spells</Link>
           <Link className="nav-primary-link" to="/feats/">Feats</Link>
           <Link className="nav-primary-link" to="/bestiary/">Bestiary</Link>
+          <Link className="nav-primary-link" to="/initiative/">Initiative</Link>
         </nav>
 
       </header>

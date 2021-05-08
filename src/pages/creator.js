@@ -674,7 +674,7 @@ const Creator = ({ menu, menuUpdate }) => {
       flyoutUpdate={flyoutUpdate}
     >
 
-      <Seo title="Character Builder" />
+      <Seo title="Creator" />
 
       <Hero
         desktop={ImgDesktop}

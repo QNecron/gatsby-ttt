@@ -1,0 +1,57 @@
+.initiative {
+  @include flex-center("false", "false", "true", 100%);
+  background: rgba(black, .24);
+  gap: $space-8;
+  padding: 8vh 8vw calc(8vh + #{$space-16}) 8vw;
+  @include shadow(1, 0, black);
+
+  [data-input="number"] {
+    max-width: $space-64;
+  }
+
+  .init-calc {
+    @include flex-center("false", "false", "false");
+    margin-top: $space-16;
+    max-width: rem(88);
+  }
+
+  .init-remove {
+    margin-left: $space-8;
+  }
+
+}
+
+.initiative-order {
+  padding-top: $space-12;
+}
+
+.init-block {
+  margin-bottom: $space-8;
+  @include shadow(1, 0, black);
+}
+
+.init-info {
+  @include flex-center("true", "false", "false");
+}
+
+.init-name {
+  background: rgba(black, .24);
+  padding: $space-8 $space-16;
+  width: 100%;
+}
+
+.init-roll {
+  @include flex-center("true", "true", "false");
+  @extend %black-letter;
+  border: solid rem(2) $orange;
+  color: $orange;
+  font-size: rem(12);
+  font-weight: 700;
+  padding: 0 $space-16;
+  height: $space-40;
+  width: $space-40;
+}
+
+.init-name {
+  text-transform: capitalize;
+}
