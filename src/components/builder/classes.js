@@ -54,13 +54,13 @@ const Classes = ({ ...props }) => {
       case "Fighter":
         // FSS
         fort = Math.floor(2 + value * .5)
-        refl = Math.floor(0 + value * .3333)
-        will = Math.floor(0 + value * .3333)
+        refl = Math.ceil(0 + value * .3333)
+        will = Math.ceil(0 + value * .3333)
       break;
 
       case "Bard":
         // SFF
-        fort = Math.floor(0 + value * .3333)
+        fort = Math.ceil(0 + value * .3333)
         refl = Math.floor(2 + value * .5)
         will = Math.floor(2 + value * .5)
       break;
@@ -70,7 +70,7 @@ const Classes = ({ ...props }) => {
       case "Paladin":
         // FSF
         fort = Math.floor(2 + value * .5)
-        refl = Math.floor(0 + value * .3333)
+        refl = Math.ceil(0 + value * .3333)
         will = Math.floor(2 + value * .5)
       break;
 
@@ -85,21 +85,21 @@ const Classes = ({ ...props }) => {
         // FFS
         fort = Math.floor(2 + value * .5)
         refl = Math.floor(2 + value * .5)
-        will = Math.floor(0 + value * .3333)
+        will = Math.ceil(0 + value * .3333)
       break;
 
       case "Rogue":
         // SFS
-        fort = Math.floor(0 + value * .3333)
+        fort = Math.ceil(0 + value * .3333)
         refl = Math.floor(2 + value * .5)
-        will = Math.floor(0 + value * .3333)
+        will = Math.ceil(0 + value * .3333)
       break;
 
       case "Sorcerer":
       case "Wizard":
         // SSF
-        fort = Math.floor(0 + value * .3333)
-        refl = Math.floor(0 + value * .3333)
+        fort = Math.ceil(0 + value * .3333)
+        refl = Math.ceil(0 + value * .3333)
         will = Math.floor(2 + value * .5)
       break;
 
