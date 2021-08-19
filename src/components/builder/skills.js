@@ -12,9 +12,26 @@ const Skills = ({ ...props }) => {
     return eval("{"+name+"}") // eslint-disable-line no-eval
   }
 
+  let class1skills = props.class1Level * total(props.skills1, props.intModifier)
+  let class2skills = props.class2Level * total(props.skills2, props.intModifier)
+  let class3skills = props.class3Level * total(props.skills3, props.intModifier)
+
   return(
 
     <>
+
+    <div className="block-container skill-count">
+
+      <Input
+        inputType="number"
+        inputId="skillpointcount"
+        inputValue={total(class1skills, class2skills, class3skills)}
+        inputDisabled="true"
+        inputChange={() => null}
+        inputLabel="Skill Points"
+      />
+
+    </div>
 
     {Data.map((s, index) => {
 

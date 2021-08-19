@@ -10,7 +10,7 @@ import Input from "../components/forms/input"
 import Hero from "../components/hero/hero"
 import Flyout from "../components/flyout/flyout"
 
-import { modifier, total } from "../components/builder/functions"
+import { modifier } from "../components/builder/functions"
 
 import Storage from "../components/builder/storage"
 import Backgrounds from "../components/builder/backgrounds"
@@ -942,18 +942,15 @@ const Creator = ({ menu, menuUpdate }) => {
 
             <div className="right">
 
-              <div>class level1: {class1Level}</div>
-              <div>class level2: {class2Level}</div>
-              <div>class level3: {class3Level}</div>
-              <div>class skill1: {skills1}</div>
-              <div>class skill2: {skills2}</div>
-              <div>class skill3: {skills3}</div>
-              <div>INT modifier: {modifier(int, intRace, intItem)}</div>
-
-              <h1>total skill points: {total(0,0,0)}</h1>
-
               <Skills
                 bgSize={bgSize}
+                class1Level={class1Level}
+                class2Level={class2Level}
+                class3Level={class3Level}
+                intModifier={modifier(int, intRace, intItem)}
+                skills1={skills1}
+                skills2={skills2}
+                skills3={skills3}
                 acrobatics={acrobatics}
                 acrobaticsUpdate={acrobaticsUpdate}
                 acrobaticsItem={acrobaticsItem}
