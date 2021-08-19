@@ -4,7 +4,7 @@ import Select from "../../components/forms/select"
 
 const Backgrounds = ({ ...props }) => {
 
-  const [sizeForce, sizeForceUpdate] = useState(false)
+  const [sizeForce, sizeForceUpdate] = useState(true)
 
   function backgroundBonus(value, race) {
 

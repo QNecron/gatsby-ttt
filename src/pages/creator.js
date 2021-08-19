@@ -10,7 +10,7 @@ import Input from "../components/forms/input"
 import Hero from "../components/hero/hero"
 import Flyout from "../components/flyout/flyout"
 
-import { modifier } from "../components/builder/functions"
+import { modifier, total } from "../components/builder/functions"
 
 import Storage from "../components/builder/storage"
 import Backgrounds from "../components/builder/backgrounds"
@@ -78,27 +78,27 @@ const Creator = ({ menu, menuUpdate }) => {
   const [will3, will3Update] = useState(0)
   const [will1Item, will1ItemUpdate] = useState(0)
 
-  const [str, strUpdate] = useState(8)
+  const [str, strUpdate] = useState(10)
   const [strRace, strRaceUpdate] = useState(0)
   const [strItem, strItemUpdate] = useState(0)
 
-  const [dex, dexUpdate] = useState(8)
+  const [dex, dexUpdate] = useState(10)
   const [dexRace, dexRaceUpdate] = useState(0)
   const [dexItem, dexItemUpdate] = useState(0)
 
-  const [con, conUpdate] = useState(8)
+  const [con, conUpdate] = useState(10)
   const [conRace, conRaceUpdate] = useState(0)
   const [conItem, conItemUpdate] = useState(0)
 
-  const [int, intUpdate] = useState(8)
+  const [int, intUpdate] = useState(10)
   const [intRace, intRaceUpdate] = useState(0)
   const [intItem, intItemUpdate] = useState(0)
 
-  const [wis, wisUpdate] = useState(8)
+  const [wis, wisUpdate] = useState(10)
   const [wisRace, wisRaceUpdate] = useState(0)
   const [wisItem, wisItemUpdate] = useState(0)
 
-  const [cha, chaUpdate] = useState(8)
+  const [cha, chaUpdate] = useState(10)
   const [chaRace, chaRaceUpdate] = useState(0)
   const [chaItem, chaItemUpdate] = useState(0)
 
@@ -111,6 +111,10 @@ const Creator = ({ menu, menuUpdate }) => {
   const [speedSwim, speedSwimUpdate] = useState(0)
   const [speedClimb, speedClimbUpdate] = useState(0)
   const [speedBurrow, speedBurrowUpdate] = useState(0)
+
+  const [skills1, skills1Update] = useState(0)
+  const [skills2, skills2Update] = useState(0)
+  const [skills3, skills3Update] = useState(0)
 
   const [acrobatics, acrobaticsUpdate] = useState(0)
   const [acrobaticsItem, acrobaticsItemUpdate] = useState(0)
@@ -246,6 +250,9 @@ const Creator = ({ menu, menuUpdate }) => {
     natural,
     deflection,
     spellresistance,
+    save1,
+    save2,
+    save3,
     fortitude1,
     fortitude2,
     fortitude3,
@@ -369,6 +376,7 @@ const Creator = ({ menu, menuUpdate }) => {
         "class_1_level": class1Level,
         "class_1_bab": bab1,
         "class_1_saves": {
+          "progression": save1,
           "fortitude": fortitude1,
           "reflex": reflex1,
           "will": will1
@@ -377,6 +385,7 @@ const Creator = ({ menu, menuUpdate }) => {
         "class_2_level": class2Level,
         "class_2_bab": bab2,
         "class_2_saves": {
+          "progression": save2,
           "fortitude": fortitude2,
           "reflex": reflex2,
           "will": will2
@@ -385,6 +394,7 @@ const Creator = ({ menu, menuUpdate }) => {
         "class_3_level": class3Level,
         "class_3_bab": bab3,
         "class_3_saves": {
+          "progression": save3,
           "fortitude": fortitude3,
           "reflex": reflex3,
           "will": will3
@@ -786,6 +796,9 @@ const Creator = ({ menu, menuUpdate }) => {
                 will1Update={will1Update}
                 will2Update={will2Update}
                 will3Update={will3Update}
+                skills1Update={skills1Update}
+                skills2Update={skills2Update}
+                skills3Update={skills3Update}
               />
 
               <Attributes
@@ -928,6 +941,16 @@ const Creator = ({ menu, menuUpdate }) => {
             </div>
 
             <div className="right">
+
+              <div>class level1: {class1Level}</div>
+              <div>class level2: {class2Level}</div>
+              <div>class level3: {class3Level}</div>
+              <div>class skill1: {skills1}</div>
+              <div>class skill2: {skills2}</div>
+              <div>class skill3: {skills3}</div>
+              <div>INT modifier: {modifier(int, intRace, intItem)}</div>
+
+              <h1>total skill points: {total(0,0,0)}</h1>
 
               <Skills
                 bgSize={bgSize}

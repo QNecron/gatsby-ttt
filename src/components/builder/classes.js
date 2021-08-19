@@ -1,9 +1,11 @@
-import React from "react"
+import React , { useState } from "react"
 
 import Input from "../../components/forms/input"
 import Select from "../../components/forms/select"
 
 const Classes = ({ ...props }) => {
+
+  const [bgDM, bgDMUpdate] = useState(false)
 
   function calculate(value, classed, property) {
     let bab = 0
@@ -54,13 +56,13 @@ const Classes = ({ ...props }) => {
       case "Fighter":
         // FSS
         fort = Math.floor(2 + value * .5)
-        refl = Math.ceil(0 + value * .3333)
-        will = Math.ceil(0 + value * .3333)
+        refl = Math.floor(0 + value * .3333)
+        will = Math.floor(0 + value * .3333)
       break;
 
       case "Bard":
         // SFF
-        fort = Math.ceil(0 + value * .3333)
+        fort = Math.floor(0 + value * .3333)
         refl = Math.floor(2 + value * .5)
         will = Math.floor(2 + value * .5)
       break;
@@ -70,7 +72,7 @@ const Classes = ({ ...props }) => {
       case "Paladin":
         // FSF
         fort = Math.floor(2 + value * .5)
-        refl = Math.ceil(0 + value * .3333)
+        refl = Math.floor(0 + value * .3333)
         will = Math.floor(2 + value * .5)
       break;
 
@@ -85,21 +87,21 @@ const Classes = ({ ...props }) => {
         // FFS
         fort = Math.floor(2 + value * .5)
         refl = Math.floor(2 + value * .5)
-        will = Math.ceil(0 + value * .3333)
+        will = Math.floor(0 + value * .3333)
       break;
 
       case "Rogue":
         // SFS
-        fort = Math.ceil(0 + value * .3333)
+        fort = Math.floor(0 + value * .3333)
         refl = Math.floor(2 + value * .5)
-        will = Math.ceil(0 + value * .3333)
+        will = Math.floor(0 + value * .3333)
       break;
 
       case "Sorcerer":
       case "Wizard":
         // SSF
-        fort = Math.ceil(0 + value * .3333)
-        refl = Math.ceil(0 + value * .3333)
+        fort = Math.floor(0 + value * .3333)
+        refl = Math.floor(0 + value * .3333)
         will = Math.floor(2 + value * .5)
       break;
 
@@ -115,6 +117,7 @@ const Classes = ({ ...props }) => {
       props.fortitude1Update(fort)
       props.reflex1Update(refl)
       props.will1Update(will)
+      skillpoints(classed, props.class1Level, 1)
     }
 
     if (property === 2) {
@@ -123,6 +126,7 @@ const Classes = ({ ...props }) => {
       props.fortitude2Update(fort)
       props.reflex2Update(refl)
       props.will2Update(will)
+      skillpoints(classed, props.class2Level, 2)
     }
 
     if (property === 3) {
@@ -131,11 +135,14 @@ const Classes = ({ ...props }) => {
       props.fortitude3Update(fort)
       props.reflex3Update(refl)
       props.will3Update(will)
+      skillpoints(classed, props.class3Level, 3)
     }
 
   }
 
   function saves(classed, property) {
+
+    bgDMUpdate(false)
 
     switch(classed) {
 
@@ -193,6 +200,7 @@ const Classes = ({ ...props }) => {
       break;
 
       default:
+        bgDMUpdate(true)
         if (property === 1) props.save1Update("None")
         if (property === 2) props.save2Update("None")
         if (property === 3) props.save3Update("None")
@@ -210,6 +218,46 @@ const Classes = ({ ...props }) => {
 
     if (property === 3) {
       props.class3Update(classed)
+    }
+
+  }
+
+  function skillpoints(classed, levels, property) {
+    let points = 0
+
+    switch(classed) {
+
+      case "Barbarian":
+      case "Druid":
+      case "Monk":
+        points = 4
+      break;
+
+      case "Bard":
+      case "Ranger":
+        points = 6
+      break;
+
+      case "Rogue":
+        points = 8
+      break;
+
+      default:
+        points = 2
+      break;
+
+    }
+
+    if (property === 1) {
+      props.skills1Update(points)
+    }
+
+    if (property === 2) {
+      props.skills2Update(points)
+    }
+
+    if (property === 3) {
+      props.skills3Update(points)
     }
 
   }
@@ -285,8 +333,8 @@ const Classes = ({ ...props }) => {
       <Select
         inputId="save1"
         inputValue={props.save1}
-        inputDisabled={true}
-        inputChange={() => null}
+        inputDisabled={bgDM === true ? false : true}
+        inputChange={(e) => props.save1Update(e.target.value) }
         inputLabel="Saves"
       >
         <option value="None">-</option>
