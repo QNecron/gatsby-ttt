@@ -10,7 +10,7 @@ const Tabs = ({ ...props }) => {
         <button
           className="tab"
           tab-active={props.state === info ? '' : null}
-          key={index}
+          key={info + '-' + index}
           onClick={() => props.click(info)}
         >
           {info}

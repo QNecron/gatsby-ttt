@@ -134,8 +134,7 @@ const Spells = () => {
               subFilter = false;
 
               return(
-                <>
-                <article className="spell-container" key={index}>
+                <article className="spell-container" key={'spells-' + index}>
                   <h2 className="spell-info spell-name heading-4">{d.name}</h2>
                   <div className="spell-info spell-school"><strong>School:</strong> {d.school} {d.subschool ? '(' + d.subschool + ')' : ''} {d.descriptor ? '[' + d.descriptor + ']' : ''}</div>
                   <div className="spell-info spell-level">
@@ -171,7 +170,6 @@ const Spells = () => {
                     </button>
                   </div>
                 </article>
-                </>
               )
 
             }
@@ -180,7 +178,7 @@ const Spells = () => {
               if (letter === "*" && casterLvl === "*" && index === 1) {
 
                 return(
-                  <article className="spell-container spell-results">
+                  <article className="spell-container spell-results" key={index}>
                     <h2 className="spell-info spell-name heading-4">Filter Required</h2>
                     <div className="spell-info spell-descript">
                       In order to guarantee a good experience you'll need to apply
@@ -193,7 +191,7 @@ const Spells = () => {
               else if (letter !== "*" && casterLvl !== "*" && index === 1) {
 
                 return(
-                  <article className="spell-container spell-results">
+                  <article className="spell-container spell-results" key={index}>
                     <h2 className="spell-info spell-name heading-4">No Results Found</h2>
                     <div className="spell-info spell-descript">
                       The combination you've selected has returned zero results, try
@@ -203,7 +201,13 @@ const Spells = () => {
                 )
 
               }
-              else { return null }
+              else {
+
+                return(
+                  <div key={index}>{/* null */}</div>
+                )
+
+              }
 
             }
 
@@ -228,7 +232,7 @@ const Spells = () => {
           inputLabel="Books"
         >
           {Books.map((name, index) =>
-            <option value={name} key={index}>{name}</option>
+            <option value={name} key={'books-' + index}>{name}</option>
           )}
         </Select>
 
@@ -239,7 +243,7 @@ const Spells = () => {
           inputLabel="Schools"
         >
           {Schools.map((name, index) =>
-            <option value={name} key={index}>{capitalize(name)}</option>
+            <option value={name} key={name + '-' + index}>{capitalize(name)}</option>
           )}
         </Select>
 
@@ -250,7 +254,7 @@ const Spells = () => {
           inputLabel="Sub-Schools"
         >
           {SubSchools.map((name, index) =>
-            <option value={name} key={index}>{capitalize(name)}</option>
+            <option value={name} key={name + '-' + index}>{capitalize(name)}</option>
           )}
         </Select>
 
@@ -261,7 +265,7 @@ const Spells = () => {
           inputLabel="Caster"
         >
           {Casters.map((name, index) =>
-            <option value={name} key={index}>{capitalize(name)}</option>
+            <option value={name} key={name + '-' + index}>{capitalize(name)}</option>
           )}
         </Select>
 

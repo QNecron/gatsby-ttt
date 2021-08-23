@@ -1,0 +1,47 @@
+.plate {
+
+  @include flex-center("true", "true", "false");
+}
+
+.plate-title {
+  flex: 1 1 auto;
+}
+
+.plate-number1,
+.plate-number2 {
+  text-align: right;
+}
+
+.plate-number2 {
+  background: $orange;
+  color: $orange-white;
+}
+
+[data-plate="bestiary"] {
+  background-image: url('../images/textures/texture-mud.jpg');
+  background-size: cover;
+  border: solid rem(1) rgba($l-brown, .48);
+  color: $white;
+  margin: $space-4 0;
+  opacity: .92;
+  @include shadow(1, 0, black);
+
+  .plate-title,
+  .plate-number1,
+  .plate-number2 {
+    padding: $space-8 $space-12;
+  }
+
+}
+
+[data-plate="skill-count"] {
+  color: $l-brown;
+  margin-top: $space-16;
+
+  .plate-title,
+  .plate-number1,
+  .plate-number2 {
+    padding: $space-12;
+  }
+
+}
