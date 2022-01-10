@@ -37,3 +37,15 @@
   }
 
 }
+
+.nav-utility-dm {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &[data-mode="enabled"] {
+    background: $highlight;
+    color: $black;
+  }
+
+}

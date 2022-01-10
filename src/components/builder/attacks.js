@@ -127,8 +127,8 @@ const Attacks = ({ ...props }) => {
         inputLabel="Melee Attack Modifier"
         inputHelper="Mod"
       >
-        <option value="str">STR</option>
-        <option value="dex">DEX</option>
+        <option value="STR">STR</option>
+        <option value="DEX">DEX</option>
       </Select>
     </div>
 

@@ -2,27 +2,36 @@ import React from "react"
 
 import Input from "../../components/forms/input"
 
+import { modifier } from "./functions"
+
 const Armor = ({ ...props }) => {
 
-  function armorAdd(a, b, c, d, e, f, g) {
+  const modDex = modifier(
+    props.character.attributes.dex,
+    props.character.racial_attributes.dex,
+    props.character.item_attributes.dex
+  )
+
+  function armor(a, b, c, d, e, f, g) {
     let ac = 0
-    ac = parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e) + parseInt(f) + parseInt(g)
+
+    ac = 10 + parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e) + parseInt(f) + parseInt(g)
 
     return ac.toString()
 
   }
 
-  function sizing(background) {
-    let size = 0
+  function size(s) {
+    let bonus = 0
 
-    if (background === "Small") {
-      size = 1
+    if (s === "Small") {
+      bonus = 1
     }
     else {
-      size = 0
+      bonus = 0
     }
 
-    return size
+    return bonus
 
   }
 
@@ -31,37 +40,69 @@ const Armor = ({ ...props }) => {
     <>
 
       <div className="block-container armor">
-        <h2 className="block-defined heading-5">Armor Class</h2>
-        <div className="block">{armorAdd(props.armorTotal, props.dex, props.armor, props.shield, props.deflection, props.natural, sizing(props.bgSize))}</div>
+        <h2 className="block-defined heading-5">AC</h2>
+        <div className="block">{armor(
+          modDex,
+          props.character.ac.armor,
+          props.character.ac.shield,
+          props.character.ac.deflection,
+          props.character.ac.natural,
+          size(props.character.size),
+          0
+        )}</div>
       </div>
 
       <div className="block-container">
         <Input
           inputType="number"
           inputId="armor"
-          inputValue={props.armor}
-          inputChange={(e) => props.armorUpdate(e.target.value)}
+          inputValue={props.character.ac.armor}
+          inputChange={(e) => props.characterUpdate({
+            ...props.character,
+            ac: {
+              ...props.character.ac,
+              armor: e.target.value
+            }
+          })}
           inputLabel="Armor"
         />
         <Input
           inputType="number"
           inputId="shield"
-          inputValue={props.shield}
-          inputChange={(e) => props.shieldUpdate(e.target.value)}
+          inputValue={props.character.ac.shield}
+          inputChange={(e) => props.characterUpdate({
+            ...props.character,
+            ac: {
+              ...props.character.ac,
+              shield: e.target.value
+            }
+          })}
           inputLabel="Shield"
         />
         <Input
           inputType="number"
           inputId="deflection"
-          inputValue={props.deflection}
-          inputChange={(e) => props.deflectionUpdate(e.target.value)}
+          inputValue={props.character.ac.deflection}
+          inputChange={(e) => props.characterUpdate({
+            ...props.character,
+            ac: {
+              ...props.character.ac,
+              deflection: e.target.value
+            }
+          })}
           inputLabel="Deflection"
         />
         <Input
           inputType="number"
           inputId="natural"
-          inputValue={props.natural}
-          inputChange={(e) => props.naturalUpdate(e.target.value)}
+          inputValue={props.character.ac.natural}
+          inputChange={(e) => props.characterUpdate({
+            ...props.character,
+            ac: {
+              ...props.character.ac,
+              natural: e.target.value
+            }
+          })}
           inputLabel="Natural"
         />
       </div>
@@ -71,7 +112,7 @@ const Armor = ({ ...props }) => {
           inputType="number"
           inputId="touch"
           inputDisabled={true}
-          inputValue={armorAdd(props.armorTotal, props.dex, 0, 0, props.deflection, 0, sizing(props.bgSize))}
+          inputValue={armor(modDex, size(props.character.size), props.character.ac.deflection, 0, 0, 0, 0)}
           inputChange={() => null}
           inputLabel="Touch"
         />
@@ -79,15 +120,23 @@ const Armor = ({ ...props }) => {
           inputType="number"
           inputId="flatfooted"
           inputDisabled={true}
-          inputValue={armorAdd(props.armorTotal, 0, props.armor, props.shield, props.deflection, props.natural, sizing(props.bgSize))}
+          inputValue={armor(
+            props.character.ac.armor,
+            props.character.ac.shield,
+            props.character.ac.deflection,
+            props.character.ac.natural,
+            size(props.character.size),
+            0, 0
+          )}
           inputChange={() => null}
           inputLabel="Flat-footed"
         />
         <Input
           inputType="number"
           inputId="spellresistance"
-          inputValue={props.spellresistance}
-          inputChange={(e) => props.spellresistanceUpdate(e.target.value)}
+          inputDisabled={props.dm === "enabled" ? false : true}
+          inputValue={props.character.spell_resistance}
+          inputChange={(e) => props.characterUpdate({...props.character, spell_resistance: e.target.value})}
           inputLabel="Spell Resistance"
         />
       </div>

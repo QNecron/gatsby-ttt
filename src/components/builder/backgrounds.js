@@ -13,6 +13,7 @@ const Backgrounds = ({ ...props }) => {
     let cha = 0
     let bonus = ""
     let size = "Medium"
+    let speed = 30
 
     switch (r) {
 
@@ -30,6 +31,7 @@ const Backgrounds = ({ ...props }) => {
         wis = 2
         cha = -2
         size = "Medium"
+        speed = 20
       break;
 
       case "Elf":
@@ -50,6 +52,7 @@ const Backgrounds = ({ ...props }) => {
         wis = 0
         cha = 2
         size = "Small"
+        speed = 20
       break;
 
       case "Halfling":
@@ -60,6 +63,7 @@ const Backgrounds = ({ ...props }) => {
         wis = 0
         cha = 2
         size = "Small"
+        speed = 20
       break;
 
       default:
@@ -70,6 +74,7 @@ const Backgrounds = ({ ...props }) => {
         wis = 0
         cha = 0
         size = "Medium"
+        speed = 30
       break;
 
     }
@@ -87,7 +92,11 @@ const Backgrounds = ({ ...props }) => {
         wis: wis,
         cha: cha
       },
-      size: size
+      size: size,
+      speed: {
+        ...props.character.speed,
+        movement: speed
+      }
     })
 
   }

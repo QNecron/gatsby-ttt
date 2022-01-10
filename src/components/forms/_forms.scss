@@ -105,6 +105,33 @@
     text-transform: capitalize;
   }
 
+  .input-field:not(:disabled) {
+
+    &:focus,
+    &:hover {
+
+      ~ .input-field-icon {
+        border-right-color: $highlight;
+        border-bottom-color: $highlight;
+      }
+
+    }
+
+  }
+
+  .input-field-icon {
+    border-right: solid rem(2) $secondary;
+    border-bottom: solid rem(2) $secondary;
+    height: $space-8;
+    width: $space-8;
+    position: absolute;
+    bottom: rem(18);
+    right: $space-12;
+    transform: rotate(45deg);
+    z-index: -1;
+    @include timing;
+  }
+
 }
 
 [data-input="checkbox"],

@@ -10,7 +10,7 @@ import Input from "../components/forms/input"
 import Hero from "../components/hero/hero"
 import Flyout from "../components/flyout/flyout"
 
-// import Armor from "../components/builder/armor"
+import Armor from "../components/builder/armor"
 import Attacks from "../components/builder/attacks"
 import Attributes from "../components/builder/attributes"
 import Backgrounds from "../components/builder/backgrounds"
@@ -19,7 +19,7 @@ import HitPoints from "../components/builder/hitpoints"
 import Initiative from "../components/builder/initiative"
 import Saves from "../components/builder/saves"
 // import Skills from "../components/builder/skills"
-// import Speed from "../components/builder/speed"
+import Speed from "../components/builder/speed"
 // import Storage from "../components/builder/storage"
 
 import ImgDesktop from "../images/hero/hero-05.jpg"
@@ -88,7 +88,23 @@ const Creator = ({ menu, menuUpdate }) => {
       reflex: 0,
       will: 0
     },
-    init: 0
+    init: 0,
+    ac: {
+      armor_type: "Cloth",
+      armor: 0,
+      shield: 0,
+      deflection: 0,
+      natural: 0,
+    },
+    spell_resistance: 0,
+    speed: {
+      penalty: 0,
+      movement: 30,
+      swim: 0,
+      fly: 0,
+      climb: 0,
+      burrow: 0
+    }
   })
 
   return(
@@ -112,6 +128,16 @@ const Creator = ({ menu, menuUpdate }) => {
         <Wrapper wrapper="structure">
 
           <nav className="nav-utility" role="navigation">
+
+            <button
+              className="nav-utility-link nav-utility-dm"
+              data-mode={dm}
+              aria-live="polite"
+              onClick={(e) => dmUpdate(dm === "disabled" ? "enabled" : "disabled")}
+            >
+              <span className="material-icons" aria-hidden="true">auto_fix_high</span> DM
+              <span data-srt="true">tools {dm}.</span>
+            </button>
 
             <button className="nav-utility-link" onClick={null}>
               <span className="material-icons" aria-hidden="true">cloud_upload</span> Save
@@ -181,42 +207,21 @@ const Creator = ({ menu, menuUpdate }) => {
                 characterUpdate={characterUpdate}
               />
 
+              <Armor
+                character={character}
+                characterUpdate={characterUpdate}
+                dm={dm}
+              />
+
+              <Speed
+                character={character}
+                characterUpdate={characterUpdate}
+                dm={dm}
+              />
+
             </div>
 
             <div className="right">
-
-              <div>DM: {dm}</div>
-              <div>Name: {character.name}</div>
-              <div>Race: {character.race} | Choice: {character.racial_bonus}</div>
-
-              <hr />
-              <div>STR: {character.attributes.str} + {character.racial_attributes.str} + {character.item_attributes.str}</div>
-              <div>DEX: {character.attributes.dex} + {character.racial_attributes.dex} + {character.item_attributes.dex}</div>
-              <div>CON: {character.attributes.con} + {character.racial_attributes.con} + {character.item_attributes.con}</div>
-              <div>INT: {character.attributes.int} + {character.racial_attributes.int} + {character.item_attributes.int}</div>
-              <div>WIS: {character.attributes.wis} + {character.racial_attributes.wis} + {character.item_attributes.wis}</div>
-              <div>CHA: {character.attributes.cha} + {character.racial_attributes.cha} + {character.item_attributes.cha}</div>
-
-              <hr />
-              <div>Size: {character.size}</div>
-
-              <hr />
-              <div>Class 1: {character.class_1}</div>
-              <div>Level 1: {character.level_1}</div>
-              <div>F: {character.saves_class_1.fortitude} | R: {character.saves_class_1.reflex} | W: {character.saves_class_1.will}</div>
-
-              <hr />
-              <div>Class 2: {character.class_2}</div>
-              <div>Level 2: {character.level_2}</div>
-              <div>F: {character.saves_class_2.fortitude} | R: {character.saves_class_2.reflex} | W: {character.saves_class_2.will}</div>
-
-              <Input
-                inputType="checkbox"
-                inputId="dm"
-                inputValue={dm}
-                inputChange={(e) => dmUpdate(dm === "disabled" ? "enabled" : "disabled")}
-                inputLabel="DM Mode"
-              />
 
             </div>
 

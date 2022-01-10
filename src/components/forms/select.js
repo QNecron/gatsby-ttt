@@ -36,6 +36,8 @@ const Select = ({
         <span className="input-field-helper">{inputHelper}</span>
       )}
 
+      <span className="input-field-icon" aria-hidden="true"></span>
+
     </div>
   )
 

@@ -5,50 +5,29 @@ import Select from "../../components/forms/select"
 
 const Speed = ({ ...props }) => {
 
-  const movement = (base, armor, bg, class1, level1) => {
-    let move = 0
-    let bonus = 0
+  const movement = (v, r) => {
+    let mov = 0
 
-    switch (bg) {
-
-      case "Dwarf":
-      case "Gnome":
-      case "Halfling":
-        move = base - 10
-      break;
-
-      default:
-        move = base
-      break;
-
+    if (v === "Heavy" || v === "Medium") {
+      if (r === "Halfling" || r === "Gnome") mov = 5
+      else if (r === "Dwarf") mov = 0
+      else mov = 10
+    }
+    else {
+      mov = 0
     }
 
-    switch (armor) {
-
-      case "Heavy":
-      case "Medium":
-        if (!bg === "Dwarf") bonus -= 10
-        else if (bg === "Gnome" || bg === "Halfling") bonus -= 5
-      break;
-
-      default:
-        // none
-      break;
-
-    }
-
-    // barbarian movement
-    if (class1 === "Barbarian" && level1 >= 1 && armor !== "Heavy") bonus += 10
-
-    // monk movement
-    if (armor === "Cloth" && class1 === "Monk" && level1 >= 18) bonus += 60
-    else if (armor === "Cloth" && class1 === "Monk" && level1 >= 15) bonus += 50
-    else if (armor === "Cloth" && class1 === "Monk" && level1 >= 12) bonus += 40
-    else if (armor === "Cloth" && class1 === "Monk" && level1 >= 9) bonus += 30
-    else if (armor === "Cloth" && class1 === "Monk" && level1 >= 6) bonus += 20
-    else if (armor === "Cloth" && class1 === "Monk" && level1 >= 3) bonus += 10
-
-    return move + bonus
+    props.characterUpdate({
+      ...props.character,
+      ac: {
+        ...props.character.ac,
+        armor_type: v
+      },
+      speed: {
+        ...props.character.speed,
+        penalty: mov
+      }
+    })
 
   }
 
@@ -58,14 +37,15 @@ const Speed = ({ ...props }) => {
 
     <div className="block-container speed">
       <h2 className="block-defined heading-5">Speed</h2>
-      <div className="block">{movement(props.speed, props.speedArmor, props.bg, props.class1, props.class1Level)}ft</div>
+      <div className="block">{parseInt(props.character.speed.movement) - parseInt(props.character.speed.penalty)}ft
+      </div>
       <Select
         inputId="speedArmor"
-        inputValue={props.speedArmor}
-        inputChange={(e) => props.speedArmorUpdate(e.target.value)}
+        inputValue={props.character.ac.armor_type}
+        inputChange={(e) => movement(e.target.value, props.character.race)}
         inputLabel="Armor"
       >
-        <option value="Cloth">None</option>
+        <option value="Cloth">Cloth</option>
         <option value="Light">Light</option>
         <option value="Medium">Medium</option>
         <option value="Heavy">Heavy</option>
@@ -76,8 +56,15 @@ const Speed = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="speedFly"
-        inputValue={props.speedFly}
-        inputChange={(e) => props.speedFlyUpdate(e.target.value)}
+        inputDisabled={props.dm === "enabled" ? false : true}
+        inputValue={props.character.speed.fly}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          speed: {
+            ...props.character.speed,
+            fly: e.target.value
+          }
+        })}
         inputStep={5}
         inputSRT="true"
         inputLabel="Fly Movement Speed"
@@ -86,8 +73,15 @@ const Speed = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="speedSwim"
-        inputValue={props.speedSwim}
-        inputChange={(e) => props.speedSwimUpdate(e.target.value)}
+        inputDisabled={props.dm === "enabled" ? false : true}
+        inputValue={props.character.speed.swim}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          speed: {
+            ...props.character.speed,
+            swim: e.target.value
+          }
+        })}
         inputStep={5}
         inputSRT="true"
         inputLabel="Swim Movement Speed"
@@ -96,8 +90,15 @@ const Speed = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="speedClimb"
-        inputValue={props.speedClimb}
-        inputChange={(e) => props.speedClimbUpdate(e.target.value)}
+        inputDisabled={props.dm === "enabled" ? false : true}
+        inputValue={props.character.speed.climb}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          speed: {
+            ...props.character.speed,
+            climb: e.target.value
+          }
+        })}
         inputStep={5}
         inputSRT="true"
         inputLabel="Climb Movement Speed"
@@ -106,8 +107,15 @@ const Speed = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="speedBurrow"
-        inputValue={props.speedBurrow}
-        inputChange={(e) => props.speedBurrowUpdate(e.target.value)}
+        inputDisabled={props.dm === "enabled" ? false : true}
+        inputValue={props.character.speed.burrow}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          speed: {
+            ...props.character.speed,
+            burrow: e.target.value
+          }
+        })}
         inputStep={5}
         inputSRT="true"
         inputLabel="Burrow Movement Speed"
