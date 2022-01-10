@@ -16,7 +16,7 @@
 
   .input-field {
     background: transparent;
-    border: solid rem(1) $l-brown;
+    border: solid rem(1) $secondary;
     color: $white;
     display: block;
     padding: 0 $space-12;
@@ -34,13 +34,13 @@
 
       ~ .input-field-label,
       ~ .input-field-helper {
-        color: $orange;
+        color: $highlight;
       }
 
     }
 
     &:focus {
-      outline-color: $orange;
+      outline-color: $highlight;
     }
 
     &:disabled {
@@ -74,7 +74,7 @@
 
     &:before {
       content: "";
-      background-image: url('../images/textures/texture-dirt.jpg');
+      // background-image: url('../images/textures/texture-dirt.jpg');
       background-position: center center;
       height: rem(1);
       width: 100%;
@@ -118,7 +118,7 @@
       ~ .input-field-icon {
 
         &:after {
-          background: $l-brown;
+          background: $highlight;
         }
 
       }
@@ -128,10 +128,10 @@
     &:checked {
 
       ~ .input-field-icon {
-        border-color: $orange;
+        border-color: $highlight;
 
         &:after {
-          background: $orange;
+          background: $highlight;
         }
 
       }
@@ -147,7 +147,7 @@
   }
 
   .input-field-icon {
-    border: solid rem(2) $l-brown;
+    border: solid rem(2) $secondary;
     height: rem(18);
     width: rem(18);
     pointer-events: none;

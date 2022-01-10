@@ -1,6 +1,5 @@
 .spell-container {
-  background: rgba(black, .24);
-  border-top: solid rem(1) $d-brown;
+  background: $secondary;
   display: grid;
   font-size: rem(14);
   grid-gap: $space-4;
@@ -28,7 +27,7 @@
 }
 
 .spell-name {
-  color: $orange;
+  color: $highlight;
   grid-area: name;
   vertical-align: baseline;
 }
@@ -50,7 +49,7 @@
 .spell-resist { grid-area: resist; }
 
 .spell-descript {
-  border-top: solid rem(1) $d-brown;
+  border-top: solid rem(1) $primary;
   grid-area: descript;
   margin-top: $space-4;
   padding-top: $space-8;

@@ -28,17 +28,17 @@
 // -----------------------------------------------------------------------------
 a[class=""],
 .link-utility {
-  color: $orange;
+  color: $highlight;
   font-weight: 700;
 
   &:focus,
   &:hover {
-    color: $orange-tint;
+    color: lighten($highlight, 16%);
     text-decoration: none;
   }
 
   &:visited {
-    color: $orange-white;
+    color: lighten($highlight, 8%);
   }
 
 }

@@ -3,7 +3,7 @@
   outline-offset: rem(-4);
 
   &:focus {
-    outline-color: $orange;
+    outline-color: $highlight;
   }
 
 }
@@ -34,26 +34,26 @@
 }
 
 .btn-primary {
-  background: $orange;
-  border: solid rem(2) $d-brown;
-  color: $d-brown;
+  background: $highlight;
+  border: solid rem(2) $primary;
+  color: $primary;
 
   &:focus,
   &:hover {
-    background: $orange-tint;
+    background: lighten($highlight, 16%);
   }
 
 }
 
 .btn-secondary {
   background: transparent;
-  border: solid rem(2) $orange;
-  color: $orange;
+  border: solid rem(2) $highlight;
+  color: $highlight;
 
   &:focus,
   &:hover {
-    color: $orange-tint;
-    border-color: $orange-tint;
+    color: lighten($highlight, 16%);
+    border-color: lighten($highlight, 16%);
   }
 
 }
@@ -61,8 +61,8 @@
 .btn-hero {
   @extend %black-letter;
   background: rgba(black, .24);
-  border: solid rem(2) $orange;
-  color: $orange;
+  border: solid rem(2) $highlight;
+  color: $highlight;
   font-size: rem(14);
   font-weight: 700;
   padding: 0 $space-24;
@@ -72,8 +72,8 @@
 
   &:focus,
   &:hover {
-    background: $orange;
-    color: $d-brown;
+    background: $highlight;
+    color: $primary;
   }
 
 }

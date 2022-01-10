@@ -1,6 +1,6 @@
 .hero-container {
   background: black;
-  border-bottom: solid rem(1) rgba($l-brown, .48);
+  border-bottom: solid rem(1) rgba($secondary, .48);
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -67,7 +67,8 @@
 }
 
 .hero-asset {
-  opacity: .96;
+  filter: grayscale(100);
+  opacity: .32;
   position: absolute;
 
   // media
@@ -104,7 +105,7 @@
 
 .hero-title {
   @extend %black-letter;
-  color: $orange-white;
+  color: $highlight;
   font-family: $serif;
   font-size: rem(48);
   font-weight: 700;

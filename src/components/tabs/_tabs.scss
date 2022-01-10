@@ -4,10 +4,10 @@
 
 .tab {
   @extend %black-letter;
-  background-color: $l-brown;
-  background-image: url('../images/textures/texture-mud.jpg');
+  background-color: $secondary;
+  // background-image: url('../images/textures/texture-mud.jpg');
   background-size: cover;
-  border-top: solid rem(2) $l-brown;
+  border-top: solid rem(2) $secondary;
   font-size: rem(12);
   font-weight: 700;
   padding: 0 $space-16;
@@ -17,12 +17,12 @@
 
   &:focus,
   &:hover {
-    border-color: $orange-tint;
+    border-color: lighten($highlight, 16%);
   }
 
   &[tab-active] {
-    border-color: $orange;
-    color: $orange;
+    border-color: $highlight;
+    color: $highlight;
   }
 
 }

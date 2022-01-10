@@ -12,13 +12,27 @@ const Attributes = ({ ...props }) => {
 
     <div className="block-container str">
       <h2 className="block-defined heading-5">STR</h2>
-      <div className="block">{total(props.str, props.strRace, props.strItem)}</div>
-      <div className="block">{modifier(props.str, props.strRace, props.strItem)}</div>
+      <div className="block">{total(
+        props.character.attributes.str,
+        props.character.racial_attributes.str,
+        props.character.item_attributes.str
+      )}</div>
+      <div className="block">{modifier(
+        props.character.attributes.str,
+        props.character.racial_attributes.str,
+        props.character.item_attributes.str
+      )}</div>
       <Input
         inputType="number"
         inputId="str"
-        inputValue={props.str}
-        inputChange={(e) => props.strUpdate(e.target.value)}
+        inputValue={props.character.attributes.str}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          attributes: {
+            ...props.character.attributes,
+            str: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Strength Attribute"
         inputHelper="Base"
@@ -26,8 +40,14 @@ const Attributes = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="strItem"
-        inputValue={props.strItem}
-        inputChange={(e) => props.strItemUpdate(e.target.value)}
+        inputValue={props.character.item_attributes.str}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          item_attributes: {
+            ...props.character.item_attributes,
+            str: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Enhancement / Magical Bonus to Strength"
         inputHelper="Bonus"
@@ -36,13 +56,27 @@ const Attributes = ({ ...props }) => {
 
     <div className="block-container dex">
       <h2 className="block-defined heading-5">DEX</h2>
-      <div className="block">{total(props.dex, props.dexRace, props.dexItem)}</div>
-      <div className="block">{modifier(props.dex, props.dexRace, props.dexItem)}</div>
+      <div className="block">{total(
+        props.character.attributes.dex,
+        props.character.racial_attributes.dex,
+        props.character.item_attributes.dex
+      )}</div>
+      <div className="block">{modifier(
+        props.character.attributes.dex,
+        props.character.racial_attributes.dex,
+        props.character.item_attributes.dex
+      )}</div>
       <Input
         inputType="number"
         inputId="dex"
-        inputValue={props.dex}
-        inputChange={(e) => props.dexUpdate(e.target.value)}
+        inputValue={props.character.attributes.dex}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          attributes: {
+            ...props.character.attributes,
+            dex: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Dexterity Attribute"
         inputHelper="Base"
@@ -50,8 +84,14 @@ const Attributes = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="dexItem"
-        inputValue={props.dexItem}
-        inputChange={(e) => props.dexItemUpdate(e.target.value)}
+        inputValue={props.character.item_attributes.dex}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          item_attributes: {
+            ...props.character.item_attributes,
+            dex: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Enhancement / Magical Bonus to Dexterity"
         inputHelper="Bonus"
@@ -60,13 +100,27 @@ const Attributes = ({ ...props }) => {
 
     <div className="block-container con">
       <h2 className="block-defined heading-5">CON</h2>
-      <div className="block">{total(props.con, props.conRace, props.conItem)}</div>
-      <div className="block">{modifier(props.con, props.conRace, props.conItem)}</div>
+      <div className="block">{total(
+        props.character.attributes.con,
+        props.character.racial_attributes.con,
+        props.character.item_attributes.con
+      )}</div>
+      <div className="block">{modifier(
+        props.character.attributes.con,
+        props.character.racial_attributes.con,
+        props.character.item_attributes.con
+      )}</div>
       <Input
         inputType="number"
         inputId="con"
-        inputValue={props.con}
-        inputChange={(e) => props.conUpdate(e.target.value)}
+        inputValue={props.character.attributes.con}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          attributes: {
+            ...props.character.attributes,
+            con: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Constitution Attribute"
         inputHelper="Base"
@@ -74,8 +128,14 @@ const Attributes = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="conItem"
-        inputValue={props.conItem}
-        inputChange={(e) => props.conItemUpdate(e.target.value)}
+        inputValue={props.character.item_attributes.con}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          item_attributes: {
+            ...props.character.item_attributes,
+            con: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Enhancement / Magical Bonus to Constitution"
         inputHelper="Bonus"
@@ -84,13 +144,27 @@ const Attributes = ({ ...props }) => {
 
     <div className="block-container int">
       <h2 className="block-defined heading-5">INT</h2>
-      <div className="block">{total(props.int, props.intRace, props.intItem)}</div>
-      <div className="block">{modifier(props.int, props.intRace, props.intItem)}</div>
+      <div className="block">{total(
+        props.character.attributes.int,
+        props.character.racial_attributes.int,
+        props.character.item_attributes.int
+      )}</div>
+      <div className="block">{modifier(
+        props.character.attributes.int,
+        props.character.racial_attributes.int,
+        props.character.item_attributes.int
+      )}</div>
       <Input
         inputType="number"
         inputId="int"
-        inputValue={props.int}
-        inputChange={(e) => props.intUpdate(e.target.value)}
+        inputValue={props.character.attributes.int}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          attributes: {
+            ...props.character.attributes,
+            int: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Intelligence Attribute"
         inputHelper="Base"
@@ -98,8 +172,14 @@ const Attributes = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="intItem"
-        inputValue={props.intItem}
-        inputChange={(e) => props.intItemUpdate(e.target.value)}
+        inputValue={props.character.item_attributes.int}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          item_attributes: {
+            ...props.character.item_attributes,
+            int: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Enhancement / Magical Bonus to Intelligence"
         inputHelper="Bonus"
@@ -108,13 +188,27 @@ const Attributes = ({ ...props }) => {
 
     <div className="block-container wis">
       <h2 className="block-defined heading-5">WIS</h2>
-      <div className="block">{total(props.wis, props.wisRace, props.wisItem)}</div>
-      <div className="block">{modifier(props.wis, props.wisRace, props.wisItem)}</div>
+      <div className="block">{total(
+        props.character.attributes.wis,
+        props.character.racial_attributes.wis,
+        props.character.item_attributes.wis
+      )}</div>
+      <div className="block">{modifier(
+        props.character.attributes.wis,
+        props.character.racial_attributes.wis,
+        props.character.item_attributes.wis
+      )}</div>
       <Input
         inputType="number"
         inputId="wis"
-        inputValue={props.wis}
-        inputChange={(e) => props.wisUpdate(e.target.value)}
+        inputValue={props.character.attributes.wis}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          attributes: {
+            ...props.character.attributes,
+            wis: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Wisdom Attribute"
         inputHelper="Base"
@@ -122,23 +216,43 @@ const Attributes = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="wisItem"
-        inputValue={props.wisItem}
-        inputChange={(e) => props.wisItemUpdate(e.target.value)}
+        inputValue={props.character.item_attributes.wis}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          item_attributes: {
+            ...props.character.item_attributes,
+            wis: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Enhancement / Magical Bonus to Wisdom"
         inputHelper="Bonus"
       />
     </div>
 
-    <div className="block-container wis">
+    <div className="block-container cha">
       <h2 className="block-defined heading-5">CHA</h2>
-      <div className="block">{total(props.cha, props.chaRace, props.chaItem)}</div>
-      <div className="block">{modifier(props.cha, props.chaRace, props.chaItem)}</div>
+      <div className="block">{total(
+        props.character.attributes.cha,
+        props.character.racial_attributes.cha,
+        props.character.item_attributes.cha
+      )}</div>
+      <div className="block">{modifier(
+        props.character.attributes.cha,
+        props.character.racial_attributes.cha,
+        props.character.item_attributes.cha
+      )}</div>
       <Input
         inputType="number"
         inputId="cha"
-        inputValue={props.cha}
-        inputChange={(e) => props.chaUpdate(e.target.value)}
+        inputValue={props.character.attributes.cha}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          attributes: {
+            ...props.character.attributes,
+            cha: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Charisma Attribute"
         inputHelper="Base"
@@ -146,8 +260,14 @@ const Attributes = ({ ...props }) => {
       <Input
         inputType="number"
         inputId="chaItem"
-        inputValue={props.chaItem}
-        inputChange={(e) => props.chaItemUpdate(e.target.value)}
+        inputValue={props.character.item_attributes.cha}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          item_attributes: {
+            ...props.character.item_attributes,
+            cha: e.target.value
+          }
+        })}
         inputSRT="true"
         inputLabel="Enhancement / Magical Bonus to Charisma"
         inputHelper="Bonus"

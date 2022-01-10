@@ -13,14 +13,14 @@
 }
 
 .plate-number2 {
-  background: $orange;
-  color: $orange-white;
+  background: $highlight;
+  color: lighten($highlight, 16%);
 }
 
 [data-plate="bestiary"] {
-  background-image: url('../images/textures/texture-mud.jpg');
+  // background-image: url('../images/textures/texture-mud.jpg');
   background-size: cover;
-  border: solid rem(1) rgba($l-brown, .48);
+  border: solid rem(1) rgba($secondary, .48);
   color: $white;
   margin: $space-4 0;
   opacity: .92;
@@ -35,7 +35,7 @@
 }
 
 [data-plate="skill-count"] {
-  color: $l-brown;
+  color: $secondary;
   margin-top: $space-16;
 
   .plate-title,

@@ -1,6 +1,6 @@
 .header {
-  background-color: $l-brown;
-  background-image: url('../images/textures/texture-mud.jpg');
+  background-color: $secondary;
+  // background-image: url('../images/textures/texture-mud.jpg');
   background-size: cover;
   opacity: .88;
   overflow: hidden;
@@ -21,7 +21,7 @@
   @extend %black-letter;
   @include flex-center;
   // @include text-gradient($white, $white);
-  border-right: solid rem(1) rgba($l-brown, .48);
+  border-right: solid rem(1) rgba($secondary, .48);
   color: $white;
   font-family: $serif;
   font-size: rem(14);
@@ -32,26 +32,27 @@
   text-align: center;
   text-decoration: none;
   height: 100%;
-  @include shadow(0, 1, black);
+  // @include shadow(0, 1, black);
   @include timing;
 
   &:not(:first-child) {
-    border-left: solid rem(1) rgba($l-brown, .24);
+    border-left: solid rem(1) rgba($secondary, .24);
   }
 
   &:focus {
-    outline-color: $orange;
+    outline-color: $highlight;
   }
 
   &:focus,
   &:hover {
-    // @include text-gradient($orange-tint, $white);
-    color: $orange-white;
+    // @include text-gradient($highlight-tint, $white);
+    color: $highlight;
   }
 
 }
 
 .nav-primary-logo {
+  filter: grayscale(100);
   max-height: $space-48;
   position: relative;
   transition: inherit;

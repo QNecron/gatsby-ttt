@@ -36,10 +36,10 @@
 
 [data-flyout="right"] {
   background-position: left center;
-  background-color: $l-brown;
-  background-image: url('../images/textures/texture-dirt.jpg');
+  background-color: $primary;
+  // background-image: url('../images/textures/texture-dirt.jpg');
   background-size: auto 100%;
-  border-left: solid rem(1) rgba($l-brown, .48);
+  border-left: solid rem(1) rgba($secondary, .48);
   padding: $space-88 $space-24 $space-24 $space-24;
   height: 100vh;
   position: fixed;

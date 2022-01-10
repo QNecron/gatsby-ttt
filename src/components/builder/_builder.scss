@@ -6,7 +6,7 @@
 .block-defined,
 .block-support,
 .block {
-  border: solid rem(1) $l-brown;
+  border: solid rem(1) $secondary;
   padding: 0 $space-12;
   text-align: center;
   height: rem(40);
@@ -20,11 +20,11 @@
 }
 
 .block-defined {
-  background-color: $l-brown;
-  background-image: url('../images/textures/texture-mud.jpg');
+  background-color: rgba(black, .24);
+  // background-image: url('../images/textures/texture-mud.jpg');
   background-size: cover;
-  color: $orange;
-  opacity: .98;
+  color: $highlight;
+  max-width: 20%;
 }
 
 .block-support {
@@ -81,7 +81,7 @@
 
 // storage
 .character-storage-container {
-  color: $off-white;
+  color: $white;
 }
 
 .character-storage-item {
@@ -98,7 +98,7 @@
 
 .character-storage-name {
   @extend %black-letter;
-  color: $orange-white;
+  color: lighten($highlight, 16%);
   font-family: $serif;
   font-size: rem(14);
   font-weight: 700;

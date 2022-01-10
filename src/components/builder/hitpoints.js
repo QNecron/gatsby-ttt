@@ -1,14 +1,14 @@
 import React from "react"
 
-import { total } from "./functions"
+import { modifier, total } from "./functions"
 
 const HitPoints = ({ ...props }) => {
 
-  function hitdie(class1) {
+  function hitdie(c) {
 
     let hd = ""
 
-    switch (class1) {
+    switch (c) {
 
       case "Barbarian":
       case "Dragon":
@@ -56,15 +56,27 @@ const HitPoints = ({ ...props }) => {
 
   }
 
+  let tot = total(
+    props.character.level_1,
+    props.character.level_2,
+    props.character.level_3
+  )
+
+  let mod = modifier(
+    props.character.attributes.con,
+    props.character.racial_attributes.con,
+    props.character.item_attributes.con
+  )
+
   return(
 
     <div className="block-container hit-points">
-      <h2 className="block-defined heading-5">Hit Points</h2>
+      <h2 className="block-defined heading-5">HP</h2>
       <div className="block">
-        {props.class1Level >= 1 ? props.class1Level + hitdie(props.class1) + " + " : ""}
-        {props.class2Level >= 1 ? props.class2Level + hitdie(props.class2) + " + " : ""}
-        {props.class3Level >= 1 ? props.class3Level + hitdie(props.class3) + " + " : ""}
-        {total(props.class1Level, props.class2Level, props.class3Level) * props.con}
+        {props.character.level_1 >= 1 ? props.character.level_1 + hitdie(props.character.class_1) + " + " : ""}
+        {props.character.level_2 >= 1 ? props.character.level_2 + hitdie(props.character.class_2) + " + " : ""}
+        {props.character.level_3 >= 1 ? props.character.level_3 + hitdie(props.character.class_3) + " + " : ""}
+        {tot * mod}
       </div>
     </div>
 

@@ -1,8 +1,8 @@
 .nav-utility {
-  background-color: $l-brown;
-  background-image: url('../images/textures/texture-mud.jpg');
+  background-color: $secondary;
+  // background-image: url('../images/textures/texture-mud.jpg');
   background-size: cover;
-  border: solid rem(1) $d-brown;
+  border: solid rem(1) $primary;
   display: flex;
   justify-content: flex-end;
   margin-bottom: $space-32;
@@ -14,7 +14,7 @@
 
 .nav-utility-link {
   @extend %black-letter;
-  color: $orange-white;
+  color: $highlight;
   font-size: rem(12);
   font-weight: 700;
   outline: dashed rem(1) transparent;
@@ -23,12 +23,12 @@
   line-height: rem(38);
 
   &:focus {
-    outline-color: $orange;
+    outline-color: lighten($highlight, 16%);
   }
 
   &:focus,
   &:hover {
-    color: $orange;
+    color: lighten($highlight, 16%);
   }
 
   .material-icons {

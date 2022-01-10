@@ -3,64 +3,65 @@ import React, { useState } from "react"
 import Input from "../../components/forms/input"
 import Select from "../../components/forms/select"
 
-import { total } from "./functions"
+import { modifier, total } from "./functions"
 
 const Attacks = ({ ...props }) => {
 
-  const [attrMelee, attrMeleeUpdate] = useState('str')
-  const [attrRange, attrRangeUpdate] = useState('dex')
+  const [attrMelee, attrMeleeUpdate] = useState("STR")
+  const [attrRange, attrRangeUpdate] = useState("DEX")
 
-  function attacks(value, attr, background) {
-    let bab = ""
+  const modStr = modifier(
+    props.character.attributes.str,
+    props.character.racial_attributes.str,
+    props.character.item_attributes.str
+  )
+
+  const modDex = modifier(
+    props.character.attributes.dex,
+    props.character.racial_attributes.dex,
+    props.character.item_attributes.dex
+  )
+
+  function attacks(b, a, s) {
+    let full = ""
     let mod = 0
     let atk1 = ""
     let atk2 = ""
     let atk3 = ""
     let size = 0
 
-    if (attr === "dex") {
-      mod = props.dex
+    if (a === "DEX") {
+      mod = modDex
     }
     else {
-      mod = props.str
+      mod = modStr
     }
 
-    if (background === "Small") {
-      size = 1
-    }
-    else {
-      size = 0
+    if (s === "Small") {
+      size = -1
     }
 
-    if (parseInt(value) >= 0) {
-      atk1 = (parseInt(value) + mod + size).toString()
+    if (parseInt(b) >= 0) {
+      atk1 = (parseInt(b) + mod + size).toString()
     }
 
-    if (parseInt(value) - 5 >= 1) {
-      atk2 = " / " + (parseInt(value) - 5 + mod + size).toString()
+    if (parseInt(b) - 5 >= 1) {
+      atk2 = " / " + (parseInt(b) - 5 + mod + size).toString()
     }
 
-    if (parseInt(value) - 10 >= 1) {
-      atk3 = " / " + (parseInt(value) - 10 + mod + size).toString()
+    if (parseInt(b) - 10 >= 1) {
+      atk3 = " / " + (parseInt(b) - 10 + mod + size).toString()
     }
 
-    bab = atk1 + atk2 + atk3
+    full = atk1 + atk2 + atk3
 
-    return bab
+    return full
+
   }
 
   function sizing(background) {
     let size = 0
-
-    if (background === "Small") {
-      size = -1
-    }
-    else {
-      size = 0
-    }
-
     return size
-
   }
 
   return(
@@ -68,8 +69,12 @@ const Attacks = ({ ...props }) => {
     <>
 
     <div className="block-container bab">
-      <h2 className="block-defined heading-5">Base Attack Bonus</h2>
-      <div className="block">{total(props.bab1, props.bab2, props.bab3)}</div>
+      <h2 className="block-defined heading-5">BAB</h2>
+      <div className="block">{total(
+        props.character.bab_1,
+        props.character.bab_2,
+        props.character.bab_3
+      )}</div>
     </div>
 
     <div className="block-container bab">
@@ -77,7 +82,11 @@ const Attacks = ({ ...props }) => {
         inputType="number"
         inputId="cmb"
         inputDisabled={true}
-        inputValue={total(props.bab1 + props.bab2 + props.bab3, props.str, sizing(props.bgSize))}
+        inputValue={total(
+          props.character.bab_1 + props.character.bab_2 + props.character.bab_3,
+          modStr,
+          sizing(props.character.size)
+        )}
         inputChange={() => null}
         inputSRT="true"
         inputLabel="Combat Maneuver Bonus"
@@ -87,7 +96,11 @@ const Attacks = ({ ...props }) => {
         inputType="number"
         inputId="cmd"
         inputDisabled={true}
-        inputValue={total(props.bab1 + props.bab2 + props.bab3, props.str + props.dex, 10 + sizing(props.bgSize))}
+        inputValue={total(
+          props.character.bab_1 + props.character.bab_2 + props.character.bab_3,
+          modStr + modDex,
+          10 + sizing(props.character.size)
+        )}
         inputChange={() => null}
         inputSRT="true"
         inputLabel="Combat Maneuver Defence"
@@ -97,7 +110,15 @@ const Attacks = ({ ...props }) => {
 
     <div className="block-container bab">
       <h2 className="block-defined heading-5">Melee</h2>
-      <div className="block">{attacks(total(props.bab1, props.bab2, props.bab3), attrMelee, props.bgSize)}</div>
+      <div className="block">{attacks(
+        total(
+          props.character.bab_1,
+          props.character.bab_2,
+          props.character.bab_3
+        ),
+        attrMelee,
+        props.character.size
+      )}</div>
       <Select
         inputId="melee"
         inputValue={attrMelee}
@@ -113,7 +134,15 @@ const Attacks = ({ ...props }) => {
 
     <div className="block-container bab">
       <h2 className="block-defined heading-5">Range</h2>
-      <div className="block">{attacks(total(props.bab1, props.bab2, props.bab3), attrRange, props.bgSize)}</div>
+      <div className="block">{attacks(
+        total(
+          props.character.bab_1,
+          props.character.bab_2,
+          props.character.bab_3
+        ),
+        attrRange,
+        props.character.size
+      )}</div>
       <Select
         inputId="range"
         inputValue={attrRange}
@@ -122,8 +151,8 @@ const Attacks = ({ ...props }) => {
         inputLabel="Range Attack Modifier"
         inputHelper="Mod"
       >
-        <option value="dex">DEX</option>
-        <option value="str">STR</option>
+        <option value="DEX">DEX</option>
+        <option value="STR">STR</option>
       </Select>
     </div>
 

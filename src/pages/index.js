@@ -9,6 +9,7 @@ import Wrapper from "../components/wrapper/wrapper"
 
 import Copyright from "../components/copyright/copyright"
 import Hero from "../components/hero/hero"
+// import Card from "../components/card/card"
 
 import ImgDesktop from "../images/hero/hero-02.jpg"
 import ImgMobile from "../images/hero/hero-02.jpg"

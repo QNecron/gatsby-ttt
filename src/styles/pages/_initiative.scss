@@ -43,8 +43,8 @@
 .init-roll {
   @include flex-center("true", "true", "false");
   @extend %black-letter;
-  border: solid rem(2) $orange;
-  color: $orange;
+  border: solid rem(2) $highlight;
+  color: $highlight;
   font-size: rem(12);
   font-weight: 700;
   padding: 0 $space-16;
