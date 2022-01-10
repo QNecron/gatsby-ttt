@@ -1,0 +1,41 @@
+.panels-container {
+  padding-top: rem(15); // +1px border
+}
+
+.panel-nav {}
+
+.panel-nav-tab {
+  @extend %black-letter;
+  background-color: $secondary;
+  border-top: solid rem(2) $secondary;
+  font-size: rem(10);
+  font-weight: 700;
+  margin-right: rem(1);
+  padding: 0 $space-16;
+  line-height: 1.25;
+  height: $space-40;
+  @include shadow(1, 0, black);
+
+  &:focus,
+  &:hover {
+    border-color: lighten($highlight, 16%);
+  }
+
+  &[aria-selected="true"] {
+    border-color: $highlight;
+    color: $highlight;
+  }
+
+}
+
+.panel-content {
+  border-top: solid rem(1) $secondary;
+  display: none;
+  position: relative;
+  z-index: 1;
+}
+
+[data-panel="1"] ~ [data-panel="1"] { display: block; }
+[data-panel="2"] ~ [data-panel="2"] { display: block; }
+[data-panel="3"] ~ [data-panel="3"] { display: block; }
+[data-panel="4"] ~ [data-panel="4"] { display: block; }

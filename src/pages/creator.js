@@ -9,6 +9,7 @@ import Input from "../components/forms/input"
 
 import Hero from "../components/hero/hero"
 import Flyout from "../components/flyout/flyout"
+// import Panels from "../components/panels/panels"
 
 import Armor from "../components/builder/armor"
 import Attacks from "../components/builder/attacks"
@@ -18,7 +19,9 @@ import Classes from "../components/builder/classes"
 import HitPoints from "../components/builder/hitpoints"
 import Initiative from "../components/builder/initiative"
 import Saves from "../components/builder/saves"
-// import Skills from "../components/builder/skills"
+import SkillsGeneral from "../components/builder/skills-general"
+import SkillsKnowledge from "../components/builder/skills-knowledge"
+
 import Speed from "../components/builder/speed"
 // import Storage from "../components/builder/storage"
 
@@ -29,6 +32,7 @@ const Creator = ({ menu, menuUpdate }) => {
 
   const [flyout, flyoutUpdate] = useState("false")
   const [dm, dmUpdate] = useState("disabled")
+  const [panel, panelUpdate] = useState(1)
 
   const [character, characterUpdate] = useState({
     name: "",
@@ -67,6 +71,7 @@ const Creator = ({ menu, menuUpdate }) => {
       reflex: 0,
       will: 0
     },
+    skill_points_1: 0,
     class_2: "",
     level_2: 0,
     bab_2: 0,
@@ -75,6 +80,7 @@ const Creator = ({ menu, menuUpdate }) => {
       reflex: 0,
       will: 0
     },
+    skill_points_2: 0,
     class_3: "",
     level_3: 0,
     bab_3: 0,
@@ -83,10 +89,79 @@ const Creator = ({ menu, menuUpdate }) => {
       reflex: 0,
       will: 0
     },
+    skill_points_3: 0,
+    skills: {
+      acrobatics: 0,
+      appraise: 0,
+      bluff: 0,
+      climb: 0,
+      diplomacy: 0,
+      disable_device: 0,
+      disguise: 0,
+      escape_artist: 0,
+      fly: 0,
+      handle_animal: 0,
+      heal: 0,
+      intimidate: 0,
+      k_arcana: 0,
+      k_dungeoneering: 0,
+      k_engineering: 0,
+      k_geography: 0,
+      k_history: 0,
+      k_local: 0,
+      k_nature: 0,
+      k_nobility: 0,
+      k_planes: 0,
+      k_religion: 0,
+      linguistics: 0,
+      perception: 0,
+      ride: 0,
+      sense_motive: 0,
+      sleight_of_hand: 0,
+      spellcraft: 0,
+      stealth: 0,
+      survival: 0,
+      swim: 0,
+      use_magic_device: 0,
+    },
     saves_item: {
       fortitude: 0,
       reflex: 0,
       will: 0
+    },
+    skills_item: {
+      acrobatics: 0,
+      appraise: 0,
+      bluff: 0,
+      climb: 0,
+      diplomacy: 0,
+      disable_device: 0,
+      disguise: 0,
+      escape_artist: 0,
+      fly: 0,
+      handle_animal: 0,
+      heal: 0,
+      intimidate: 0,
+      k_arcana: 0,
+      k_dungeoneering: 0,
+      k_engineering: 0,
+      k_geography: 0,
+      k_history: 0,
+      k_local: 0,
+      k_nature: 0,
+      k_nobility: 0,
+      k_planes: 0,
+      k_religion: 0,
+      linguistics: 0,
+      perception: 0,
+      ride: 0,
+      sense_motive: 0,
+      sleight_of_hand: 0,
+      spellcraft: 0,
+      stealth: 0,
+      survival: 0,
+      swim: 0,
+      use_magic_device: 0,
     },
     init: 0,
     ac: {
@@ -222,6 +297,84 @@ const Creator = ({ menu, menuUpdate }) => {
             </div>
 
             <div className="right">
+
+              {/* @README This needs to be made into a component! */}
+              <div className="panels-container" role="tablist" aria-label="Skills">
+
+                <div className="panel-nav" data-panel={panel}>
+
+                  <button
+                    id="nav-1"
+                    className="panel-nav-tab"
+                    role="tab"
+                    aria-selected={panel === 1 ? true : false}
+                    aria-controls="panel-1"
+                    onClick={(e) => panelUpdate(1)}
+                  >
+                      General
+                  </button>
+
+                  <button
+                    id="nav-2"
+                    className="panel-nav-tab"
+                    role="tab"
+                    aria-selected={panel === 2 ? true : false}
+                    aria-controls="panel-2"
+                    onClick={(e) => panelUpdate(2)}
+                  >
+                      Knowledge
+                  </button>
+
+                  <button
+                    id="nav-3"
+                    className="panel-nav-tab"
+                    role="tab"
+                    aria-selected={panel === 3 ? true : false}
+                    aria-controls="panel-3"
+                    onClick={(e) => panelUpdate(3)}
+                  >
+                      Crafting
+                  </button>
+
+                  <button
+                    id="nav-4"
+                    className="panel-nav-tab"
+                    role="tab"
+                    aria-selected={panel === 4 ? true : false}
+                    aria-controls="panel-4"
+                    onClick={(e) => panelUpdate(4)}
+                  >
+                      Professions
+                  </button>
+
+
+                </div>
+
+                <div id="panel-1" className="panel-content" data-panel="1" aria-labelledby="nav-1" role="tabpanel">
+
+                  <SkillsGeneral
+                    character={character}
+                    characterUpdate={characterUpdate}
+                  />
+
+                </div>
+
+                <div id="panel-2" className="panel-content" data-panel="2" aria-labelledby="nav-2" role="tabpanel">
+
+                  <SkillsKnowledge
+                    character={character}
+                    characterUpdate={characterUpdate}
+                  />
+
+                </div>
+
+                <div id="panel-3" className="panel-content" data-panel="3" aria-labelledby="nav-3" role="tabpanel">Hello Mars</div>
+
+                <div id="panel-4" className="panel-content" data-panel="4" aria-labelledby="nav-4" role="tabpanel">Hello Venus</div>
+
+              </div>
+
+
 
             </div>
 

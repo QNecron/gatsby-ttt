@@ -7,6 +7,7 @@ const Input = ({
   inputDisabled,
   inputName,
   inputStep,
+  inputMin,
   inputValue,
   inputChecked,
   inputChange,
@@ -26,6 +27,7 @@ const Input = ({
         disabled={inputDisabled ? inputDisabled : false}
         name={inputName}
         step={inputStep}
+        min={inputMin}
         value={inputValue}
         defaultChecked={inputChecked}
         onChange={inputChange}
@@ -58,6 +60,10 @@ Input.propTypes = {
     PropTypes.string,
     PropTypes.number
   ]),
+  inputMin: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   inputValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -75,6 +81,7 @@ Input.defaultProps = {
   inputDisabled: false,
   inputName: ``,
   inputStep: ``,
+  inputMin: ``,
   inputValue: ``,
   inputChecked: false,
   inputChange: (e) => null,

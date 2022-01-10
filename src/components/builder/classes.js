@@ -3,13 +3,57 @@ import React from "react"
 import Input from "../../components/forms/input"
 import Select from "../../components/forms/select"
 
+import { modifier } from "./functions"
+
 const Classes = ({ ...props }) => {
+
+  const modInt = modifier(
+    props.character.attributes.int,
+    props.character.racial_attributes.int,
+    props.character.item_attributes.int
+  )
 
   const stats = (c, l) => {
     let bab = 0
     let fort = 0
     let refl = 0
     let will = 0
+    let skill = 0
+
+    switch (c) {
+
+      case "Barbarian":
+      case "Fighter":
+      case "Paladin":
+      case "Ranger":
+      case "Construct":
+      case "Dragon":
+      case "MagicalBeast":
+      case "MonstrousHumanoid":
+      case "Outsider":
+        bab = Math.floor(l * 1)
+      break;
+
+      case "Bard":
+      case "Cleric":
+      case "Druid":
+      case "Monk":
+      case "Rogue":
+      case "Aberration":
+      case "Animal":
+      case "Humanoid":
+      case "Ooze":
+      case "Plant":
+      case "Undead":
+      case "Vermin":
+        bab = Math.floor(l * .75)
+      break;
+
+      default:
+        bab = Math.floor(l * .5)
+      break;
+
+    }
 
     switch (c) {
 
@@ -74,35 +118,31 @@ const Classes = ({ ...props }) => {
 
     switch (c) {
 
-      case "Barbarian":
-      case "Fighter":
-      case "Paladin":
-      case "Ranger":
-      case "Construct":
-      case "Dragon":
-      case "MagicalBeast":
-      case "MonstrousHumanoid":
-      case "Outsider":
-        bab = Math.floor(l * 1)
+      case "Rogue":
+        skill = Math.floor((8 + modInt) * l)
       break;
 
       case "Bard":
-      case "Cleric":
+      case "Ranger":
+        skill = Math.floor((6 + modInt) * l)
+      break;
+
+      case "Barbarian":
       case "Druid":
       case "Monk":
-      case "Rogue":
-      case "Aberration":
-      case "Animal":
-      case "Humanoid":
-      case "Ooze":
-      case "Plant":
-      case "Undead":
-      case "Vermin":
-        bab = Math.floor(l * .75)
+        skill = Math.floor((4 + modInt) * l)
+      break;
+
+      case "Cleric":
+      case "Fighter":
+      case "Paladin":
+      case "Sorcerer":
+      case "Wizard":
+        skill = Math.floor((2 + modInt) * l)
       break;
 
       default:
-        bab = Math.floor(l * .5)
+        // none
       break;
 
     }
@@ -115,6 +155,7 @@ const Classes = ({ ...props }) => {
       fort = 0
       refl = 0
       will = 0
+      skill = 0
     }
 
     if (c === props.character.class_1) {
@@ -128,7 +169,8 @@ const Classes = ({ ...props }) => {
           fortitude: fort,
           reflex: refl,
           will: will
-        }
+        },
+        skill_points_1: skill
       })
 
     }
@@ -143,7 +185,8 @@ const Classes = ({ ...props }) => {
           fortitude: fort,
           reflex: refl,
           will: will
-        }
+        },
+        skill_points_2: skill
       })
 
     }

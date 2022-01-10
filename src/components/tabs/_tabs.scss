@@ -1,12 +1,13 @@
 .tabs-container {
   @include flex-center("true", "true", "true", 50%);
+  gap: rem(1);
 }
 
 .tab {
   @extend %black-letter;
   background-color: $secondary;
   // background-image: url('../images/textures/texture-mud.jpg');
-  background-size: cover;
+  // background-size: cover;
   border-top: solid rem(2) $secondary;
   font-size: rem(12);
   font-weight: 700;
@@ -30,12 +31,12 @@
 //
 [tabs-type="caster-lvls"],
 [tabs-type="alphabet"] {
-  @include flex-center("true", "false", "true", 16.6667%);
+  @include flex-center("true", "false", "true", calc(16.6667% - 1px));
   flex-wrap: wrap;
   margin: $space-16 0;
 
   .tab {
-    max-width: 16.6667%;
+    max-width: calc(16.6667% - 1px);
   }
 
 }
