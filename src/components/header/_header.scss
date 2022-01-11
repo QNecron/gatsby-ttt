@@ -22,7 +22,7 @@
   @include flex-center;
   // @include text-gradient($white, $white);
   border-right: solid rem(1) rgba($secondary, .48);
-  color: $white;
+  color: $highlight;
   font-family: $serif;
   font-size: rem(14);
   font-weight: 700;
@@ -46,7 +46,7 @@
   &:focus,
   &:hover {
     // @include text-gradient($highlight-tint, $white);
-    color: $highlight;
+    color: lighten($highlight, 16%);
   }
 
   // media
@@ -58,7 +58,7 @@
 }
 
 .nav-primary-logo {
-  filter: grayscale(100);
+  // filter: grayscale(100);
   max-height: $space-48;
   position: relative;
   transition: inherit;
