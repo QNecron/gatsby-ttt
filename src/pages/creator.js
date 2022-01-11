@@ -95,6 +95,9 @@ const Creator = ({ menu, menuUpdate }) => {
       appraise: 0,
       bluff: 0,
       climb: 0,
+      craft_1: 0,
+      craft_2: 0,
+      craft_3: 0,
       diplomacy: 0,
       disable_device: 0,
       disguise: 0,
@@ -115,6 +118,12 @@ const Creator = ({ menu, menuUpdate }) => {
       k_religion: 0,
       linguistics: 0,
       perception: 0,
+      perform_1: 0,
+      perform_2: 0,
+      perform_3: 0,
+      profession_1: 0,
+      profession_2: 0,
+      profession_3: 0,
       ride: 0,
       sense_motive: 0,
       sleight_of_hand: 0,
@@ -134,6 +143,9 @@ const Creator = ({ menu, menuUpdate }) => {
       appraise: 0,
       bluff: 0,
       climb: 0,
+      craft_1: 0,
+      craft_2: 0,
+      craft_3: 0,
       diplomacy: 0,
       disable_device: 0,
       disguise: 0,
@@ -154,6 +166,12 @@ const Creator = ({ menu, menuUpdate }) => {
       k_religion: 0,
       linguistics: 0,
       perception: 0,
+      perform_1: 0,
+      perform_2: 0,
+      perform_3: 0,
+      profession_1: 0,
+      profession_2: 0,
+      profession_3: 0,
       ride: 0,
       sense_motive: 0,
       sleight_of_hand: 0,
@@ -333,7 +351,7 @@ const Creator = ({ menu, menuUpdate }) => {
                     aria-controls="panel-3"
                     onClick={(e) => panelUpdate(3)}
                   >
-                      Craft
+                      Craft / Profession
                   </button>
 
                   <button
@@ -345,17 +363,6 @@ const Creator = ({ menu, menuUpdate }) => {
                     onClick={(e) => panelUpdate(4)}
                   >
                       Perform
-                  </button>
-
-                  <button
-                    id="nav-5"
-                    className="panel-nav-tab"
-                    role="tab"
-                    aria-selected={panel === 5 ? true : false}
-                    aria-controls="panel-5"
-                    onClick={(e) => panelUpdate(5)}
-                  >
-                      Profession
                   </button>
 
 
@@ -382,8 +389,6 @@ const Creator = ({ menu, menuUpdate }) => {
                 <div id="panel-3" className="panel-content" data-panel="3" aria-labelledby="nav-3" role="tabpanel">Hello Mars</div>
 
                 <div id="panel-4" className="panel-content" data-panel="4" aria-labelledby="nav-4" role="tabpanel">Hello Venus</div>
-
-                <div id="panel-5" className="panel-content" data-panel="5" aria-labelledby="nav-5" role="tabpanel">Hello Pluto</div>
 
               </div>
 

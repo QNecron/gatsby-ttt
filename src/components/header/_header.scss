@@ -49,6 +49,12 @@
     color: $highlight;
   }
 
+  // media
+  @include media($mq-mobile) {
+    font-size: rem(8); // DELETE
+    padding: 0 $space-8;
+  }
+
 }
 
 .nav-primary-logo {

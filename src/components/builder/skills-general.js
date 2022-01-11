@@ -544,6 +544,426 @@ const SkillsGeneral = ({ ...props }) => {
       />
     </div>
 
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Linguistics</h2>
+      <div className="block">{total(
+        props.character.skills.linguistics,
+        props.character.skills_item.linguistics,
+        modInt
+      )}</div>
+      <div className="block">{modInt}</div>
+      <Input
+        inputType="number"
+        inputId="linguistics"
+        inputValue={props.character.skills.linguistics}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            linguistics: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Linguistics Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="linguisticsItem"
+        inputValue={props.character.skills_item.linguistics}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            linguistics: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Linguistics Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Perception</h2>
+      <div className="block">{total(
+        props.character.skills.perception,
+        props.character.skills_item.perception,
+        modWis
+      )}</div>
+      <div className="block">{modWis}</div>
+      <Input
+        inputType="number"
+        inputId="perception"
+        inputValue={props.character.skills.perception}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            perception: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Perception Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="perceptionItem"
+        inputValue={props.character.skills_item.perception}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            perception: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Perception Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Ride</h2>
+      <div className="block">{total(
+        props.character.skills.ride,
+        props.character.skills_item.ride,
+        modDex
+      )}</div>
+      <div className="block">{modDex}</div>
+      <Input
+        inputType="number"
+        inputId="ride"
+        inputValue={props.character.skills.ride}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            ride: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Ride Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="rideItem"
+        inputValue={props.character.skills_item.ride}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            ride: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Ride Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Sense Motive</h2>
+      <div className="block">{total(
+        props.character.skills.sense_motive,
+        props.character.skills_item.sense_motive,
+        modWis
+      )}</div>
+      <div className="block">{modWis}</div>
+      <Input
+        inputType="number"
+        inputId="sensemotive"
+        inputValue={props.character.skills.sense_motive}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            sense_motive: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Sense Motive Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="sensemotiveItem"
+        inputValue={props.character.skills_item.sense_motive}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            sense_motive: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Sense Motive Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Sleight of Hand</h2>
+      <div className="block">{total(
+        props.character.skills.sleight_of_hand,
+        props.character.skills_item.sleight_of_hand,
+        modDex
+      )}</div>
+      <div className="block">{modDex}</div>
+      <Input
+        inputType="number"
+        inputId="sleightofhand"
+        inputValue={props.character.skills.sleight_of_hand}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            sleight_of_hand: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Sleight of Hand Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="sleightofhandItem"
+        inputValue={props.character.skills_item.sleight_of_hand}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            sleight_of_hand: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Sleight of Hand Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Spellcraft</h2>
+      <div className="block">{total(
+        props.character.skills.spellcraft,
+        props.character.skills_item.spellcraft,
+        modInt
+      )}</div>
+      <div className="block">{modInt}</div>
+      <Input
+        inputType="number"
+        inputId="spellcraft"
+        inputValue={props.character.skills.spellcraft}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            spellcraft: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Spellcraft Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="spellcraftItem"
+        inputValue={props.character.skills_item.spellcraft}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            spellcraft: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Spellcraft Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Stealth</h2>
+      <div className="block">{total(
+        props.character.skills.stealth,
+        props.character.skills_item.stealth,
+        modDex
+      )}</div>
+      <div className="block">{modDex}</div>
+      <Input
+        inputType="number"
+        inputId="stealth"
+        inputValue={props.character.skills.stealth}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            stealth: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Stealth Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="stealthItem"
+        inputValue={props.character.skills_item.stealth}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            stealth: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Stealth Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Survival</h2>
+      <div className="block">{total(
+        props.character.skills.survival,
+        props.character.skills_item.survival,
+        modWis
+      )}</div>
+      <div className="block">{modWis}</div>
+      <Input
+        inputType="number"
+        inputId="survival"
+        inputValue={props.character.skills.survival}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            survival: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Survival Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="survivalItem"
+        inputValue={props.character.skills_item.survival}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            survival: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Survival Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">Swim</h2>
+      <div className="block">{total(
+        props.character.skills.swim,
+        props.character.skills_item.swim,
+        modStr
+      )}</div>
+      <div className="block">{modStr}</div>
+      <Input
+        inputType="number"
+        inputId="swim"
+        inputValue={props.character.skills.swim}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            swim: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Swim Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="swimItem"
+        inputValue={props.character.skills_item.swim}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            swim: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Swim Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
+    <div className="block-container skill">
+      <h2 className="block-defined heading-6">UMD</h2>
+      <div className="block">{total(
+        props.character.skills.use_magic_device,
+        props.character.skills_item.use_magic_device,
+        modCha
+      )}</div>
+      <div className="block">{modCha}</div>
+      <Input
+        inputType="number"
+        inputId="usemagicdevice"
+        inputValue={props.character.skills.use_magic_device}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills: {
+            ...props.character.skills,
+            use_magic_device: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Use Magic Device Skill Ranks"
+        inputHelper="Ranks"
+      />
+      <Input
+        inputType="number"
+        inputId="usemagicdeviceItem"
+        inputValue={props.character.skills_item.use_magic_device}
+        inputMin="0"
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          skills_item: {
+            ...props.character.skills_item,
+            use_magic_device: e.target.value
+          }
+        })}
+        inputSRT="true"
+        inputLabel="Use Magic Device Skill Bonus"
+        inputHelper="Bonus"
+      />
+    </div>
+
     </>
 
   )

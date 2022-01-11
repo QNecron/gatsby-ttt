@@ -6,34 +6,10 @@ import { modifier, total } from "./functions"
 
 const SkillsKnowledge = ({ ...props }) => {
 
-  const modStr = modifier(
-    props.character.attributes.str,
-    props.character.racial_attributes.str,
-    props.character.item_attributes.str
-  )
-
-  const modDex = modifier(
-    props.character.attributes.dex,
-    props.character.racial_attributes.dex,
-    props.character.item_attributes.dex
-  )
-
   const modInt = modifier(
     props.character.attributes.int,
     props.character.racial_attributes.int,
     props.character.item_attributes.int
-  )
-
-  const modWis = modifier(
-    props.character.attributes.wis,
-    props.character.racial_attributes.wis,
-    props.character.item_attributes.wis
-  )
-
-  const modCha = modifier(
-    props.character.attributes.cha,
-    props.character.racial_attributes.cha,
-    props.character.item_attributes.cha
   )
 
   return(
