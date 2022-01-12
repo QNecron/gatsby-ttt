@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-//useEffect
+
 import Seo from "../components/seo"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
@@ -11,6 +11,8 @@ import Hero from "../components/hero/hero"
 import Flyout from "../components/flyout/flyout"
 // import Panels from "../components/panels/panels"
 
+import { total } from "../components/builder/functions"
+
 import Armor from "../components/builder/armor"
 import Attacks from "../components/builder/attacks"
 import Attributes from "../components/builder/attributes"
@@ -19,8 +21,11 @@ import Classes from "../components/builder/classes"
 import HitPoints from "../components/builder/hitpoints"
 import Initiative from "../components/builder/initiative"
 import Saves from "../components/builder/saves"
+import SkillsCraft from "../components/builder/skills-craft"
 import SkillsGeneral from "../components/builder/skills-general"
 import SkillsKnowledge from "../components/builder/skills-knowledge"
+import SkillsPerform from "../components/builder/skills-perform"
+import SkillsProfession from "../components/builder/skills-profession"
 import Speed from "../components/builder/speed"
 // import Storage from "../components/builder/storage"
 
@@ -199,6 +204,55 @@ const Creator = ({ menu, menuUpdate }) => {
     }
   })
 
+  const ranks = () => {
+    let ranks = 0
+
+    ranks +=
+    parseInt(character.skills.acrobatics) +
+    parseInt(character.skills.appraise) +
+    parseInt(character.skills.bluff) +
+    parseInt(character.skills.climb) +
+    parseInt(character.skills.craft_1) +
+    parseInt(character.skills.craft_2) +
+    parseInt(character.skills.craft_3) +
+    parseInt(character.skills.diplomacy) +
+    parseInt(character.skills.disable_device) +
+    parseInt(character.skills.disguise) +
+    parseInt(character.skills.escape_artist) +
+    parseInt(character.skills.fly) +
+    parseInt(character.skills.handle_animal) +
+    parseInt(character.skills.heal) +
+    parseInt(character.skills.intimidate) +
+    parseInt(character.skills.k_arcana) +
+    parseInt(character.skills.k_dungeoneering) +
+    parseInt(character.skills.k_engineering) +
+    parseInt(character.skills.k_geography) +
+    parseInt(character.skills.k_history) +
+    parseInt(character.skills.k_local) +
+    parseInt(character.skills.k_nature) +
+    parseInt(character.skills.k_nobility) +
+    parseInt(character.skills.k_planes) +
+    parseInt(character.skills.k_religion) +
+    parseInt(character.skills.linguistics) +
+    parseInt(character.skills.perception) +
+    parseInt(character.skills.perform_1) +
+    parseInt(character.skills.perform_2) +
+    parseInt(character.skills.perform_3) +
+    parseInt(character.skills.profession_1) +
+    parseInt(character.skills.profession_2) +
+    parseInt(character.skills.profession_3) +
+    parseInt(character.skills.ride) +
+    parseInt(character.skills.sense_motive) +
+    parseInt(character.skills.sleight_of_hand) +
+    parseInt(character.skills.spellcraft) +
+    parseInt(character.skills.stealth) +
+    parseInt(character.skills.survival) +
+    parseInt(character.skills.swim) +
+    parseInt(character.skills.use_magic_device)
+
+    return ranks
+  }
+
   return(
 
     <Page
@@ -315,7 +369,7 @@ const Creator = ({ menu, menuUpdate }) => {
 
             <div className="right">
 
-              {/* @README This needs to be made into a component! */}
+              {/* @TODO This needs to be made into a component */}
               <div className="panels-container" role="tablist" aria-label="Skills">
 
                 <div className="panel-nav" data-panel={panel}>
@@ -350,7 +404,7 @@ const Creator = ({ menu, menuUpdate }) => {
                     aria-controls="panel-3"
                     onClick={(e) => panelUpdate(3)}
                   >
-                      Craft / Profession
+                      Craft
                   </button>
 
                   <button
@@ -364,6 +418,24 @@ const Creator = ({ menu, menuUpdate }) => {
                       Perform
                   </button>
 
+                  <button
+                    id="nav-5"
+                    className="panel-nav-tab"
+                    role="tab"
+                    aria-selected={panel === 5 ? true : false}
+                    aria-controls="panel-5"
+                    onClick={(e) => panelUpdate(5)}
+                  >
+                      Profession
+                  </button>
+
+                  <div className="panel-nav-count">
+                    {ranks()} / {total(
+                      character.skill_points_1,
+                      character.skill_points_2,
+                      character.skill_points_3
+                    )}
+                  </div>
 
                 </div>
 
@@ -385,13 +457,34 @@ const Creator = ({ menu, menuUpdate }) => {
 
                 </div>
 
-                <div id="panel-3" className="panel-content" data-panel="3" aria-labelledby="nav-3" role="tabpanel">Hello Mars</div>
+                <div id="panel-3" className="panel-content" data-panel="3" aria-labelledby="nav-3" role="tabpanel">
 
-                <div id="panel-4" className="panel-content" data-panel="4" aria-labelledby="nav-4" role="tabpanel">Hello Venus</div>
+                  <SkillsCraft
+                    character={character}
+                    characterUpdate={characterUpdate}
+                  />
+
+                </div>
+
+                <div id="panel-4" className="panel-content" data-panel="4" aria-labelledby="nav-4" role="tabpanel">
+
+                  <SkillsPerform
+                    character={character}
+                    characterUpdate={characterUpdate}
+                  />
+
+                </div>
+
+                <div id="panel-5" className="panel-content" data-panel="5" aria-labelledby="nav-5" role="tabpanel">
+
+                  <SkillsProfession
+                    character={character}
+                    characterUpdate={characterUpdate}
+                  />
+
+                </div>
 
               </div>
-
-
 
             </div>
 

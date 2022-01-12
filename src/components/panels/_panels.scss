@@ -2,7 +2,17 @@
   padding-top: rem(15); // +1px border
 }
 
-.panel-nav {}
+.panel-nav {
+  align-items: center;
+  display: flex;
+
+  // media
+  @include media($mq-mobile) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+}
 
 .panel-nav-tab {
   @extend %black-letter;
@@ -24,6 +34,24 @@
   &[aria-selected="true"] {
     border-color: $highlight;
     color: $highlight;
+  }
+
+}
+
+.panel-nav-count {
+  @extend %black-letter;
+  background-color: rgba($secondary, .24);
+  color: $highlight;
+  flex-grow: 1;
+  font-size: rem(14);
+  font-weight: 700;
+  padding: 0 $space-16;
+  text-align: right;
+  line-height: $space-40;
+
+  // media
+  @include media($mq-mobile) {
+    min-width: rem(96);
   }
 
 }

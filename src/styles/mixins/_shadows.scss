@@ -4,11 +4,11 @@
   $txt-shadow: none;
 
   @if $b == 1 {
-    $box-shadow:  0 rem(1) rem(2) rgba($c, .24), 0 rem(3) rem(4) rgba($c, .48);
+    $box-shadow:  0 rem(1) rem(2) rgba($c, .24), 0 rem(3) rem(4) rgba($c, .32);
   }
 
   @if $t == 1 {
-    $txt-shadow: rem(3) rem(4) rem(4) rgba($c, .48)
+    $txt-shadow: rem(3) rem(4) rem(4) rgba($c, .32)
   }
 
   @if $b >= 1 {

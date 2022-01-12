@@ -1,11 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 
 import { Link } from "gatsby"
 
+import Wrapper from "../../components/wrapper/wrapper"
+import Flyout from "../../components/flyout/flyout"
+
 import Logo from "../../images/logo-tabletop-tools.png"
 
 const Header = ({ ...props }) => {
+
+  const [flyout, flyoutUpdate] = useState("false")
 
   return (
 
@@ -13,11 +18,37 @@ const Header = ({ ...props }) => {
 
       <header className="header" role="banner">
 
-        <nav className="nav-primary" role="navigation">
-          <Link className="nav-primary-link" to="/">
+        <Wrapper wrapper="structure">
+
+          {/*
+          <Link className="header-link" to="/">
             <span data-srt="true">{props.title}</span>
-            <img className="nav-primary-logo" src={Logo} alt=" " aria-hidden="true" />
+            <img className="header-logo" src={Logo} alt=" " aria-hidden="true" />
           </Link>
+          */}
+
+          <button
+            className="header-menu"
+            aria-haspopup="true"
+            aria-controls="nav-primary-container"
+            onClick={(e) => flyoutUpdate("true")}
+          >
+            <span className="material-icons" aria-hidden="true">menu</span> Menu
+          </button>
+
+        </Wrapper>
+
+      </header>
+
+      <Flyout
+        flyoutId="nav-primary-container"
+        flyoutType={"left"}
+        flyoutOpen={flyout}
+        flyout={flyout}
+        flyoutUpdate={flyoutUpdate}
+      >
+
+        <nav className="nav-primary" role="navigation">
           <Link className="nav-primary-link" to="/creator/">Creator</Link>
           <Link className="nav-primary-link" to="/spells/">Spells</Link>
           <Link className="nav-primary-link" to="/feats/">Feats</Link>
@@ -25,7 +56,7 @@ const Header = ({ ...props }) => {
           <Link className="nav-primary-link" to="/initiative/">Initiative</Link>
         </nav>
 
-      </header>
+      </Flyout>
 
     </div>
 

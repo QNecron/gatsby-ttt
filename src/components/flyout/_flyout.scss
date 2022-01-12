@@ -19,7 +19,6 @@
   margin-right: $space-8;
   position: absolute;
   top: $space-24;
-  left: rem(-20);
   z-index: 1;
   @include shadow(1, 0, black);
 
@@ -34,17 +33,11 @@
   max-height: calc(100vh - 88px);
 }
 
-[data-flyout="right"] {
-  background-position: left center;
-  background-color: $primary;
-  // background-image: url('../images/textures/texture-dirt.jpg');
-  background-size: auto 100%;
-  border-left: solid rem(1) rgba($secondary, .48);
+[data-flyout] {
   padding: $space-88 $space-24 $space-24 $space-24;
   height: 100vh;
   position: fixed;
   top: 0;
-  right: 0;
   z-index: 9;
   transition: all .24s ease-in-out 0s;
   @include shadow(1, 0, black);
@@ -58,8 +51,34 @@
     width: rem(288);
   }
 
+}
+
+[data-flyout="right"] {
+  background-color: $primary;
+  border-left: solid rem(1) rgba($secondary, .48);
+  right: 0;
+
   &[aria-expanded="false"] {
     transform: translate(calc(101% + 20px), 0)
+  }
+
+  .flyout-close {
+    left: rem(-20);
+  }
+
+}
+
+[data-flyout="left"] {
+  background-color: $primary;
+  border-right: solid rem(1) rgba($secondary, .48);
+  left: 0;
+
+  &[aria-expanded="false"] {
+    transform: translate(calc(-101% - 20px), 0)
+  }
+
+  .flyout-close {
+    right: rem(-28);
   }
 
 }

@@ -1,5 +1,5 @@
 .hero-container {
-  background: black;
+  background: $primary;
   border-bottom: solid rem(1) rgba($secondary, .48);
   overflow: hidden;
   position: relative;
@@ -47,7 +47,7 @@
 }
 
 .hero-overlay {
-  background: linear-gradient(to top, rgba(black, .88) 0%, rgba(black, .16) 100%);
+  background: linear-gradient(to top, rgba($primary, .88) 0%, rgba($primary, .16) 100%);
   position: absolute;
   top: 0;
   right: 0;
@@ -68,7 +68,7 @@
 
 .hero-asset {
   filter: grayscale(100);
-  // opacity: .32;
+  opacity: .16;
   position: absolute;
 
   // media

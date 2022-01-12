@@ -1,8 +1,5 @@
 .header {
   background-color: $secondary;
-  // background-image: url('../images/textures/texture-mud.jpg');
-  background-size: cover;
-  opacity: .88;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -10,56 +7,81 @@
   left: 0;
   z-index: 9;
   @include shadow(1, 0, black);
+
+  .wrapper {
+    @include flex-center;
+
+    // media
+    @include media($mq-desktop) {
+      padding-left: $space-8;
+    }
+    @include media($mq-tablet-range) {
+      padding-left: 0;
+    }
+    @include media($mq-mobile) {
+      padding-left: 0;
+    }
+
+  }
+
 }
 
-.nav-primary {
-  @include flex-center;
-  height: $space-72;
-}
+// .header-logo {
+//   max-height: $space-48;
+//   position: relative;
+//   transition: inherit;
+// }
 
+.header-menu,
 .nav-primary-link {
   @extend %black-letter;
-  @include flex-center;
-  // @include text-gradient($white, $white);
-  border-right: solid rem(1) rgba($secondary, .48);
-  color: $highlight;
   font-family: $serif;
   font-size: rem(14);
   font-weight: 700;
   outline: dashed rem(1) transparent;
-  outline-offset: rem(-4);
-  padding: 0 $space-24;
-  text-align: center;
-  text-decoration: none;
-  height: 100%;
-  // @include shadow(0, 1, black);
-  @include timing;
-
-  &:not(:first-child) {
-    border-left: solid rem(1) rgba($secondary, .24);
-  }
+  outline-offset: rem(-1);
 
   &:focus {
     outline-color: $highlight;
   }
 
-  &:focus,
-  &:hover {
-    // @include text-gradient($highlight-tint, $white);
-    color: lighten($highlight, 16%);
-  }
-
-  // media
-  @include media($mq-mobile) {
-    font-size: rem(8); // DELETE
-    padding: 0 $space-8;
+  .material-icons {
+    vertical-align: bottom;
   }
 
 }
 
-.nav-primary-logo {
-  // filter: grayscale(100);
-  max-height: $space-48;
-  position: relative;
-  transition: inherit;
+.header-menu {
+  color: $highlight;
+
+  &:focus,
+  &:hover {
+    color: lighten($highlight, 16%);
+  }
+
+  // media
+  @include media($mq-tablet-up) {
+    padding: $space-12 $space-24;
+  }
+  @include media($mq-mobile) {
+    padding: $space-12 $space-16;
+  }
+
+}
+
+.nav-primary-link {
+  display: block;
+  color: $white;
+  margin-bottom: rem(1);
+  padding: $space-12 $space-24;
+
+  &:focus,
+  &:hover {
+    color: lighten($highlight, 16%);
+  }
+
+  &[aria-current] {
+    color: $highlight;
+  }
+
 }
