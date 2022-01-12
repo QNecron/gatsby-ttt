@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import Seo from "../components/seo"
 import Page from "../components/page/page"
@@ -27,7 +27,7 @@ import SkillsKnowledge from "../components/builder/skills-knowledge"
 import SkillsPerform from "../components/builder/skills-perform"
 import SkillsProfession from "../components/builder/skills-profession"
 import Speed from "../components/builder/speed"
-// import Storage from "../components/builder/storage"
+import Storage from "../components/builder/storage"
 
 import ImgDesktop from "../images/hero/hero-05.jpg"
 import ImgMobile from "../images/hero/hero-05-mobile.jpg"
@@ -35,8 +35,10 @@ import ImgMobile from "../images/hero/hero-05-mobile.jpg"
 const Creator = ({ menu, menuUpdate }) => {
 
   const [flyout, flyoutUpdate] = useState("false")
-  const [dm, dmUpdate] = useState("disabled")
   const [panel, panelUpdate] = useState(1)
+
+  const [dm, dmUpdate] = useState("disabled")
+  const [listCharacter, listCharacterUpdate] = useState("")
 
   const [character, characterUpdate] = useState({
     name: "",
@@ -253,6 +255,210 @@ const Creator = ({ menu, menuUpdate }) => {
     return ranks
   }
 
+  const save = () => {
+
+    let hero = character.name
+
+    if (!hero) return;
+
+    const data = JSON.stringify({
+      character: {
+        name: character.name,
+        race: character.race,
+        racial_bonus: character.racial_bonus,
+        racial_attributes: {
+          str: character.racial_attributes.str,
+          dex: character.racial_attributes.dex,
+          con: character.racial_attributes.con,
+          int: character.racial_attributes.int,
+          wis: character.racial_attributes.wis,
+          cha: character.racial_attributes.cha
+        },
+        attributes: {
+          str: character.attributes.str,
+          dex: character.attributes.dex,
+          con: character.attributes.con,
+          int: character.attributes.int,
+          wis: character.attributes.wis,
+          cha: character.attributes.cha
+        },
+        item_attributes: {
+          str: character.item_attributes.str,
+          dex: character.item_attributes.dex,
+          con: character.item_attributes.con,
+          int: character.item_attributes.int,
+          wis: character.item_attributes.wis,
+          cha: character.item_attributes.cha
+        },
+        size: character.size,
+        class_1: character.class_1,
+        level_1: character.level_1,
+        bab_1: character.bab_1,
+        saves_class_1: {
+          fortitude: character.saves_class_1.fortitude,
+          reflex: character.saves_class_1.reflex,
+          will: character.saves_class_1.will
+        },
+        skill_points_1: character.skill_points_1,
+        class_2: character.class_2,
+        level_2: character.level_2,
+        bab_2: character.bab_2,
+        saves_class_2: {
+          fortitude: character.saves_class_2.fortitude,
+          reflex: character.saves_class_2.reflex,
+          will: character.saves_class_2.will
+        },
+        skill_points_2: character.skill_points_2,
+        class_3: character.class_3,
+        level_3: character.level_3,
+        bab_3: character.bab_3,
+        saves_class_3: {
+          fortitude: character.saves_class_3.fortitude,
+          reflex: character.saves_class_3.reflex,
+          will: character.saves_class_3.will
+        },
+        skill_points_3: character.skill_points_3,
+        skills: {
+          acrobatics: character.skills.acrobatics,
+          appraise: character.skills.appraise,
+          bluff: character.skills.bluff,
+          climb: character.skills.climb,
+          craft_1: character.skills.craft_1,
+          craft_2: character.skills.craft_2,
+          craft_3: character.skills.craft_3,
+          diplomacy: character.skills.diplomacy,
+          disable_device: character.skills.disable_device,
+          disguise: character.skills.disguise,
+          escape_artist: character.skills.escape_artist,
+          fly: character.skills.fly,
+          handle_animal: character.skills.handle_animal,
+          heal: character.skills.heal,
+          intimidate: character.skills.intimidate,
+          k_arcana: character.skills.k_arcana,
+          k_dungeoneering: character.skills.k_dungeoneering,
+          k_engineering: character.skills.k_engineering,
+          k_geography: character.skills.k_geography,
+          k_history: character.skills.k_history,
+          k_local: character.skills.k_local,
+          k_nature: character.skills.k_nature,
+          k_nobility: character.skills.k_nobility,
+          k_planes: character.skills.k_planes,
+          k_religion: character.skills.k_religion,
+          linguistics: character.skills.linguistics,
+          perception: character.skills.perception,
+          perform_1: character.skills.perform_1,
+          perform_2: character.skills.perform_2,
+          perform_3: character.skills.perform_3,
+          profession_1: character.skills.profession_1,
+          profession_2: character.skills.profession_2,
+          profession_3: character.skills.profession_3,
+          ride: character.skills.ride,
+          sense_motive: character.skills.sense_motive,
+          sleight_of_hand: character.skills.sleight_of_hand,
+          spellcraft: character.skills.spellcraft,
+          stealth: character.skills.stealth,
+          survival: character.skills.survival,
+          swim: character.skills.swim,
+          use_magic_device: character.skills.use_magic_device,
+        },
+        saves_item: {
+          fortitude: character.saves_item.fortitude,
+          reflex: character.saves_item.reflex,
+          will: character.saves_item.will
+        },
+        skills_item: {
+        acrobatics: character.skills_item.acrobatics,
+        appraise: character.skills_item.appraise,
+        bluff: character.skills_item.bluff,
+        climb: character.skills_item.climb,
+        craft_1: character.skills_item.craft_1,
+        craft_2: character.skills_item.craft_2,
+        craft_3: character.skills_item.craft_3,
+        diplomacy: character.skills_item.diplomacy,
+        disable_device: character.skills_item.disable_device,
+        disguise: character.skills_item.disguise,
+        escape_artist: character.skills_item.escape_artist,
+        fly: character.skills_item.fly,
+        handle_animal: character.skills_item.handle_animal,
+        heal: character.skills_item.heal,
+        intimidate: character.skills_item.intimidate,
+        k_arcana: character.skills_item.k_arcana,
+        k_dungeoneering: character.skills_item.k_dungeoneering,
+        k_engineering: character.skills_item.k_engineering,
+        k_geography: character.skills_item.k_geography,
+        k_history: character.skills_item.k_history,
+        k_local: character.skills_item.k_local,
+        k_nature: character.skills_item.k_nature,
+        k_nobility: character.skills_item.k_nobility,
+        k_planes: character.skills_item.k_planes,
+        k_religion: character.skills_item.k_religion,
+        linguistics: character.skills_item.linguistics,
+        perception: character.skills_item.perception,
+        perform_1: character.skills_item.perform_1,
+        perform_2: character.skills_item.perform_2,
+        perform_3: character.skills_item.perform_3,
+        profession_1: character.skills_item.profession_1,
+        profession_2: character.skills_item.profession_2,
+        profession_3: character.skills_item.profession_3,
+        ride: character.skills_item.ride,
+        sense_motive: character.skills_item.sense_motive,
+        sleight_of_hand: character.skills_item.sleight_of_hand,
+        spellcraft: character.skills_item.spellcraft,
+        stealth: character.skills_item.stealth,
+        survival: character.skills_item.survival,
+        swim: character.skills_item.swim,
+        use_magic_device: character.skills_item.use_magic_device,
+        },
+        init: character.init,
+        ac: {
+          armor_type: character.ac.armor_type,
+          armor: character.ac.armor,
+          shield: character.ac.shield,
+          deflection: character.ac.deflection,
+          natural: character.ac.natural
+        },
+        spell_resistance: character.spell_resistance,
+        speed: {
+          penalty: character.speed.penalty,
+          movement: character.speed.movement,
+          swim: character.speed.swim,
+          fly: character.speed.fly,
+          climb: character.speed.climb,
+          burrow: character.speed.burrow
+        }
+      }
+    })
+
+    const storage = window.localStorage
+    storage.setItem(character.name, data)
+
+    let characters = []
+
+    for (var i = 0; i < storage.length; i++) {
+      let key = storage.key(i);
+      // let value = storage.getItem(key);
+      characters.push(key);
+    }
+
+    listCharacterUpdate(characters)
+
+  }
+
+  useEffect(() => {
+
+    const storage = window.localStorage
+    let characters = []
+
+    for (var i = 0; i < storage.length; i++) {
+      let key = storage.key(i);
+      // let value = storage.getItem(key);
+      characters.push(key);
+    }
+
+    listCharacterUpdate(characters)
+
+  }, [])
+
   return(
 
     <Page
@@ -285,7 +491,7 @@ const Creator = ({ menu, menuUpdate }) => {
               <span data-srt="true">tools {dm}.</span>
             </button>
 
-            <button className="nav-utility-link" onClick={null}>
+            <button className="nav-utility-link" onClick={(e) => save()}>
               <span className="material-icons" aria-hidden="true">cloud_upload</span> Save
             </button>
 
@@ -502,7 +708,12 @@ const Creator = ({ menu, menuUpdate }) => {
         flyoutUpdate={flyoutUpdate}
       >
 
-        Hello
+        <Storage
+          character={character}
+          characterUpdate={characterUpdate}
+          listCharacter={listCharacter}
+          listCharacterUpdate={listCharacterUpdate}
+        />
 
       </Flyout>
 

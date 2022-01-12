@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import Wrapper from "../../components/wrapper/wrapper"
 import Flyout from "../../components/flyout/flyout"
 
-import Logo from "../../images/logo-tabletop-tools.png"
+// import Logo from "../../images/logo-tabletop-tools.png"
 
 const Header = ({ ...props }) => {
 
@@ -49,6 +49,7 @@ const Header = ({ ...props }) => {
       >
 
         <nav className="nav-primary" role="navigation">
+          <Link className="nav-primary-link" to="/">Home</Link>
           <Link className="nav-primary-link" to="/creator/">Creator</Link>
           <Link className="nav-primary-link" to="/spells/">Spells</Link>
           <Link className="nav-primary-link" to="/feats/">Feats</Link>
