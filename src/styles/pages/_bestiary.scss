@@ -12,8 +12,7 @@
 }
 
 .monster-plate {
-  background-image: url('../images/textures/texture-mud.jpg');
-  background-size: cover;
+  background: $secondary;
   border: solid rem(1) rgba($secondary, .48);
   color: $white;
   margin: $space-4 0;
@@ -51,5 +50,5 @@
 
 .monster-xp {
   background: $highlight;
-  color: lighten($highlight, 16%);
+  color: $primary;
 }

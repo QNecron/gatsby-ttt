@@ -82,53 +82,57 @@ const Feats = () => {
 
           </nav>
 
-          <table className="table">
+          <div className="table-container">
 
-            <tbody className="table-info">
+            <table className="table">
 
-            <tr className="table-row table-heading">
-              <td className="table-col medium">Name</td>
-              <td className="table-col large">Description</td>
-              <td className="table-col large">Requirement(s)</td>
-              <td className="table-col small">Type</td>
-              <td className="table-col small feat-flyout">Details</td>
-            </tr>
+              <tbody className="table-info">
 
-            {Data.map((d, index) => {
+                <tr className="table-row table-heading">
+                  <td className="table-col medium">Name</td>
+                  <td className="table-col large">Description</td>
+                  <td className="table-col large">Requirement(s)</td>
+                  <td className="table-col small">Type</td>
+                  <td className="table-col small feat-flyout">Details</td>
+                </tr>
 
-              if (d.source === book) {
+                {Data.map((d, index) => {
 
-                if (d.type !== type && type !== "All") return null
+                  if (d.source === book) {
 
-                return(
+                    if (d.type !== type && type !== "All") return null
 
-                  <tr className="table-row" key={index} aria-live="polite">
-                    <td className="table-col feat-name">{d.name}</td>
-                    <td className="table-col feat-desc">{d.description}</td>
-                    <td className="table-col feat-prereq">{d.prerequisites ? d.prerequisites : '-'}</td>
-                    <td className="table-col feat-type">{d.type}</td>
-                    <td className="table-col feat-flyout">
-                      <button
-                        className="link-utility"
-                        aria-haspopup="true"
-                        aria-controls="character-storage"
-                        onClick={(e) => description(d.source, d.name)}
-                      >
-                        <span className="material-icons" aria-hidden="true">menu_open</span>
-                      </button>
-                    </td>
-                  </tr>
+                    return(
 
-                )
+                      <tr className="table-row" key={index} aria-live="polite">
+                        <td className="table-col feat-name">{d.name}</td>
+                        <td className="table-col feat-desc">{d.description}</td>
+                        <td className="table-col feat-prereq">{d.prerequisites ? d.prerequisites : '-'}</td>
+                        <td className="table-col feat-type">{d.type}</td>
+                        <td className="table-col feat-flyout">
+                          <button
+                            className="link-utility"
+                            aria-haspopup="true"
+                            aria-controls="character-storage"
+                            onClick={(e) => description(d.source, d.name)}
+                          >
+                            <span className="material-icons" aria-hidden="true">menu_open</span>
+                          </button>
+                        </td>
+                      </tr>
 
-              }
-              else { return null }
+                    )
 
-            })}
+                  }
+                  else { return null }
 
-            </tbody>
+                })}
 
-          </table>
+              </tbody>
+
+            </table>
+
+          </div>
 
         </Wrapper>
 

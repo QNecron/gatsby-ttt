@@ -1,20 +1,24 @@
 .spell-container {
   background: $secondary;
-  display: grid;
   font-size: rem(14);
-  grid-gap: $space-4;
-  grid-template-areas:
-    "name name name name details"
-    "school school level level level"
-    "casting casting component component component"
-    "range range time time time"
-    "saving saving resist resist resist"
-    "descript descript descript descript descript"
-  ;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
   padding: $space-16 $space-24;
   @include shadow(1, 0, black);
+
+  // media
+  @include media($mq-tablet-up) {
+    display: grid;
+    grid-gap: $space-4;
+    grid-template-areas:
+      "name name name name details"
+      "school school level level level"
+      "casting casting component component component"
+      "range range time time time"
+      "saving saving resist resist resist"
+      "descript descript descript descript descript"
+    ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
 
   ~ .spell-container {
     margin-top: $space-16;

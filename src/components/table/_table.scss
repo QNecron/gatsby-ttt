@@ -1,5 +1,22 @@
+.table-container {
+
+  // media
+  @include media($mq-mobile) {
+    overflow-x: auto;
+  }
+
+}
+
 .table {
-  width: 100%;
+
+  // media
+  @include media($mq-tablet-up) {
+    width: 100%;
+  }
+  @include media($mq-mobile) {
+    width: 200vw;
+  }
+
 }
 
 .table-info {
