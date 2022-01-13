@@ -2,17 +2,15 @@ import React from "react"
 
 import Wrapper from "../wrapper/wrapper"
 
-import Pathfinder from "../../images/logo-paizo-pathfinder-2e.png"
+// import Pathfinder from "../../images/logo-paizo-pathfinder-2e.png"
 
 const Copyright = () => {
 
   return(
 
-    <section className="section section-copyright" section-type="bot">
+    <section className="section section-copyright" section-type="top">
 
-      <Wrapper wrapper="structure">
-
-        <img src={Pathfinder} className="paizo-logo" alt="Paizo | Pathfinder" />
+      <Wrapper wrapper="content">
 
         <p className="paizo-copyright">
           This website uses trademarks and/or copyrights owned by Paizo Publishing,

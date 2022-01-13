@@ -2,15 +2,19 @@
   position: relative;
 }
 
-[section-type="both"] {
+[section-type~="both"] {
   padding-top: 8vh;
   padding-bottom: 8vh;
 }
 
-[section-type="top"] {
+[section-type~="top"] {
   padding-top: 8vh;
 }
 
-[section-type="bot"] {
+[section-type~="bot"] {
   padding-bottom: 8vh;
+}
+
+[section-type~="secondary"] {
+  background-color: $secondary;
 }

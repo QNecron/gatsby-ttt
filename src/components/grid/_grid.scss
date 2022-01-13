@@ -36,4 +36,8 @@
 }
 @include media($mq-mobile) {
   [grid-mobile="1"] > * { grid-column: span 12; }
+  [grid-mobile="2"] > * { grid-column: span 6; }
+}
+@include media($mq-mobile-s) {
+  [grid-mobile="2"] > * { grid-column: span 12; }
 }

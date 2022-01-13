@@ -8,7 +8,7 @@ const Footer = ({ title }) => {
     <div className="footer-container">
 
       <footer className="footer" role="contentinfo">
-        &copy; {new Date().getFullYear()} {title}
+        {new Date().getFullYear()} {title}
       </footer>
 
     </div>
