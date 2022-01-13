@@ -59,7 +59,7 @@ const TemplateBestiary = ({ pageContext }) => (
 
   <Page>
 
-    <Seo title={pageContext.title} />
+    <Seo title={pageContext.title + " | Bestiary"} />
 
     <Hero
       title={pageContext.title}

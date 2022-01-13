@@ -27,7 +27,7 @@ exports.createPages = ({ actions }) => {
       path: `/bestiary/${slug}`,
       component: template,
       context: {
-        title: monster.LinkText,
+        title: monster.Name,
         name: monster.Name,
         visual: monster.Description_Visual,
         description: monster.Description,
