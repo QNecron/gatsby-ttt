@@ -73,6 +73,7 @@ const Creator = ({ menu, menuUpdate }) => {
     level_1: 0,
     bab_1: 0,
     saves_class_1: {
+      progression: "",
       fortitude: 0,
       reflex: 0,
       will: 0

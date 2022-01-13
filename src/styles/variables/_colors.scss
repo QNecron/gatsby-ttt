@@ -1,11 +1,8 @@
 $black: #2e2e2e;
 $white: #e0e0e0;
 
-$d-gray: #101317;
-$l-gray: #1c1f1f;
-$red: #cf3030;
-$green: #30cf50;
-$blue: #3050cf;
+$d-gray: #131515;
+$l-gray: lighten($d-gray, 8%);
 $orange: #cf9030;
 
 $primary: $d-gray;

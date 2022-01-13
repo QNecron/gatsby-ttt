@@ -56,6 +56,7 @@ function Storage({ ...props }) {
         bab_1: data.bab_1,
         saves_class_1: {
           ...props.character.saves_class_1,
+          progression: data.saves_class_1.progression,
           fortitude: data.saves_class_1.fortitude,
           reflex: data.saves_class_1.reflex,
           will: data.saves_class_1.will
