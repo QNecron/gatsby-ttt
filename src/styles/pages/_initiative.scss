@@ -1,22 +1,40 @@
 .initiative {
-  @include flex-center("false", "false", "true", 100%);
   background: rgba(black, .24);
-  gap: $space-8;
   padding: 8vh 8vw calc(8vh + #{$space-16}) 8vw;
   @include shadow(1, 0, black);
 
-  [data-input="number"] {
-    max-width: $space-64;
+  // media
+  @include media($mq-tablet-up) {
+    display: flex;
+    gap: $space-8;
+    justify-content: center;
   }
 
   .init-calc {
-    @include flex-center("false", "false", "false");
     margin-top: $space-16;
-    max-width: rem(88);
   }
 
-  .init-remove {
-    margin-left: $space-8;
+}
+
+.init-roll-name {
+  @include flex-center("false", "false", "true", 100%);
+  gap: $space-8;
+
+  .input-field-container:nth-child(1) {
+    max-width: $space-72;
+  }
+
+  .input-field-container:nth-child(2) {
+    width: 24vw;
+  }
+
+}
+
+.init-add {
+
+  // media
+  @include media($mq-mobile) {
+    width: 100%;
   }
 
 }
@@ -30,10 +48,6 @@
   @include shadow(1, 0, black);
 }
 
-.init-info {
-  @include flex-center("true", "false", "false");
-}
-
 .init-name {
   background: rgba(black, .24);
   padding: $space-8 $space-16;
@@ -41,7 +55,7 @@
 }
 
 .init-roll {
-  @include flex-center("true", "true", "false");
+  // @include flex-center("true", "true", "false");
   @extend %black-letter;
   border: solid rem(2) $highlight;
   color: $highlight;

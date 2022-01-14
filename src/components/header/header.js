@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 import Wrapper from "../../components/wrapper/wrapper"
 import Flyout from "../../components/flyout/flyout"
 
-// import Logo from "../../images/logo-tabletop-tools.png"
+import Logo from "../../images/logo-tabletop-tools.png"
 
 const Header = ({ ...props }) => {
 
@@ -20,13 +20,6 @@ const Header = ({ ...props }) => {
 
         <Wrapper wrapper="structure">
 
-          {/*
-          <Link className="header-link" to="/">
-            <span data-srt="true">{props.title}</span>
-            <img className="header-logo" src={Logo} alt=" " aria-hidden="true" />
-          </Link>
-          */}
-
           <button
             className="header-menu"
             aria-haspopup="true"
@@ -35,6 +28,11 @@ const Header = ({ ...props }) => {
           >
             <span className="material-icons" aria-hidden="true">menu</span> Menu
           </button>
+
+          <Link className="header-logo" to="/">
+            <span data-srt="true">{props.title}</span>
+            <img className="logo" src={Logo} alt=" " aria-hidden="true" />
+          </Link>
 
         </Wrapper>
 
@@ -55,6 +53,7 @@ const Header = ({ ...props }) => {
           <Link className="nav-primary-link" to="/feats/">Feats</Link>
           <Link className="nav-primary-link" to="/bestiary/">Bestiary</Link>
           <Link className="nav-primary-link" to="/initiative/">Initiative</Link>
+          { /* <Link className="nav-primary-link" to="/combat/">Combat</Link> */ }
         </nav>
 
       </Flyout>

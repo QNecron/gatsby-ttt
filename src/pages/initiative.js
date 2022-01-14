@@ -11,7 +11,7 @@ import Hero from "../components/hero/hero"
 import Flyout from "../components/flyout/flyout"
 
 import ImgDesktop from "../images/hero/hero-04.jpg"
-import ImgMobile from "../images/hero/hero-04.jpg"
+import ImgMobile from "../images/hero/hero-04-mobile.jpg"
 
 const Initiative = () => {
 
@@ -31,6 +31,9 @@ const Initiative = () => {
 
     array.push(obj);
     rollUpdate(array);
+
+    initRollUpdate("")
+    initNameUpdate("")
 
   }
 
@@ -55,28 +58,6 @@ const Initiative = () => {
 
         <Wrapper wrapper="structure">
 
-          <p>At the start of a battle, each combatant makes an initiative check.
-          An initiative check is a Dexterity check. Each character applies his
-          or her Dexterity modifier to the roll, as well as other modifiers from
-          feats, spells, and other effects. Characters act in order, counting
-          down from the highest result to the lowest. In every round that
-          follows, the characters act in the same order (unless a character
-          takes an action that results in his or her initiative changing; see
-          Special Initiative Actions).</p>
-
-          <p>If two or more combatants have the same initiative check result,
-          the combatants who are tied act in order of total initiative modifier
-          (highest first). If there is still a tie, the tied characters should
-          roll to determine which one of them goes before the other.</p>
-
-        </Wrapper>
-
-      </Section>
-
-      <Section type="bot">
-
-        <Wrapper wrapper="structure">
-
           <nav className="nav-utility" role="navigation">
 
             <button
@@ -90,43 +71,62 @@ const Initiative = () => {
 
           <div className="initiative">
 
-            <Input
-              inputType="number"
-              inputId="initRoll"
-              inputValue={initRoll}
-              inputChange={(e) => initRollUpdate(e.target.value)}
-              inputLabel="Roll"
-            />
+            <div className="init-roll-name">
 
-            <Input
-              inputType="text"
-              inputId="initName"
-              inputValue={initName}
-              inputChange={(e) => initNameUpdate(e.target.value)}
-              inputLabel="PC / NPC"
-            />
+              <Input
+                inputType="number"
+                inputId="initRoll"
+                inputValue={initRoll}
+                inputChange={(e) => initRollUpdate(e.target.value)}
+                inputLabel="Roll"
+              />
+
+              <Input
+                inputType="text"
+                inputId="initName"
+                inputValue={initName}
+                inputChange={(e) => initNameUpdate(e.target.value)}
+                inputLabel="PC / NPC"
+              />
+
+            </div>
 
             <div className="init-calc">
 
               <button
-                className="btn-icon btn-secondary init-add"
+                className="btn btn-with-icon btn-secondary init-add"
                 onClick={(e) => calculate(initName, initRoll)}
               >
-                <span className="material-icons" aria-hidden="true">done</span>
-                <span data-srt="true">Combat Initiative</span>
-              </button>
-
-              <button
-                className="btn-icon btn-secondary init-remove"
-                onClick={(e) => reset()}
-              >
-                <span className="material-icons" aria-hidden="true">autorenew</span>
-                <span data-srt="true">Reset Initiative</span>
+                <span className="material-icons" aria-hidden="true">done</span> Add NPC / PC
               </button>
 
             </div>
 
           </div>
+
+        </Wrapper>
+
+      </Section>
+
+      <Section type="both secondary">
+
+        <Wrapper wrapper="content">
+
+          <h2 className="heading-2">Usage</h2>
+
+          <p className="gutter-top-16">At the start of a battle, each combatant
+          makes an initiative check. An initiative check is a Dexterity check.
+          Each character applies his or her Dexterity modifier to the roll, as
+          well as other modifiers from feats, spells, and other effects.
+          Characters act in order, counting down from the highest result to the
+          lowest. In every round that follows, the characters act in the same
+          order (unless a character takes an action that results in his or her
+          initiative changing).</p>
+
+          <p>If two or more combatants have the same initiative check result,
+          the combatants who are tied act in order of total initiative modifier
+          (highest first). If there is still a tie, the tied characters should
+          roll to determine which one of them goes before the other.</p>
 
         </Wrapper>
 
@@ -155,6 +155,13 @@ const Initiative = () => {
 
             </figure>
         )}
+
+        <button
+          className="btn btn-with-icon btn-secondary btn-block init-remove"
+          onClick={(e) => reset()}
+        >
+          <span className="material-icons" aria-hidden="true">autorenew</span> Reset Initiative
+        </button>
 
       </Flyout>
 

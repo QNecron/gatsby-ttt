@@ -8,7 +8,7 @@
 
 [data-hero="large"],
 [data-hero="large"] .wrapper {
-  min-height: 88vh;
+  min-height: 80vh;
 }
 
 [data-hero="small"],
@@ -68,7 +68,7 @@
 
 .hero-asset {
   filter: grayscale(100);
-  opacity: .16;
+  opacity: .32;
   position: absolute;
 
   // media

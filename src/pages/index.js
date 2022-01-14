@@ -47,7 +47,7 @@ const IndexPage = () => {
               title="Creator"
               copy="Create, level, manage and delete your characters and monsters."
               cta="Creator"
-              link="/creator"
+              link="/creator/"
               desktop={MCCreator}
               mobile={MCCreator}
               type="showcase"
@@ -57,7 +57,7 @@ const IndexPage = () => {
               title="Spells"
               copy="Filter through hundreds of spells by book, class, level, type and subtype."
               cta="Spells"
-              link="/spells"
+              link="/spells/"
               desktop={MCSpells}
               mobile={MCSpells}
               type="showcase"
@@ -67,7 +67,7 @@ const IndexPage = () => {
               title="Feats"
               cta="Feats"
               copy="Filter though hundreds of feats for your character by book and type."
-              link="/feats"
+              link="/feats/"
               desktop={MCFeats}
               mobile={MCFeats}
               type="showcase"
@@ -77,7 +77,7 @@ const IndexPage = () => {
               title="Bestiary"
               cta="Bestiary"
               copy="Includes 1st, 2nd, 3rd and 4th bestiaries to filter through. BETA version."
-              link="/bestiary"
+              link="/bestiary/"
               desktop={MCBestiary}
               mobile={MCBestiary}
               type="showcase"
@@ -99,8 +99,7 @@ const IndexPage = () => {
             All the tools here are free to use, full functonality, without a pay wall.
             Features will continue to be added and expanded upon with more data that's
             available to me. This includes more classes, spells, feats, monsters and
-            books. One day the data will be cleaned up to the point it can be used
-            in APIs so anyone can query them.
+            supporting books.
           </p>
 
         </Wrapper>

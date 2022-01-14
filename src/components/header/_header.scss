@@ -26,11 +26,21 @@
 
 }
 
-// .header-logo {
-//   max-height: $space-48;
-//   position: relative;
-//   transition: inherit;
-// }
+.header-logo {
+  align-items: center;
+  display: flex;
+  margin-right: $space-16;
+  padding: 0 $space-16;
+  height: $space-48;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .logo {
+    max-height: $space-32;
+  }
+
+}
 
 .header-menu,
 .nav-primary-link {
