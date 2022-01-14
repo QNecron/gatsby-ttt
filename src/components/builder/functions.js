@@ -32,7 +32,7 @@ export const diceroll = (dice, count) => {
   }
 
   while (count >=1) {
-    roll = 1 + Math.floor(Math.random() * Math.floor(die))
+    roll += 1 + Math.floor(Math.random() * Math.floor(die))
     // console.log("Roll: " + count + " Rolled: " + roll)
     count--
   }

@@ -30,11 +30,12 @@
 
 .flyout-content {
   overflow-y: auto;
+  padding: $space-8;
   max-height: calc(100vh - 88px);
 }
 
 [data-flyout] {
-  padding: $space-88 $space-24 $space-24 $space-24;
+  padding: $space-80 $space-16 $space-16 $space-16;
   height: 100vh;
   position: fixed;
   top: 0;

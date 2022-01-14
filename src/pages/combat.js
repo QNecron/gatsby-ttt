@@ -8,16 +8,13 @@ import Grid from "../components/grid/grid"
 // import Input from "../components/forms/input"
 
 import Hero from "../components/hero/hero"
-// import Flyout from "../components/flyout/flyout"
-
-import { diceroll } from "../components/builder/functions"
+import Flyout from "../components/flyout/flyout"
 
 import ImgDesktop from "../images/hero/hero-06.jpg"
 import ImgMobile from "../images/hero/hero-06-mobile.jpg"
 
 const Combat = () => {
 
-  const [dice, diceUpdate] = useState(0)
   const [magic, magicUpdate] = useState("false")
   const [melee, meleeUpdate] = useState("false")
 
@@ -33,28 +30,6 @@ const Combat = () => {
         title="Combat"
         size="small"
       />
-
-      <Section type="both">
-
-        <Wrapper wrapper="structure">
-
-          <div className="">
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d2", 1))}>d2</button>
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d3", 1))}>d3</button>
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d4", 1))}>d4</button>
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d6", 1))}>d6</button>
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d8", 1))}>d8</button>
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d10", 1))}>d10</button>
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d12", 1))}>d12</button>
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d20", 1))}>d20</button>
-            <button className="btn btn-secondary" onClick={(e) => diceUpdate(diceroll("d100", 1))}>d100</button>
-          </div>
-
-          <p className="gutter-top-16">Rolled: {dice}</p>
-
-        </Wrapper>
-
-      </Section>
 
       <Section type="both">
 
@@ -102,6 +77,30 @@ const Combat = () => {
         </Wrapper>
 
       </Section>
+
+      <Flyout
+        flyoutId="combatmagic"
+        flyoutType={"right"}
+        flyoutOpen={magic}
+        flyout={magic}
+        flyoutUpdate={magicUpdate}
+      >
+
+        Magic
+
+      </Flyout>
+
+      <Flyout
+        flyoutId="combatmelee"
+        flyoutType={"right"}
+        flyoutOpen={melee}
+        flyout={melee}
+        flyoutUpdate={meleeUpdate}
+      >
+
+        Melee
+
+      </Flyout>
 
     </Page>
 
