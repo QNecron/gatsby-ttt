@@ -46,9 +46,11 @@
   // media
   @include media($mq-tablet-up) {
     width: rem(384);
-
   }
   @include media($mq-mobile) {
+    width: rem(384);
+  }
+  @include media($mq-mobile-s) {
     width: rem(288);
   }
 

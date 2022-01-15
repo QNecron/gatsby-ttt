@@ -5,8 +5,8 @@ import Wrapper from "../wrapper/wrapper"
 
 import { Link } from "gatsby"
 
-import ImgDesktop from "../../images/hero/hero-01.jpg"
-import ImgMobile from "../../images/hero/hero-01-mobile.jpg"
+import ImgDesktop from "../../images/hero/hero-01.webp"
+import ImgMobile from "../../images/hero/hero-01-mobile.webp"
 
 const Hero = ({ size, desktop, mobile, title, copy, cta, link }) => {
 

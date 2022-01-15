@@ -33,7 +33,7 @@
 [data-hero="large"] {
 
   .hero-content-container {
-    top: 50%;
+    top: calc(50% + #{$space-48});
   }
 
 }

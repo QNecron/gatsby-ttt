@@ -13,8 +13,8 @@ import Books from "../../json/books_core_v1.json"
 import Data from "../../json/feats_v2.json"
 import Types from "../../json/feat_types.json"
 
-import ImgDesktop from "../images/hero/hero-03.jpg"
-import ImgMobile from "../images/hero/hero-03-mobile.jpg"
+import ImgDesktop from "../images/hero/hero-03.webp"
+import ImgMobile from "../images/hero/hero-03-mobile.webp"
 
 const Feats = () => {
 

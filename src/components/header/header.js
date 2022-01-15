@@ -100,7 +100,7 @@ const Header = ({ ...props }) => {
             inputId="dicecount"
             inputValue={count}
             inputChange={(e) => countUpdate(e.target.value)}
-            inputLabel="# of Dice"
+            inputLabel="Numer of Dice"
           />
 
           <div className="dice-result">

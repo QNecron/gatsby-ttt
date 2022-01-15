@@ -6,8 +6,6 @@
 .tab {
   @extend %black-letter;
   background-color: $secondary;
-  // background-image: url('../images/textures/texture-mud.jpg');
-  // background-size: cover;
   border-top: solid rem(2) $secondary;
   font-size: rem(12);
   font-weight: 700;

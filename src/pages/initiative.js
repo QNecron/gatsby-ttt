@@ -10,8 +10,8 @@ import Input from "../components/forms/input"
 import Hero from "../components/hero/hero"
 import Flyout from "../components/flyout/flyout"
 
-import ImgDesktop from "../images/hero/hero-04.jpg"
-import ImgMobile from "../images/hero/hero-04-mobile.jpg"
+import ImgDesktop from "../images/hero/hero-04.webp"
+import ImgMobile from "../images/hero/hero-04-mobile.webp"
 
 const Initiative = () => {
 

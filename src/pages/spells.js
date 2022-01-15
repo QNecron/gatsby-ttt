@@ -17,8 +17,8 @@ import Casters from "../../json/spell_casters.json"
 import Schools from "../../json/spell_schools.json"
 import SubSchools from "../../json/spell_subschools.json"
 
-import ImgDesktop from "../images/hero/hero-02.jpg"
-import ImgMobile from "../images/hero/hero-02-mobile.jpg"
+import ImgDesktop from "../images/hero/hero-02.webp"
+import ImgMobile from "../images/hero/hero-02-mobile.webp"
 
 const Spells = () => {
 

@@ -15,8 +15,8 @@ import Books from "../../json/books_bestiary_v1.json"
 import Challenge from "../../json/challenge_rating.json"
 import Data from "../../json/bestiary_v2.json"
 
-import ImgDesktop from "../images/hero/hero-01.jpg"
-import ImgMobile from "../images/hero/hero-01-mobile.jpg"
+import ImgDesktop from "../images/hero/hero-01.webp"
+import ImgMobile from "../images/hero/hero-01-mobile.webp"
 
 function Bestiary() {
 

@@ -40,12 +40,11 @@
   }
 
   .card-copy {
-    font-size: rem(14);
     margin-bottom: $space-8;
   }
 
   .card-cta {
-    min-width: 40%;
+    min-width: rem(120);
   }
 
 }

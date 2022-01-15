@@ -29,8 +29,8 @@ import SkillsProfession from "../components/builder/skills-profession"
 import Speed from "../components/builder/speed"
 import Storage from "../components/builder/storage"
 
-import ImgDesktop from "../images/hero/hero-05.jpg"
-import ImgMobile from "../images/hero/hero-05-mobile.jpg"
+import ImgDesktop from "../images/hero/hero-05.webp"
+import ImgMobile from "../images/hero/hero-05-mobile.webp"
 
 const Creator = ({ menu, menuUpdate }) => {
 

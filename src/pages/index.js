@@ -11,13 +11,14 @@ import Copyright from "../components/copyright/copyright"
 import Hero from "../components/hero/hero"
 import Card from "../components/card/card"
 
-import ImgDesktop from "../images/hero/hero-02.jpg"
-import ImgMobile from "../images/hero/hero-02-mobile.jpg"
+import ImgDesktop from "../images/hero/hero-02.webp"
+import ImgMobile from "../images/hero/hero-02-mobile.webp"
 
 import MCBestiary from "../images/cards/mc_bestiary.webp"
 import MCCreator from "../images/cards/mc_creator.webp"
 import MCFeats from "../images/cards/mc_feats.webp"
 import MCSpells from "../images/cards/mc_spells.webp"
+import MCInitiative from "../images/hero/hero-06-mobile.webp"
 
 const IndexPage = () => {
 
@@ -101,6 +102,28 @@ const IndexPage = () => {
             available to me. This includes more classes, spells, feats, monsters and
             supporting books.
           </p>
+
+        </Wrapper>
+
+      </Section>
+
+      <Section type="both">
+
+        <Wrapper wrapper="structure">
+
+          <Grid desktop="2" tablet="2" mobile="1" gap="4">
+
+            <Card
+              title="Initiative"
+              copy="Add your players, monsters, and/or NPCs to the tracker, after that it will automatically arrange them in the proper order - highest to lowest."
+              cta="Initiative"
+              link="/initiative/"
+              desktop={MCInitiative}
+              mobile={MCInitiative}
+              type="showcase"
+            />
+
+          </Grid>
 
         </Wrapper>
 
