@@ -40,7 +40,8 @@ const Saves = ({ ...props }) => {
           props.character.saves_class_1.fortitude,
           props.character.saves_class_2.fortitude,
           props.character.saves_class_3.fortitude
-        )}</div>        <Input
+        )}</div>
+        <Input
           inputType="number"
           inputId="itemFortitude"
           inputValue={props.character.saves_item.fortitude}
