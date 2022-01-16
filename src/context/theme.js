@@ -22,8 +22,9 @@ class ThemeProvider extends React.Component {
 
   componentDidMount() {
     const storage = window.localStorage
-    const color = storage.getItem("theme");
+    let color = storage.getItem("theme");
 
+    if (!color) color = "orange"
     this.setState({ color: color })
   }
 
