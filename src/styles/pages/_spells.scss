@@ -2,6 +2,7 @@
   background: $secondary;
   font-size: rem(14);
   padding: $space-16 $space-24;
+  position: relative;
   @include shadow(1, 0, black);
 
   // media
@@ -31,7 +32,6 @@
 }
 
 .spell-name {
-  color: $highlight;
   grid-area: name;
   vertical-align: baseline;
 }
@@ -61,13 +61,26 @@
 
 .spell-details {
   grid-area: details;
-  position: relative;
+
+  // media
+  @include media($mq-tablet-up) {
+    position: relative;
+  }
 
   .link-utility {
     position: absolute;
-    top: 50%;
     right: 0;
-    transform: translate(0, -50%);
+
+    // media
+    @include media($mq-tablet-up) {
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    @include media($mq-mobile) {
+      top: $space-16;
+      right: $space-24;
+    }
+
   }
 
 }

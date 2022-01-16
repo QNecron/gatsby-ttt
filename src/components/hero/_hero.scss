@@ -105,12 +105,12 @@
 
 .hero-title {
   @extend %black-letter;
-  color: $highlight;
   font-family: $serif;
   font-size: rem(48);
   font-weight: 700;
   line-height: 1;
   @include shadow(0, 1, black);
+  @include timing;
 }
 
 .hero-copy {

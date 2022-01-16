@@ -38,22 +38,20 @@
 
   .logo {
     max-height: $space-32;
+    @include timing;
   }
 
 }
 
 .header-menu,
-.nav-primary-link {
+.nav-primary-link,
+.theme-title {
   @extend %black-letter;
   font-family: $serif;
   font-size: rem(14);
   font-weight: 700;
   outline: dashed rem(1) transparent;
   outline-offset: rem(-1);
-
-  &:focus {
-    outline-color: $highlight;
-  }
 
   .material-icons {
     vertical-align: bottom;
@@ -62,12 +60,6 @@
 }
 
 .header-menu {
-  color: $highlight;
-
-  &:focus,
-  &:hover {
-    color: lighten($highlight, 16%);
-  }
 
   // media
   @include media($mq-tablet-up) {
@@ -79,21 +71,12 @@
 
 }
 
-.nav-primary-link {
+.nav-primary-link,
+.theme-title {
   display: block;
   color: $white;
   margin-bottom: rem(1);
   padding: $space-12 $space-24;
-
-  &:focus,
-  &:hover {
-    color: lighten($highlight, 16%);
-  }
-
-  &[aria-current] {
-    color: $highlight;
-  }
-
 }
 
 .dice-list {
@@ -107,13 +90,12 @@
   background: rgba(black, .24);
   gap: $space-16;
   margin-top: $space-16;
-  padding: $space-24 $space-24 $space-40 $space-24;
+  padding: $space-24 $space-32 $space-40 $space-32;
   @include shadow(1, 0, black);
 }
 
 .dice-result {
   border: solid rem(1) $secondary;
-  color: $highlight;
   font-weight: 700;
   margin-top: $space-16;
   text-align: center;

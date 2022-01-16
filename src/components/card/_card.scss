@@ -3,7 +3,8 @@
 }
 
 [card-type="showcase"] {
-  border-top: solid rem(2) $highlight;
+  border-top: solid rem(2);
+  border-bottom: solid rem(1) $secondary;
 
   .card-asset-container {
 
@@ -35,11 +36,11 @@
 
   .card-title {
     @extend %black-letter;
-    color: $highlight;
     font-size: rem(16);
   }
 
   .card-copy {
+    font-size: rem(14);
     margin-bottom: $space-8;
   }
 

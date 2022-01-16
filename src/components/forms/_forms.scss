@@ -29,20 +29,6 @@
     position: relative;
     z-index: 1;
 
-    &:focus,
-    &:hover {
-
-      ~ .input-field-label,
-      ~ .input-field-helper {
-        color: $highlight;
-      }
-
-    }
-
-    &:focus {
-      outline-color: $highlight;
-    }
-
     &:disabled {
       background: rgba(black, .24);
       cursor: default;
@@ -103,20 +89,6 @@
     text-transform: capitalize;
   }
 
-  .input-field:not(:disabled) {
-
-    &:focus,
-    &:hover {
-
-      ~ .input-field-icon {
-        border-right-color: $highlight;
-        border-bottom-color: $highlight;
-      }
-
-    }
-
-  }
-
   .input-field-icon {
     border-right: solid rem(2) $secondary;
     border-bottom: solid rem(2) $secondary;
@@ -134,36 +106,6 @@
 
 [data-input="checkbox"],
 [data-input="radio"] {
-
-  .input-field {
-
-    &:focus,
-    &:hover {
-
-      ~ .input-field-icon {
-
-        &:after {
-          background: $highlight;
-        }
-
-      }
-
-    }
-
-    &:checked {
-
-      ~ .input-field-icon {
-        border-color: $highlight;
-
-        &:after {
-          background: $highlight;
-        }
-
-      }
-
-    }
-
-  }
 
   .input-field-label {
     cursor: pointer;

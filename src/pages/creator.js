@@ -507,7 +507,7 @@ const Creator = ({ menu, menuUpdate }) => {
 
           </nav>
 
-          <Grid desktop="2" tablet="2" mobile="1">
+          <Grid desktop="2" tablet="2" mobile="1" gap="32">
 
             <div className="left">
 

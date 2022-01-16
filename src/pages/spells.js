@@ -204,7 +204,7 @@ const Spells = () => {
               else {
 
                 return(
-                  <div key={index}>{/* null */}</div>
+                  <React.Fragment key={index}>{/* <> does not support key */}</React. Fragment>
                 )
 
               }

@@ -1,11 +1,6 @@
 [class*="btn"] {
   outline: dashed rem(1) transparent;
   outline-offset: rem(-4);
-
-  &:focus {
-    outline-color: $highlight;
-  }
-
 }
 
 .btn,
@@ -36,48 +31,25 @@
 }
 
 .btn-primary {
-  background: $highlight;
   border: solid rem(2) $primary;
   color: $primary;
-
-  &:focus,
-  &:hover {
-    background: lighten($highlight, 16%);
-  }
-
 }
 
 .btn-secondary {
   background: transparent;
-  border: solid rem(2) $highlight;
-  color: $highlight;
-
-  &:focus,
-  &:hover {
-    color: lighten($highlight, 16%);
-    border-color: lighten($highlight, 16%);
-  }
-
+  border: solid rem(2);
 }
 
 .btn-hero {
   @extend %black-letter;
   background: rgba(black, .24);
-  border: solid rem(2) $highlight;
-  color: $highlight;
+  border: solid rem(2);
   font-size: rem(14);
   font-weight: 700;
   padding: 0 $space-24;
   line-height: rem(36); // -4px for top/bot borders
   position: relative;
   @include shadow(1, 0, black);
-
-  &:focus,
-  &:hover {
-    background: $highlight;
-    color: $primary;
-  }
-
 }
 
 .btn-small {

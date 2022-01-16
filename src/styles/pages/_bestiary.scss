@@ -1,11 +1,3 @@
-.monster-stats-container {
-
-  strong {
-    color: lighten($highlight, 16%);
-  }
-
-}
-
 .monster-visual {
   display: block;
   margin-bottom: $space-32;
@@ -24,7 +16,6 @@
 .monster-subplate {
   border-top: solid rem(1) rgba($secondary, .48);
   border-bottom: solid rem(1) rgba($secondary, .48);
-  color: $highlight;
   margin: $space-4 0;
   padding: $space-8 $space-12;
 }
@@ -49,6 +40,5 @@
 }
 
 .monster-xp {
-  background: $highlight;
   color: $primary;
 }

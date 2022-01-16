@@ -20,7 +20,6 @@
 }
 
 .block-defined {
-  color: $highlight;
   max-width: 20%;
 }
 
@@ -95,7 +94,6 @@
 
 .character-storage-name {
   @extend %black-letter;
-  color: lighten($highlight, 16%);
   font-family: $serif;
   font-size: rem(14);
   font-weight: 700;

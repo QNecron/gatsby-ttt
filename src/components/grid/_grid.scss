@@ -1,12 +1,6 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-
-  // media
-  @include media($mq-tablet-up) {
-    grid-gap: $space-32;
-  }
-
 }
 
 [grid-gap="4"] { grid-gap: $space-4; }
