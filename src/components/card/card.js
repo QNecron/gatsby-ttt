@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import { Link } from "gatsby"
 
-const Card = ({ type, desktop, mobile, title, copy, cta, link }) => {
+const Card = ({ type, desktop, mobile, title, copy, cta, link, external }) => {
 
   return(
 
@@ -20,7 +20,12 @@ const Card = ({ type, desktop, mobile, title, copy, cta, link }) => {
         <div className="card-content-container">
           {title ? <h2 className="card-title">{title}</h2> : ''}
           {copy ? <p className="card-copy">{copy}</p> : ''}
-          {link ? <Link className="card-cta btn btn-primary btn-small" to={link}>{cta}</Link> : ''}
+          {link && external === true && (
+            <a className="card-cta btn btn-primary btn-small" href={link} rel="noreferrer" target="_blank">{cta}</a>
+          )}
+          {link && external === false && (
+            <Link className="card-cta btn btn-primary btn-small" to={link}>{cta}</Link>
+          )}
         </div>
       }
 
@@ -37,7 +42,8 @@ Card.propTypes = {
   title: PropTypes.string,
   copy: PropTypes.string,
   cta: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
+  external: PropTypes.bool
 }
 
 Card.defaultProps = {
@@ -47,7 +53,8 @@ Card.defaultProps = {
   title: ``,
   copy: ``,
   cta: ``,
-  link: ``
+  link: ``,
+  external: false
 }
 
 export default Card

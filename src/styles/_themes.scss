@@ -1,29 +1,3 @@
-.theme-container {
-  display: flex;
-  gap: $space-4;
-  padding: 0 $space-24 0 $space-24;
-}
-
-.theme-link {
-  border: solid rem(1) $secondary;
-  opacity: .64;
-  height: rem(38); // +2 from border
-  width: rem(38); // +2 from border
-  @include shadow(1, 0, black);
-
-  &.blue { background-color: $blue; }
-  &.green { background-color: $green; }
-  &.orange { background-color: $orange; }
-  &.purple { background-color: $purple; }
-  &.red { background-color: $red; }
-
-  &[theme-active="true"] {
-    border-color: $white;
-    opacity: 1;
-  }
-
-}
-
 [site-theme="blue"] {
 
   .logo {
