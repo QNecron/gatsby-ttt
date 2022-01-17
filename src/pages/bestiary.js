@@ -58,48 +58,52 @@ function Bestiary() {
 
           </nav>
 
-          <table className="table">
+          <div className="table-container">
 
-            <tbody className="table-info">
+            <table className="table">
 
-            <tr className="table-row table-heading">
-              <td className="table-col large">Name</td>
-              <td className="table-col large">Type</td>
-              <td className="table-col medium">Size</td>
-              <td className="table-col small">CR</td>
-              <td className="table-col small">XP</td>
-            </tr>
+              <tbody className="table-info">
 
-            {Data.sort((a, b) => a.Name > b.Name ? 1 : -1).map((d, index) => {
+              <tr className="table-row table-heading">
+                <td className="table-col large">Name</td>
+                <td className="table-col large">Type</td>
+                <td className="table-col medium">Size</td>
+                <td className="table-col small">CR</td>
+                <td className="table-col small">XP</td>
+              </tr>
 
-              const url = "./" + d.Name.replace(/\s/g , "-").toLowerCase() + "/"
+              {Data.sort((a, b) => a.Name > b.Name ? 1 : -1).map((d, index) => {
 
-              if (d.Source === book) {
+                const url = "./" + d.Name.replace(/\s/g , "-").toLowerCase() + "/"
 
-                if (d.Type !== creature && creature !== "all") return null
+                if (d.Source === book) {
 
-                if (d.CR.toString() !== challenge && challenge !== "all") return null
+                  if (d.Type !== creature && creature !== "all") return null
 
-                return(
-                  <tr className="table-row" key={index}>
-                    <td className="table-col bestiary-name">
-                      <Link className="" to={url}>{d.LinkText ? d.LinkText : d.Name}</Link>
-                    </td>
-                    <td className="table-col bestiary-type">{capitalize(d.Type)}</td>
-                    <td className="table-col bestiary-size">{d.Size}</td>
-                    <td className="table-col bestiary-cr">{d.CR}</td>
-                    <td className="table-col bestiary-xp">{d.XP}</td>
-                  </tr>
-                )
+                  if (d.CR.toString() !== challenge && challenge !== "all") return null
 
-              }
-              else { return null }
+                  return(
+                    <tr className="table-row" key={index}>
+                      <td className="table-col bestiary-name">
+                        <Link className="" to={url}>{d.LinkText ? d.LinkText : d.Name}</Link>
+                      </td>
+                      <td className="table-col bestiary-type">{capitalize(d.Type)}</td>
+                      <td className="table-col bestiary-size">{d.Size}</td>
+                      <td className="table-col bestiary-cr">{d.CR}</td>
+                      <td className="table-col bestiary-xp">{d.XP}</td>
+                    </tr>
+                  )
 
-            })}
+                }
+                else { return null }
 
-            </tbody>
+              })}
 
-          </table>
+              </tbody>
+
+            </table>
+
+          </div>
 
         </Wrapper>
 
