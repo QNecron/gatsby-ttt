@@ -14,8 +14,40 @@ const Armor = ({ ...props }) => {
 
   function armor(a, b, c, d, e, f, g) {
     let ac = 0
+    let monk = 0
 
-    ac = 10 + parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e) + parseInt(f) + parseInt(g)
+    let class1 = props.character.class_1
+    let level1 = props.character.level_1
+    let class2 = props.character.class_2
+    let level2 = props.character.level_2
+    let class3 = props.character.class_3
+    let level3 = props.character.level_3
+
+    if (class1 === "Monk" || class2 === "Monk" || class3 === "Monk") {
+
+      if (level1 >= 4 && level1 <= 7) monk += 1
+      if (level1 >= 8 && level1 <= 11) monk += 2
+      if (level1 >= 12 && level1 <= 15) monk += 3
+      if (level1 >= 16 && level1 <= 19) monk += 4
+      if (level1 >= 20) monk += 5
+
+      if (level2 >= 4 && level2 <= 7) monk += 1
+      if (level2 >= 8 && level2 <= 11) monk += 2
+      if (level2 >= 12 && level2 <= 15) monk += 3
+      if (level2 >= 16 && level2 <= 19) monk += 4
+      if (level2 >= 20) monk += 5
+
+      if (level3 >= 4 && level3 <= 7) monk += 1
+      if (level3 >= 8 && level3 <= 11) monk += 2
+      if (level3 >= 12 && level3 <= 15) monk += 3
+      if (level3 >= 16 && level3 <= 19) monk += 4
+      if (level3 >= 20) monk += 5
+
+      if (monk > 5) monk = 5
+
+    }
+
+    ac = 10 + monk + parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e) + parseInt(f) + parseInt(g)
 
     return ac.toString()
 

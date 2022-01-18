@@ -26,6 +26,7 @@ const Classes = ({ ...props }) => {
       case "Fighter":
       case "Paladin":
       case "Ranger":
+      case "Cavalier":
       case "Construct":
       case "Dragon":
       case "MagicalBeast":
@@ -39,6 +40,10 @@ const Classes = ({ ...props }) => {
       case "Druid":
       case "Monk":
       case "Rogue":
+      case "Alchemist":
+      case "Inquisitor":
+      case "Oracle":
+      case "Summoner":
       case "Aberration":
       case "Animal":
       case "Humanoid":
@@ -59,6 +64,7 @@ const Classes = ({ ...props }) => {
 
       case "Barbarian":
       case "Fighter":
+      case "Cavalier":
         // FSS
         fort = Math.floor(2 + l * .5)
         refl = Math.floor(0 + l * .3333)
@@ -75,6 +81,7 @@ const Classes = ({ ...props }) => {
       case "Cleric":
       case "Druid":
       case "Paladin":
+      case "Inquisitor":
         // FSF
         fort = Math.floor(2 + l * .5)
         refl = Math.floor(0 + l * .3333)
@@ -89,6 +96,7 @@ const Classes = ({ ...props }) => {
       break;
 
       case "Ranger":
+      case "Alchemist":
         // FFS
         fort = Math.floor(2 + l * .5)
         refl = Math.floor(2 + l * .5)
@@ -104,6 +112,9 @@ const Classes = ({ ...props }) => {
 
       case "Sorcerer":
       case "Wizard":
+      case "Oracle":
+      case "Summoner":
+      case "Witch":
         // SSF
         fort = Math.floor(0 + l * .3333)
         refl = Math.floor(0 + l * .3333)
@@ -181,12 +192,16 @@ const Classes = ({ ...props }) => {
 
       case "Bard":
       case "Ranger":
+      case "Inquisitor":
         skill = Math.floor((6 + modInt) * l)
       break;
 
       case "Barbarian":
       case "Druid":
       case "Monk":
+      case "Alchemist":
+      case "Cavalier":
+      case "Oracle":
         skill = Math.floor((4 + modInt) * l)
       break;
 
@@ -195,6 +210,8 @@ const Classes = ({ ...props }) => {
       case "Paladin":
       case "Sorcerer":
       case "Wizard":
+      case "Summoner":
+      case "Witch":
         skill = Math.floor((2 + modInt) * l)
       break;
 
@@ -204,6 +221,7 @@ const Classes = ({ ...props }) => {
 
     }
 
+    // monster / npc
     switch (c) {
 
       case "Construct":
@@ -295,7 +313,11 @@ const Classes = ({ ...props }) => {
       <Select
         inputId="class1"
         inputValue={props.character.class_1}
-        inputChange={(e) => props.characterUpdate({...props.character, class_1: e.target.value})}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          class_1: e.target.value,
+          level_1: 0
+        })}
         inputLabel="Class"
       >
         <option value="None">-</option>
@@ -311,6 +333,14 @@ const Classes = ({ ...props }) => {
           <option value="Rogue">Rogue</option>
           <option value="Sorcerer">Sorcerer</option>
           <option value="Wizard">Wizard</option>
+        </optgroup>
+        <optgroup label="Advanced Player's Guide">
+          <option value="Alchemist">Alchemist</option>
+          <option value="Cavalier">Cavalier</option>
+          <option value="Inquisitor">Inquisitor</option>
+          <option value="Oracle">Oracle</option>
+          <option value="Summoner">Summoner</option>
+          <option value="Witch">Witch</option>
         </optgroup>
         {props.dm === "enabled" &&
         <optgroup label="Racial Types">
@@ -373,7 +403,11 @@ const Classes = ({ ...props }) => {
       <Select
         inputId="class2"
         inputValue={props.character.class_2}
-        inputChange={(e) => props.characterUpdate({...props.character, class_2: e.target.value})}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          class_2: e.target.value,
+          level_2: 0
+        })}
         inputLabel="Class"
       >
         <option value="None">-</option>
@@ -389,6 +423,14 @@ const Classes = ({ ...props }) => {
           <option value="Rogue">Rogue</option>
           <option value="Sorcerer">Sorcerer</option>
           <option value="Wizard">Wizard</option>
+        </optgroup>
+        <optgroup label="Advanced Player's Guide">
+          <option value="Alchemist">Alchemist</option>
+          <option value="Cavalier">Cavalier</option>
+          <option value="Inquisitor">Inquisitor</option>
+          <option value="Oracle">Oracle</option>
+          <option value="Summoner">Summoner</option>
+          <option value="Witch">Witch</option>
         </optgroup>
       </Select>
 
@@ -407,7 +449,11 @@ const Classes = ({ ...props }) => {
       <Select
         inputId="class3"
         inputValue={props.character.class_3}
-        inputChange={(e) => props.characterUpdate({...props.character, class_3: e.target.value})}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          class_3: e.target.value,
+          level_3: 0
+        })}
         inputLabel="Class"
       >
         <option value="None">-</option>
@@ -423,6 +469,14 @@ const Classes = ({ ...props }) => {
           <option value="Rogue">Rogue</option>
           <option value="Sorcerer">Sorcerer</option>
           <option value="Wizard">Wizard</option>
+        </optgroup>
+        <optgroup label="Advanced Player's Guide">
+          <option value="Alchemist">Alchemist</option>
+          <option value="Cavalier">Cavalier</option>
+          <option value="Inquisitor">Inquisitor</option>
+          <option value="Oracle">Oracle</option>
+          <option value="Summoner">Summoner</option>
+          <option value="Witch">Witch</option>
         </optgroup>
       </Select>
 

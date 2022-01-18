@@ -18,6 +18,7 @@ const HitPoints = ({ ...props }) => {
       case "Fighter":
       case "Paladin":
       case "Ranger":
+      case "Cavalier":
       case "Construct":
       case "MagicalBeast":
       case "MonstrousHumanoid":
@@ -30,6 +31,10 @@ const HitPoints = ({ ...props }) => {
       case "Druid":
       case "Monk":
       case "Rogue":
+      case "Alchemist":
+      case "Inquisitor":
+      case "Oracle":
+      case "Summoner":
       case "Aberration":
       case "Animal":
       case "Humanoid":
@@ -42,6 +47,7 @@ const HitPoints = ({ ...props }) => {
 
       case "Sorcerer":
       case "Wizard":
+      case "Witch":
       case "Fey":
         hd = "d6"
       break;
