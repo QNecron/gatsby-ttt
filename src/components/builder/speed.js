@@ -5,13 +5,12 @@ import Select from "../../components/forms/select"
 
 const Speed = ({ ...props }) => {
 
-  const movement = (v, r, c1, c2, c3) => {
+  const movement = (v, r) => {
     let mov = 0
 
     if (v === "Heavy" || v === "Medium") {
       if (r === "Halfling" || r === "Gnome") mov = 5
       else if (r === "Dwarf") mov = 0
-      else if (v === "Medium" && (c1 === "Barbarian" || c2 === "Barbarian" || c3 === "Barbarian")) mov = 0
       else mov = 10
     }
     else {
@@ -43,13 +42,7 @@ const Speed = ({ ...props }) => {
       <Select
         inputId="speedArmor"
         inputValue={props.character.ac.armor_type}
-        inputChange={(e) => movement(
-          e.target.value,
-          props.character.race,
-          props.character.class_1,
-          props.character.class_2,
-          props.character.class_3
-        )}
+        inputChange={(e) => movement(e.target.value, props.character.race)}
         inputLabel="Armor"
       >
         <option value="Cloth">Cloth</option>
