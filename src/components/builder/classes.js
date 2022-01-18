@@ -298,6 +298,22 @@ const Classes = ({ ...props }) => {
       })
 
     }
+    else if (c === props.character.class_3) {
+
+      props.characterUpdate({
+        ...props.character,
+        level_3: l,
+        bab_3: bab,
+        saves_class_3: {
+          ...props.character.saves_class_3,
+          fortitude: fort,
+          reflex: refl,
+          will: will
+        },
+        skill_points_3: skill
+      })
+
+    }
     else {
       console.log("No class property defined.")
     }

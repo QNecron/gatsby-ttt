@@ -37,8 +37,29 @@ const Speed = ({ ...props }) => {
 
     <div className="block-container speed">
       <h2 className="block-defined heading-5">Speed</h2>
-      <div className="block">{parseInt(props.character.speed.movement) - parseInt(props.character.speed.penalty)}ft
+      <div className="block">{(
+        parseInt(props.character.speed.movement) +
+        parseInt(props.character.speed.bonus)) - 
+        parseInt(props.character.speed.penalty)}ft
       </div>
+
+      <Input
+        inputType="number"
+        inputId="speedBonus"
+        inputValue={props.character.speed.bonus}
+        inputChange={(e) => props.characterUpdate({
+          ...props.character,
+          speed: {
+            ...props.character.speed,
+            bonus: e.target.value
+          }
+        })}
+        inputStep={5}
+        inputSRT="true"
+        inputLabel="Bonus Movement Speed"
+        inputHelper="Bonus"
+      />
+
       <Select
         inputId="speedArmor"
         inputValue={props.character.ac.armor_type}

@@ -190,6 +190,7 @@ function Storage({ ...props }) {
           ...props.character.speed,
           penalty: data.speed.penalty,
           movement: data.speed.movement,
+          bonus: data.speed.bonus,
           swim: data.speed.swim,
           fly: data.speed.fly,
           climb: data.speed.climb,

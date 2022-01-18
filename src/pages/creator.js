@@ -200,6 +200,7 @@ const Creator = ({ menu, menuUpdate }) => {
     speed: {
       penalty: 0,
       movement: 30,
+      bonus: 0,
       swim: 0,
       fly: 0,
       climb: 0,
@@ -422,6 +423,7 @@ const Creator = ({ menu, menuUpdate }) => {
         speed: {
           penalty: character.speed.penalty,
           movement: character.speed.movement,
+          bonus: character.speed.bonus,
           swim: character.speed.swim,
           fly: character.speed.fly,
           climb: character.speed.climb,
