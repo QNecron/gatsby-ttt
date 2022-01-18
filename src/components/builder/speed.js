@@ -39,10 +39,23 @@ const Speed = ({ ...props }) => {
       <h2 className="block-defined heading-5">Speed</h2>
       <div className="block">{(
         parseInt(props.character.speed.movement) +
-        parseInt(props.character.speed.bonus)) - 
+        parseInt(props.character.speed.bonus)) -
         parseInt(props.character.speed.penalty)}ft
       </div>
+      <Select
+        inputId="speedArmor"
+        inputValue={props.character.ac.armor_type}
+        inputChange={(e) => movement(e.target.value, props.character.race)}
+        inputLabel="Armor"
+      >
+        <option value="Cloth">Cloth</option>
+        <option value="Light">Light</option>
+        <option value="Medium">Medium</option>
+        <option value="Heavy">Heavy</option>
+      </Select>
+    </div>
 
+    <div className="block-container speed">
       <Input
         inputType="number"
         inputId="speedBonus"
@@ -59,21 +72,6 @@ const Speed = ({ ...props }) => {
         inputLabel="Bonus Movement Speed"
         inputHelper="Bonus"
       />
-
-      <Select
-        inputId="speedArmor"
-        inputValue={props.character.ac.armor_type}
-        inputChange={(e) => movement(e.target.value, props.character.race)}
-        inputLabel="Armor"
-      >
-        <option value="Cloth">Cloth</option>
-        <option value="Light">Light</option>
-        <option value="Medium">Medium</option>
-        <option value="Heavy">Heavy</option>
-      </Select>
-    </div>
-
-    <div className="block-container speed">
       <Input
         inputType="number"
         inputId="speedFly"
