@@ -28,6 +28,7 @@ import SkillsPerform from "../components/builder/skills-perform"
 import SkillsProfession from "../components/builder/skills-profession"
 import Speed from "../components/builder/speed"
 import Storage from "../components/builder/storage"
+import BonusSpells from "../components/builder/spells"
 
 import ImgDesktop from "../images/hero/hero-05.webp"
 import ImgMobile from "../images/hero/hero-05-mobile.webp"
@@ -35,6 +36,7 @@ import ImgMobile from "../images/hero/hero-05-mobile.webp"
 const Creator = ({ menu, menuUpdate }) => {
 
   const [flyout, flyoutUpdate] = useState("false")
+  const [spells, spellsUpdate] = useState("false")
   const [panel, panelUpdate] = useState(1)
 
   const [dm, dmUpdate] = useState("disabled")
@@ -447,6 +449,34 @@ const Creator = ({ menu, menuUpdate }) => {
 
   }
 
+  const caster = () => {
+    const c1 = character.class_1
+    const l1 = character.level_1
+    const c2 = character.class_2
+    const l2 = character.level_2
+    const c3 = character.class_3
+    const l3 = character.level_3
+
+    let magical = false
+
+    if ((c1 === "Bard" && l1 >= 1) || (c2 === "Bard" && l2 >= 1) || (c3 === "Bard" && l3 >= 1)) magical = true
+    else if ((c1 === "Cleric" && l1 >= 1) || (c2 === "Cleric" && l2 >= 1) || (c3 === "Cleric" && l3 >= 1)) magical = true
+    else if ((c1 === "Druid" && l1 >= 1) || (c2 === "Druid" && l2 >= 1)|| (c3 === "Druid" && l3 >= 1)) magical = true
+    else if ((c1 === "Paladin" && l1 >= 1) || (c2 === "Paladin" && l2 >= 1) || (c3 === "Paladin" && l3 >= 1)) magical = true
+    else if ((c1 === "Ranger" && l1 >= 1) || (c2 === "Ranger" && l2 >= 1) || (c3 === "Ranger" && l3 >= 1)) magical = true
+    else if ((c1 === "Sorcerer" && l1 >= 1) || (c2 === "Sorcerer" && l2 >= 1) || (c3 === "Sorcerer" && l3 >= 1)) magical = true
+    else if ((c1 === "Wizard" && l1 >= 1) || (c2 === "Wizard" && l2 >= 1) || (c3 === "Wizard" && l3 >= 1)) magical = true
+    else if ((c1 === "Alchemist" && l1 >= 1) || (c2 === "Alchemist" && l2 >= 1)|| (c3 === "Alchemist" && l3 >= 1)) magical = true
+    else if ((c1 === "Inquisitor" && l1 >= 1) || (c2 === "Inquisitor" && l2 >= 1) || (c3 === "Inquisitor" && l3 >= 1)) magical = true
+    else if ((c1 === "Oracle" && l1 >= 1) || (c2 === "Oracle" && l2 >= 1) || (c3 === "Oracle" && l3 >= 1)) magical = true
+    else if ((c1 === "Summoner" && l1 >= 1) || (c2 === "Summoner" && l2 >= 1) || (c3 === "Summoner" && l3 >= 1)) magical = true
+    else if ((c1 === "Witch" && l1 >= 1) || (c2 === "Witch" && l2 >= 1) || (c3 === "Witch" && l3 >= 1)) magical = true
+    else magical = false
+
+    return magical
+
+  }
+
   useEffect(() => {
 
     const storage = window.localStorage
@@ -493,6 +523,15 @@ const Creator = ({ menu, menuUpdate }) => {
             >
               <span className="material-icons" aria-hidden="true">auto_fix_high</span> DM
               <span data-srt="true">tools {dm}.</span>
+            </button>
+
+            <button
+              className="nav-utility-link"
+              aria-haspopup="true"
+              aria-controls="spells-info"
+              onClick={(e) => spellsUpdate("true")}
+            >
+              <span className="material-icons" aria-hidden="true">auto_stories</span> Spells
             </button>
 
             <button className="nav-utility-link" onClick={(e) => save()}>
@@ -592,7 +631,7 @@ const Creator = ({ menu, menuUpdate }) => {
                     aria-controls="panel-1"
                     onClick={(e) => panelUpdate(1)}
                   >
-                      General
+                    General
                   </button>
 
                   <button
@@ -603,7 +642,7 @@ const Creator = ({ menu, menuUpdate }) => {
                     aria-controls="panel-2"
                     onClick={(e) => panelUpdate(2)}
                   >
-                      Knowledge
+                    Knowledge
                   </button>
 
                   <button
@@ -614,7 +653,7 @@ const Creator = ({ menu, menuUpdate }) => {
                     aria-controls="panel-3"
                     onClick={(e) => panelUpdate(3)}
                   >
-                      Craft
+                    Craft
                   </button>
 
                   <button
@@ -625,7 +664,7 @@ const Creator = ({ menu, menuUpdate }) => {
                     aria-controls="panel-4"
                     onClick={(e) => panelUpdate(4)}
                   >
-                      Perform
+                    Perform
                   </button>
 
                   <button
@@ -636,7 +675,7 @@ const Creator = ({ menu, menuUpdate }) => {
                     aria-controls="panel-5"
                     onClick={(e) => panelUpdate(5)}
                   >
-                      Profession
+                    Profession
                   </button>
 
                   <div className="panel-nav-count">
@@ -718,6 +757,30 @@ const Creator = ({ menu, menuUpdate }) => {
           listCharacter={listCharacter}
           listCharacterUpdate={listCharacterUpdate}
         />
+
+      </Flyout>
+
+      <Flyout
+        flyoutId="spells-info"
+        flyoutType={"right"}
+        flyoutOpen={spells}
+        flyout={spells}
+        flyoutUpdate={spellsUpdate}
+      >
+
+        {caster() === true &&
+          <BonusSpells
+            character={character}
+            characterUpdate={characterUpdate}
+          />
+        }
+        {caster() === false &&
+          <div className="character-storage-empty">
+            <p className="character-storage-name">
+              Your character doesn't appear to be able to cast spells.
+            </p>
+          </div>
+        }
 
       </Flyout>
 

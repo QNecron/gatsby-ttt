@@ -7,7 +7,7 @@
   display: flex;
 
   // media
-  @include media($mq-mobile) {
+  @include media($mq-tablet-l) {
     flex-wrap: nowrap;
     overflow-x: auto;
   }
@@ -38,7 +38,7 @@
   line-height: $space-40;
 
   // media
-  @include media($mq-mobile) {
+  @include media($mq-tablet-l) {
     min-width: rem(96);
   }
 

@@ -262,7 +262,7 @@ function Storage({ ...props }) {
     {!props.listCharacter[0] && (
       <div className="character-storage-empty">
         <p className="character-storage-name">
-          Looks like you don't have any saved characters.
+          No saved characters found, click the "Save" button to store your progress.
         </p>
       </div>
     )}

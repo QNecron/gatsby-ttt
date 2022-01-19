@@ -47,7 +47,8 @@
 .bab,
 .hit-points,
 .skill,
-.speed {
+.speed,
+.spells {
 
   .block-defined,
   .block-support,
@@ -102,4 +103,37 @@
 
 .character-storage-empty {
   text-align: center;
+}
+
+.spell-bonuses-container {}
+
+.spell-bonus {
+  @extend %black-letter;
+  align-items: center;
+  background: rgba(black, .24);
+  border: solid rem(1) $secondary;
+  display: flex;
+  font-size: rem(12);
+  font-weight: 700;
+  justify-content: center;
+  margin-top: $space-16;
+  padding-right: rem(58);
+  height: rem(38); // +2 border
+  position: relative;
+}
+
+.spell-level {
+  color: $secondary;
+  padding-right: $space-8;
+}
+
+.spell-dc {
+  align-items: center;
+  color: $black;
+  display: flex;
+  padding: 0 $space-12;
+  position: absolute;
+  top: rem(2);
+  right: rem(2);
+  bottom: rem(2);
 }
