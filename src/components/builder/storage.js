@@ -214,7 +214,8 @@ function Storage({ ...props }) {
     for (var i = 0; i < storage.length; i++) {
       let key = storage.key(i);
       // let value = storage.getItem(key);
-      characters.push(key);
+
+      if (key !== "theme") characters.push(key)
     }
 
     props.listCharacterUpdate(characters)
