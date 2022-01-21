@@ -105,7 +105,11 @@
   text-align: center;
 }
 
-.spell-bonuses-container {}
+.spell-bonuses-container {
+  @include flex-center("true", "true", "true", calc(50% - 4px));
+  flex-wrap: wrap;
+  gap: 0 $space-8;
+}
 
 .spell-bonus {
   @extend %black-letter;

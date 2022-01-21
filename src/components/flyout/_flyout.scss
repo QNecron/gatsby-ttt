@@ -57,8 +57,9 @@
 }
 
 [data-flyout="right"] {
-  background-color: $primary;
-  border-left: solid rem(1) rgba($secondary, .48);
+  background-color: rgba($primary, .8);
+  backdrop-filter: blur($space-8);
+  border-left: solid rem(1) $secondary;
   right: 0;
 
   &[aria-expanded="false"] {
@@ -72,8 +73,9 @@
 }
 
 [data-flyout="left"] {
-  background-color: $primary;
-  border-right: solid rem(1) rgba($secondary, .48);
+  background-color: rgba($primary, .8);
+  backdrop-filter: blur($space-8);
+  border-right: solid rem(1) $secondary;
   left: 0;
 
   &[aria-expanded="false"] {
