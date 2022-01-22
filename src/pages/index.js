@@ -1,5 +1,4 @@
 import React from "react"
-// import { Link } from "gatsby"
 
 import Seo from "../components/seo"
 import Page from "../components/page/page"

@@ -161,44 +161,44 @@ const BonusSpells = ({ ...props }) => {
         {mod === "CHA" ? modCha : ""}
       </div>
     </div>
-    <div class="spell-bonuses-container">
-      <div class="spell-bonus">
+    <div className="spell-bonuses-container">
+      <div className="spell-bonus">
         <span className="spell-level">0th</span>
         <div className="spell-dc">DC{10 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">1st</span> +{spl1} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{11 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">2nd</span> +{spl2} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{12 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">3rd</span> +{spl3} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{13 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">4th</span> +{spl4} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{14 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">5th</span> +{spl5} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{15 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">6th</span> +{spl6} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{16 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">7th</span> +{spl7} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{17 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">8th</span> +{spl8} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{18 + sdc}</div>
       </div>
-      <div class="spell-bonus">
+      <div className="spell-bonus">
         <span className="spell-level">9th</span> +{spl9} <span data-srt="true">bonus spells</span>
         <div className="spell-dc">DC{19 + sdc}</div>
       </div>

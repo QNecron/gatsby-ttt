@@ -6,6 +6,11 @@
   z-index: 1;
 }
 
+[data-hero="full"],
+[data-hero="full"] .wrapper {
+  min-height: 100vh;
+}
+
 [data-hero="large"],
 [data-hero="large"] .wrapper {
   min-height: 80vh;
@@ -30,6 +35,20 @@
 
 }
 
+[data-hero="full"] {
+
+  .hero-asset {
+
+    // media
+    @include media($mq-desktop) {
+      top: 0;
+    }
+
+  }
+
+}
+
+[data-hero="full"],
 [data-hero="large"] {
 
   .hero-content-container {
@@ -75,7 +94,7 @@
   @include media($mq-desktop) {
     height: auto;
     width: 100%;
-    top: -16%;
+    top: -24%;
     left: 0;
   }
   @include media($mq-mobile) {

@@ -3,6 +3,11 @@ import React from "react"
 import Seo from "../components/seo"
 import Page from "../components/page/page"
 
+import Hero from "../components/hero/hero"
+
+import ImgDesktop from "../images/hero/hero-06.webp"
+import ImgMobile from "../images/hero/hero-06-mobile.webp"
+
 const NotFoundPage = () => {
 
   return(
@@ -11,9 +16,15 @@ const NotFoundPage = () => {
 
       <Seo title="404: Not found" />
 
-      <h1>NOT FOUND</h1>
-
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <Hero
+        title="404 Not Found"
+        copy="Looks like you've failed your survival check and ended up lost."
+        cta="Take Me Home"
+        link="/"
+        desktop={ImgDesktop}
+        mobile={ImgMobile}
+        size="full"
+      />
 
     </Page>
 

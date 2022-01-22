@@ -128,9 +128,9 @@ function Storage({ ...props }) {
         },
         saves_item: {
           ...props.character.saves_item,
-          fortitude: data.fortitude,
-          reflex: data.reflex,
-          will: data.will
+          fortitude: data.saves_item.fortitude,
+          reflex: data.saves_item.reflex,
+          will: data.saves_item.will
         },
         skills_item: {
           ...props.character.skills_item,
