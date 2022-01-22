@@ -22,7 +22,8 @@
   .nav-primary-link,
   .nav-utility-link,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
 
     &:focus,
     &:hover {
@@ -50,7 +51,8 @@
   .init-roll,
   .spell-name,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
     color: $blue;
   }
 
@@ -240,7 +242,8 @@
   .nav-primary-link,
   .nav-utility-link,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
 
     &:focus,
     &:hover {
@@ -268,7 +271,8 @@
   .init-roll,
   .spell-name,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
     color: $green;
   }
 
@@ -454,7 +458,8 @@
   .nav-primary-link,
   .nav-utility-link,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
 
     &:focus,
     &:hover {
@@ -482,7 +487,8 @@
   .init-roll,
   .spell-name,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
     color: $orange;
   }
 
@@ -672,7 +678,8 @@
   .nav-primary-link,
   .nav-utility-link,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
 
     &:focus,
     &:hover {
@@ -700,7 +707,8 @@
   .init-roll,
   .spell-name,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
     color: $purple;
   }
 
@@ -890,7 +898,8 @@
   .nav-primary-link,
   .nav-utility-link,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
 
     &:focus,
     &:hover {
@@ -918,7 +927,8 @@
   .init-roll,
   .spell-name,
   a[class=""],
-  .link-utility {
+  .link-utility,
+  .breadcrumb-link {
     color: $red;
   }
 

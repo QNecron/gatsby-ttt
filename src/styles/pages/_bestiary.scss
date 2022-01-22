@@ -1,11 +1,12 @@
 .monster-visual {
+  border-bottom: solid rem(1) $secondary;
   display: block;
   margin-bottom: $space-32;
+  padding-bottom: $space-32;
 }
 
 .monster-plate {
   background: $secondary;
-  border: solid rem(1) rgba($secondary, .48);
   color: $white;
   margin: $space-4 0;
   opacity: .92;
@@ -14,14 +15,15 @@
 }
 
 .monster-subplate {
-  border-top: solid rem(1) rgba($secondary, .48);
-  border-bottom: solid rem(1) rgba($secondary, .48);
-  margin: $space-4 0;
+  border-top: solid rem(1) $secondary;
+  border-bottom: solid rem(1) $secondary;
+  margin-top: $space-16;
+  margin-bottom: $space-4;
   padding: $space-8 $space-12;
 }
 
 .monster-stat {
-  padding: $space-4 4vw $space-4 $space-12;
+  padding: $space-4 $space-12;
 }
 
 .monster-name,
@@ -41,4 +43,40 @@
 
 .monster-xp {
   color: $primary;
+}
+
+.monster-description-container {
+
+  // media
+  @include media($mq-mobile) {
+    padding: 0 $space-12;
+  }
+
+}
+
+.breadcrumbs-container {
+  border-top: solid rem(1) $secondary;
+  display: flex;
+  margin-top: $space-32;
+  padding: $space-32 $space-12 $space-8 $space-12;
+
+  [aria-hidden="true"] {
+    color: $secondary;
+  }
+
+}
+
+.breadcrumb {
+  color: $white;
+  margin-right: $space-4;
+}
+
+.breadcrumb-link {
+  text-decoration: underline;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+  }
+
 }

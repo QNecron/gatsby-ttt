@@ -1,10 +1,13 @@
 import React from "react"
 
+import { Link } from "gatsby"
+
 import Seo from "../components/seo"
 import Page from "../components/page/page"
 import Section from "../components/section/section"
 import Wrapper from "../components/wrapper/wrapper"
 import Grid from "../components/grid/grid"
+
 import Hero from "../components/hero/hero"
 
 function positiveNegative(string) {
@@ -73,10 +76,6 @@ const TemplateBestiary = ({ pageContext }) => (
         <Grid desktop="2" tablet="2" mobile="1" gap="32">
 
           <div className="monster-stats-container">
-
-            <em className="monster-visual">
-              {pageContext.visual}
-            </em>
 
             <div className="monster-plate">
               <h2 className="heading-4 monster-name">{pageContext.name}</h2>
@@ -247,11 +246,24 @@ const TemplateBestiary = ({ pageContext }) => (
 
           </div>
 
-          <div className="right">
+          <div className="monster-description-container">
+
+            <em className="monster-visual">
+              {pageContext.visual}
+            </em>
+
             <p>{pageContext.description}</p>
+
           </div>
 
         </Grid>
+
+        <ol className="breadcrumbs-container">
+          <li className="breadcrumb">
+            <Link className="breadcrumb-link" to="/bestiary/">Bestiary</Link> <span aria-hidden="true">/</span>
+          </li>
+          <li className="breadcrumb">{pageContext.title}</li>
+        </ol>
 
       </Wrapper>
 
