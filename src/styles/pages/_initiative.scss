@@ -16,6 +16,12 @@
 
 }
 
+
+.init-info,
+.init-roll {
+  @include flex-center("true", "true");
+}
+
 .init-roll-name {
   @include flex-center("false", "false", "true", 100%);
   gap: $space-8;
