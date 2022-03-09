@@ -39,7 +39,6 @@ const Header = ({ ...props }) => {
                 <span className="material-icons" aria-hidden="true">menu</span> Menu
               </button>
 
-              {/*
               <button
                 className="header-menu"
                 aria-haspopup="true"
@@ -48,7 +47,6 @@ const Header = ({ ...props }) => {
               >
                Dice Bag
               </button>
-              */}
 
               <Link className="header-logo" to="/">
                 <span data-srt="true">{props.title}</span>
