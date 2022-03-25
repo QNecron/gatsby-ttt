@@ -38,6 +38,7 @@
 
   .logo {
     max-height: $space-32;
+    max-width: $space-32;
     @include timing;
   }
 

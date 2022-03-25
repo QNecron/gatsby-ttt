@@ -50,7 +50,7 @@ const Header = ({ ...props }) => {
 
               <Link className="header-logo" to="/">
                 <span data-srt="true">{props.title}</span>
-                <img className="logo" src={Logo} alt=" " aria-hidden="true" />
+                <img className="logo" src={Logo} height="64" width="64" alt=" " aria-hidden="true" />
               </Link>
 
             </Wrapper>
