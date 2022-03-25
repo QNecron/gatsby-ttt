@@ -51,6 +51,8 @@ const Initiative = () => {
         desktop={ImgDesktop}
         mobile={ImgMobile}
         title="Initiative"
+        height={"1012"}
+        width={"1500"}
         size="small"
       />
 

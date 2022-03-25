@@ -23,6 +23,8 @@ const NotFoundPage = () => {
         link="/"
         desktop={ImgDesktop}
         mobile={ImgMobile}
+        height={"1080"}
+        width={"1920"}
         size="full"
       />
 

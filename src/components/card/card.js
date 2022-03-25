@@ -11,8 +11,8 @@ const Card = ({ type, desktop, mobile, title, copy, cta, link, external }) => {
 
       {(desktop && mobile) &&
         <picture className="card-asset-container">
-          <source srcSet={mobile} media="(max-width: 767px)" />
-          <img className="card-asset" src={desktop} alt=" " aria-hidden="true" />
+          <source srcSet={mobile} height="768" width="512" media="(max-width: 767px)" />
+          <img className="card-asset" src={desktop} height="768" width="512" alt=" " aria-hidden="true" />
         </picture>
       }
 

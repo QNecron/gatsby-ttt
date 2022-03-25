@@ -64,6 +64,8 @@ const Feats = () => {
         desktop={ImgDesktop}
         mobile={ImgMobile}
         title="Feats"
+        height={"1249"}
+        width={"1920"}
         size="small"
       />
 

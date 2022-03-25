@@ -34,6 +34,8 @@ const IndexPage = () => {
         link="/creator/"
         desktop={ImgDesktop}
         mobile={ImgMobile}
+        height={"1133"}
+        width={"1680"}
         size="large"
       />
 

@@ -35,7 +35,8 @@
 
 }
 
-[data-hero="full"] {
+[data-hero="full"],
+[data-hero="large"] {
 
   .hero-asset {
 
@@ -45,11 +46,6 @@
     }
 
   }
-
-}
-
-[data-hero="full"],
-[data-hero="large"] {
 
   .hero-content-container {
     top: calc(50% + #{$space-48});

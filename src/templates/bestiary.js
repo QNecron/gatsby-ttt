@@ -66,6 +66,8 @@ const TemplateBestiary = ({ pageContext }) => (
 
     <Hero
       title={pageContext.title}
+      height={"1133"}
+      width={"1680"}
       size="small"
     />
 

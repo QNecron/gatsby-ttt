@@ -8,15 +8,15 @@ import { Link } from "gatsby"
 import ImgDesktop from "../../images/hero/hero-01.webp"
 import ImgMobile from "../../images/hero/hero-01-mobile.webp"
 
-const Hero = ({ size, desktop, mobile, title, copy, cta, link }) => {
+const Hero = ({ size, height, width, desktop, mobile, title, copy, cta, link }) => {
 
   return(
 
     <section className="hero-container" data-hero={size}>
 
       <picture className="hero-asset-container">
-        <source srcSet={mobile} media="(max-width: 767px)" />
-        <img className="hero-asset" src={desktop} alt=" " aria-hidden="true" />
+        <source srcSet={mobile} height="479" width="767" media="(max-width: 767px)" />
+        <img className="hero-asset" src={desktop} height={height} width={width} alt=" " aria-hidden="true" />
       </picture>
 
       <div className="hero-overlay"></div>
@@ -40,6 +40,8 @@ const Hero = ({ size, desktop, mobile, title, copy, cta, link }) => {
 
 Hero.propTypes = {
   size: PropTypes.string,
+  height: PropTypes.string,
+  width: PropTypes.string,
   desktop: PropTypes.string,
   mobile: PropTypes.string,
   title: PropTypes.string,
@@ -50,6 +52,8 @@ Hero.propTypes = {
 
 Hero.defaultProps = {
   size: "large",
+  height: ``,
+  width: ``,
   desktop: ImgDesktop,
   mobile: ImgMobile,
   title: ``,

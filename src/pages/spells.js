@@ -92,6 +92,8 @@ const Spells = () => {
         desktop={ImgDesktop}
         mobile={ImgMobile}
         title="Spells"
+        height={"1133"}
+        width={"1680"}
         size="small"
       />
 

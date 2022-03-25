@@ -507,6 +507,8 @@ const Creator = ({ menu, menuUpdate }) => {
         desktop={ImgDesktop}
         mobile={ImgMobile}
         title="Creator"
+        height={"1200"}
+        width={"1920"}
         size="small"
       />
 
