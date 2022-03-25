@@ -121,6 +121,8 @@ const IndexPage = () => {
               link="/initiative/"
               desktop={MCInitiative}
               mobile={MCInitiative}
+              height="479"
+              width="767"
               type="showcase"
             />
 

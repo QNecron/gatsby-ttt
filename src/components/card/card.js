@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import { Link } from "gatsby"
 
-const Card = ({ type, desktop, mobile, title, copy, cta, link, external }) => {
+const Card = ({ type, height, width, desktop, mobile, title, copy, cta, link, external }) => {
 
   return(
 
@@ -12,7 +12,7 @@ const Card = ({ type, desktop, mobile, title, copy, cta, link, external }) => {
       {(desktop && mobile) &&
         <picture className="card-asset-container">
           <source srcSet={mobile} height="768" width="512" media="(max-width: 767px)" />
-          <img className="card-asset" src={desktop} height="768" width="512" alt=" " aria-hidden="true" />
+          <img className="card-asset" src={desktop} height={height} width={width} alt=" " aria-hidden="true" />
         </picture>
       }
 
@@ -37,6 +37,8 @@ const Card = ({ type, desktop, mobile, title, copy, cta, link, external }) => {
 
 Card.propTypes = {
   type: PropTypes.string,
+  height: PropTypes.string,
+  width: PropTypes.string,
   desktop: PropTypes.string,
   mobile: PropTypes.string,
   title: PropTypes.string,
@@ -48,6 +50,8 @@ Card.propTypes = {
 
 Card.defaultProps = {
   type: "default",
+  height: `768`,
+  width: `512`,
   desktop: ``,
   mobile: ``,
   title: ``,
