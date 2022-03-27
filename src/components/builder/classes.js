@@ -132,13 +132,13 @@ const Classes = ({ ...props }) => {
       case "FSS":
         // FSS
         fort = Math.floor(2 + l * .5)
-        refl = Math.floor(0 + l * .3333)
-        will = Math.floor(0 + l * .3333)
+        refl = Math.ceil(0 + l * .3333)
+        will = Math.ceil(0 + l * .3333)
       break;
 
       case "SFF":
         // SFF
-        fort = Math.floor(0 + l * .3333)
+        fort = Math.ceil(0 + l * .3333)
         refl = Math.floor(2 + l * .5)
         will = Math.floor(2 + l * .5)
       break;
@@ -146,7 +146,7 @@ const Classes = ({ ...props }) => {
       case "FSF":
         // FSF
         fort = Math.floor(2 + l * .5)
-        refl = Math.floor(0 + l * .3333)
+        refl = Math.ceil(0 + l * .3333)
         will = Math.floor(2 + l * .5)
       break;
 
@@ -161,20 +161,20 @@ const Classes = ({ ...props }) => {
         // FFS
         fort = Math.floor(2 + l * .5)
         refl = Math.floor(2 + l * .5)
-        will = Math.floor(0 + l * .3333)
+        will = Math.ceil(0 + l * .3333)
       break;
 
       case "SFS":
         // SFS
-        fort = Math.floor(0 + l * .3333)
+        fort = Math.ceil(0 + l * .3333)
         refl = Math.floor(2 + l * .5)
-        will = Math.floor(0 + l * .3333)
+        will = Math.ceil(0 + l * .3333)
       break;
 
       case "SSF":
         // SSF
-        fort = Math.floor(0 + l * .3333)
-        refl = Math.floor(0 + l * .3333)
+        fort = Math.ceil(0 + l * .3333)
+        refl = Math.ceil(0 + l * .3333)
         will = Math.floor(2 + l * .5)
       break;
 
