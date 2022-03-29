@@ -11,7 +11,7 @@ import Input from "../../components/forms/input"
 
 import { diceroll } from "../../components/builder/functions"
 
-import Logo from "../../images/logo-tabletop-tools.png"
+import Logo from "../../images/logo-tabletop-tools.webp"
 
 const Header = ({ ...props }) => {
 
@@ -50,7 +50,7 @@ const Header = ({ ...props }) => {
 
               <Link className="header-logo" to="/">
                 <span data-srt="true">{props.title}</span>
-                <img className="logo" src={Logo} height="64" width="64" alt=" " aria-hidden="true" />
+                <img className="logo" src={Logo} height="32" width="32" alt=" " aria-hidden="true" />
               </Link>
 
             </Wrapper>

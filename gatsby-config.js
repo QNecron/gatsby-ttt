@@ -28,16 +28,16 @@ module.exports = {
         icon: `src/images/logo-tabletop-tools.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `material icons`,
-           // `source sans pro\:300,400,400i,700`
-        ],
-        display: 'swap'
-      }
-    }
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       `material icons`,
+    //        // `source sans pro\:300,400,400i,700`
+    //     ],
+    //     display: 'swap'
+    //   }
+    // }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

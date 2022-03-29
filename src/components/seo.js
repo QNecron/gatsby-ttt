@@ -68,6 +68,16 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      link={[
+        {
+          rel: `dns-prefetch`,
+          href: `//fonts.googleapis.com`
+        },
+        {
+          rel: `stylesheet`,
+          href: `https://fonts.googleapis.com/icon?family=Material+Icons&display=swap`
+        }
+      ]}
     />
   )
 }
